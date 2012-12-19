@@ -1,0 +1,50 @@
+
+		{'_', [
+			{[<<"test_test_test">>], fw_test, []},
+			{[<<"test">>,bucket,'...'], fw_test, []},
+			{[<<"farwest">>,<<"templates">>,name], fw_templates_handler, [{<<"value">>,<<"test">>}]},
+			{[<<"farwest">>,<<"templates">>], fw_templates_handler, [{<<"value">>,<<"test">>}]},
+		{[<<"static">>,<<"farwest">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, []}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+		{[<<"static">>,<<"jquery">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"jquery">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+		{[<<"static">>,<<"bootstrap">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"bootstrap">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+			{[<<"farwest">>,<<"userfiles">>,name], fw_userfiles_handler, []},
+			{[<<"farwest">>,<<"userfiles">>], fw_userfiles_handler, []},
+			{[<<"farwest">>,<<"userdata">>], fw_userdata_handler, []},
+			{[<<"farwest">>,<<"userdata">>,bucket,'...'], fw_userdata_handler, []},
+			{[<<"user">>,key], fw_page_handler,
+					[{template,user_profile},
+					 {rules,
+								[{user_data, {get, userdata_user_profile, {binding, key}}}]
+					 }
+					
+					]
+				
+			}
+			
+
+		]}
+	.
+
+
+
+	

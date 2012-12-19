@@ -1,0 +1,10 @@
+{% extends "page.dtl" %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+	
+
+{% endblock %}
