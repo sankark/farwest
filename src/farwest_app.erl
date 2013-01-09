@@ -23,21 +23,22 @@
 %% API.
 
 start(_, _) ->
-	Port = int_env(http_port, 8080),
+	set_path(),
+	Port = int_env(http_port, 8085),
 	SSLPort = int_env(https_port, 8443),
 	Certfile = path_env(https_cert),
 	CACertfile = path_env(https_cacert),
 	{ok, Routes} = file:consult(path_env(routes_file)),
 	%% HTTP.
+	io:format("routes ~p",[Routes]),
 	{ok, _} = cowboy:start_http(farwest_http, 100,
-		[{port, Port}],
-		[{dispatch, Routes}, {onresponse, fun fw_hooks:onresponse/4}]
+		[{port, Port}], [{dispatch, Routes}]
 	),
 	lager:info("Farwest listening on port ~p~n", [Port]),
 	{ok, _} = cowboy:start_https(farwest_https, 100,
 		[{port, SSLPort}, {certfile, Certfile},
 			{cacertfile, CACertfile}, {verify, verify_peer}],
-		[{dispatch, Routes}, {onresponse, fun fw_hooks:onresponse/4}]
+		[{dispatch, Routes}]
 	),
 	lager:info("Farwest securely listening on port ~p~n", [SSLPort]),
 	farwest_sup:start_link().
@@ -62,3 +63,13 @@ path_env(Key) ->
 		{ok, Path} ->
 			Path
 	end.
+set_path() ->
+	P = code:all_loaded(),
+	Path = filename:dirname(filename:dirname(proplists:get_value(?MODULE, P))),
+	code:add_pathz(Path),
+	application:set_env(farwest, lib_dir, Path),
+	application:set_env(farwest, https_cert, Path ++ "/priv/cert/sample.crt"),
+	application:set_env(farwest, https_cacert,Path ++ "/priv/cert/sample.cert"),
+	application:set_env(farwest, userfiles_dir,Path ++ "/priv/userfiles_dir"),
+	application:set_env(farwest, config_file,Path ++ "/priv/config"),
+	application:set_env(farwest, routes_file,Path ++ "/priv/dispatch/dispatch").

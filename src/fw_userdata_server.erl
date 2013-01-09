@@ -22,7 +22,7 @@
 -export([code_change/3]).
 
 %% Riak bucket prefix.
--define(PREFIX, "fw_userdata_").
+-define(PREFIX, "userdata_").
 
 -record(state, {
 	riak_pid = undefined :: pid()
@@ -58,7 +58,7 @@ set_data(Bucket, Key, EditBy, UserData, Comments) ->
 %% gen_server.
 
 init([]) ->
-	{ok, RiakPid} = riakc_pb_socket:start_link("127.0.0.1", 8087),
+	{ok, RiakPid} = riakc_pb_socket:start_link(fw_config:get(riak_ip), fw_config:get(riak_port)),
 	{ok, #state{riak_pid=RiakPid}}.
 
 handle_call(stop, _, State) ->

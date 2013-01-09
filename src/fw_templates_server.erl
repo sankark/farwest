@@ -58,7 +58,7 @@ set_template(Name, EditBy, Contents, Comments) ->
 %% gen_server.
 
 init([]) ->
-	{ok, RiakPid} = riakc_pb_socket:start_link("127.0.0.1", 8087),
+	{ok, RiakPid} = riakc_pb_socket:start_link(fw_config:get(riak_ip), fw_config:get(riak_port)),
 	ok = init_templates(RiakPid),
 	{ok, #state{riak_pid=RiakPid}}.
 
@@ -100,13 +100,18 @@ init_templates(RiakPid) ->
 		{<<"value">>, Contents}
 			= lists:keyfind(<<"value">>, 1, Template),
 		case compile(Name, Contents) of
-			{ok, _} -> ok;
+			{ok, _} -> 
+				store_template(Name,Contents);
 			{error, Reason} ->
 				lager:error("Compile of template ~p failed with reason: ~p",
 					[Name, Reason])
 		end
 	end || Name <- Templates],
 	ok.
+
+store_template(Name,Contents)->
+	FileName =  filename:join([fw_config:get(template_dir),binary_to_list(Name) ++ ".dtl"]),
+	ok = file:write_file(FileName, Contents).
 
 do_get_template(RiakPid, Name) ->
 	case do_get_custom_template(RiakPid, Name) of
@@ -133,7 +138,7 @@ do_get_farwest_template(Name) ->
 				{<<"revision">>, 0},
 				{<<"edit_by">>, <<"/farwest/">>},
 				{<<"edit_datetime">>, DateTime},
-				{<<"contents">>, Contents},
+				{<<"value">>, Contents},
 				{<<"comments">>, <<"Default Farwest template">>}
 			]};
 		{error, Reason} ->
@@ -153,26 +158,29 @@ do_set_template(RiakPid, Name, EditBy, Contents, Comments) ->
 	case compile(Name, Contents) of
 		{ok, _} ->
 			fw_versioned_buckets:set(RiakPid, ?BUCKET, Name,
-				EditBy, Contents, Comments);
+				EditBy, Contents, Comments),
+				store_template(Name,Contents);
 		{error, Reason} ->
 			{error, Reason}
 	end.
 
 compile(Name, Bin) ->
 	%% @todo Allow configuring some of these options.
-	erlydtl:compile(Bin, name_to_module(Name), [
+	erlydtl:compile(Bin, name_to_module(Name), [{out_dir,"C:/farwest/priv/templates/beam"},
 		{custom_filters_modules, [erlydtl_contrib_humanize]},
 		{reader, {?MODULE, compiler_load_template}}
 	]).
 
 %% @priv
 compiler_load_template(Name) ->
-	NameBin = list_to_binary(string:substr(Name, 3, length(Name) - 7)),
+	NameBin = list_to_binary(string:substr(Name, 3, length(Name) - 6)),
+	io:format("~p~n",[NameBin]),
 	%% @todo Have a pool of riakpid we can use.
-	{ok, RiakPid} = riakc_pb_socket:start_link("127.0.0.1", 8087),
+	{ok, RiakPid} = riakc_pb_socket:start_link(fw_config:get(riak_ip), fw_config:get(riak_port)),
 	{ok, Template} = do_get_template(RiakPid, NameBin),
-	ok = riakc_pb_socket:stop(RiakPid),
+	io:format("template ~p~n",[Template]),
 	{<<"value">>, Contents} = lists:keyfind(<<"value">>, 1, Template),
+	io:format("contents ~p~n",[Contents]),
 	{ok, Contents}.
 
 name_to_module(Name) ->

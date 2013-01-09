@@ -1,0 +1,15 @@
+  %% -- ERLANG INET CONFIGURATION FILE --
+      %% read the hosts file
+      {file, hosts, "C:/Windows/system32/drivers/etc/hosts"}.
+      %% add a particular host
+      %%{host, {134,138,177,105}, ["finwe"]}.
+      %% do not monitor the hosts file
+      {hosts_file, "C:/Windows/system32/drivers/etc/hosts"}.
+      %% read and monitor nameserver config from here
+      {resolv_conf, "C:/Windows/system32/drivers/etc/hosts"}.
+      %% enable EDNS
+      %%{edns,0}.
+      %% disable caching
+      %%{cache_size, 0}.
+      %% specify lookup method
+    

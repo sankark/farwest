@@ -14,22 +14,22 @@
 		</div>
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Password</div>
-			<div class="grid_3"><input name="password" value="{{user_data.password}}"></input></div>
+			<div class="grid_3"><input name="password">{{user_data.password}}</input></div>
 		</div>
 		
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Email-Id</div>
-			<div class="grid_3"><input name="email_id" value="{{user_data.email_id}}"></input></div>
+			<div class="grid_3"><input name="email_id">{{user_data.email_id}}</input></div>
 		</div>
 		
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Address</div>
-			<div class="grid_3"><input name="address" value="{{user_data.address}}"></input></div>
+			<div class="grid_3"><input name="address">{{user_data.address}}</input></div>
 		</div>
 		
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Phone</div>
-			<div class="grid_3"><input name="phone_no" value="{{user_data.phone_no}}"></input></div>
+			<div class="grid_3"><input name="phone_no">{{user_data.phone_no}}</input></div>
 		</div>
 		
 		<div class="grid_12">

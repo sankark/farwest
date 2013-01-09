@@ -20,7 +20,7 @@
 		{git, "https://github.com/daleharvey/dh_date.git", "master"}},
 	{mimetypes, ".*",
 		{git, "git://github.com/spawngrid/mimetypes.git", "master"}},
-	{uuid, ".*",
+	{erlang-uuid, ".*",
 		{git, "git://github.com/avtobiff/erlang-uuid.git", "master"}}
 ]}.
 {eunit_opts, [verbose, {report, {eunit_surefire, [{dir, "."}]}}]}.

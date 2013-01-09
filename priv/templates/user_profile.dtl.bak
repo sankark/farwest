@@ -1,0 +1,5 @@
+{% for user in user_data %}
+Name : {{user.name}}
+Age    : {{user.age}}
+Gender : {{ user.gender}}
+{% endfor %}

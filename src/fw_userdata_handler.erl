@@ -76,6 +76,7 @@ resource_exists(Req, State=#state{collection=true}) ->
 resource_exists(Req, State=#state{collection=false}) ->
 	{Bucket, Req2} = cowboy_req:binding(bucket, Req),
 	{Key, Req3} = cowboy_req:path_info(Req2),
+	io:format(" Buck ~p, Key ~p ~n",[Bucket,Key]),
 	{fw_userdata_server:exists(Bucket, Key), Req3, State}.
 
 content_types_accepted(Req, State=#state{collection=false}) ->
@@ -147,8 +148,9 @@ userdata_from_form(Req, State=#state{userid=UserID}) ->
 	{ok, Values, Req4} = cowboy_req:body_qs(Req3),
 	{<<"userdata">>, UserData} = lists:keyfind(<<"userdata">>, 1, Values),
 	{<<"comments">>, Comments} = lists:keyfind(<<"comments">>, 1, Values),
+	io:format("userdata ~p comments ~p userid ~p ~n",[UserData,Comments,UserID]),
 	case fw_userdata_server:set_data(Bucket, Key,
-			UserID, UserData, Comments) of
+			<<"test">>, UserData, Comments) of
 		ok ->
 			{true, Req4, State};
 		{error, Reason} ->

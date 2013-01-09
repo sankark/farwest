@@ -31,6 +31,9 @@ start_link() ->
 
 init([]) ->
 	Procs = [
+	        {fw_config,
+			{fw_config, start_link, []},
+			permanent, 5000, worker, [fw_config]},
 		{fw_templates_server,
 			{fw_templates_server, start_link, []},
 			permanent, 5000, worker, [fw_templates_server]},

@@ -12,6 +12,23 @@
 			
 		},
 
+		{[<<"static">>,<<"css">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"static/css">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+		{[<<"static">>,<<"js">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"static/js">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+
 		{[<<"static">>,<<"jquery">>,'...'], cowboy_static, 
 			[	{directory, {priv_dir, farwest, [<<"jquery">>]}},
 				{mimetypes,
@@ -28,9 +45,19 @@
 			
 		},
 			{[<<"farwest">>,<<"userfiles">>,name], fw_userfiles_handler, []},
+			{[<<"signup">>], fw_signup_handler, [{template,signup}]},
 			{[<<"farwest">>,<<"userfiles">>], fw_userfiles_handler, []},
 			{[<<"farwest">>,<<"userdata">>], fw_userdata_handler, []},
-			{[<<"farwest">>,<<"userdata">>,bucket,'...'], fw_userdata_handler, []}
+			{[<<"farwest">>,<<"userdata">>,bucket,'...'], fw_userdata_handler, []},
+			{[<<"user">>,key], fw_page_handler,
+					[{template,signup},
+					 {rules,
+								[{user_data, {get, userdata_profiles, {binding, key}}}]
+					 }
+					
+					]
+				
+			}
 			
 
 		]}

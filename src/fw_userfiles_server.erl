@@ -42,7 +42,7 @@ set_file(Filename, EditBy, UserFile, Comments) ->
 %% gen_server.
 
 init([]) ->
-	{ok, RiakPid} = riakc_pb_socket:start_link("127.0.0.1", 8087),
+	{ok, RiakPid} =riakc_pb_socket:start_link(fw_config:get(riak_ip), fw_config:get(riak_port)),
 	{ok, #state{riak_pid=RiakPid}}.
 
 handle_call(stop, _, State) ->
