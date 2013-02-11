@@ -40,6 +40,9 @@ init([]) ->
 		{fw_userdata_server,
 			{fw_userdata_server, start_link, []},
 			permanent, 5000, worker, [fw_userdata_server]},
+		{fw_data_server,
+			{fw_data_server, start_link, []},
+			permanent, 5000, worker, [fw_data_server]},
 		{fw_userfiles_server,
 			{fw_userfiles_server, start_link, []},
 			permanent, 5000, worker, [fw_userfiles_server]}

@@ -1,5 +1,14 @@
 
 		{'_', [
+			{[<<"orion">>,<<"login">>,'...'], login_handler, []},
+			
+			{[<<"orion">>,<<"useremailconfirmation">>,method], login_handler, []},
+			{[<<"orion">>,<<"workspace">>], workspace_handler, []},
+			{[<<"orion">>,<<"workspace">>,user], workspace_handler, []},
+			{[<<"orion">>,<<"users">>], login_handler, []},
+			{[<<"orion">>,<<"file">>,user,dir], file_handler, []},
+			{[<<"orion">>,<<"file">>,user,dir,file], file_handler2, []},
+			{[<<"orion">>,'...'], orion_client_handler, []},
 			{[<<"test_test_test">>], fw_test, []},
 			{[<<"test">>,bucket,'...'], fw_test, []},
 			{[<<"farwest">>,<<"templates">>,name], fw_templates_handler, [{<<"value">>,<<"test">>}]},
@@ -49,11 +58,16 @@
 			{[<<"farwest">>,<<"userfiles">>], fw_userfiles_handler, []},
 			{[<<"farwest">>,<<"userdata">>], fw_userdata_handler, []},
 			{[<<"farwest">>,<<"userdata">>,bucket,'...'], fw_userdata_handler, []},
-			{[<<"user">>,key], fw_page_handler,
+			{[<<"user">>,key], fw_general_handler,
 					[{template,signup},
-					 {rules,
+					 {get_rules,
 								[{user_data, {get, userdata_profiles, {binding, key}}}]
+					 },
+
+					 {put_rules,
+								[{status, {put, userdata_profiles, {binding, key}}}]
 					 }
+
 					
 					]
 				

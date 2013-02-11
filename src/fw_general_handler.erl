@@ -126,6 +126,29 @@ rule({StatusFld,{put,Bucket,{binding,Binding}}},Req) ->
 			E
 	end;
 
+rule({StatusFld,{put,Bucket,{binding,Binding},{qs_property,Prop}}},Req) ->
+	Bucket2 = atom_to_binary(Bucket, latin1),
+	{Key, Req2} = cowboy_req:binding(Binding, Req),
+	{ok, Values, Req4} = cowboy_req:body_qs(Req2),
+	{Prop, Value} = lists:keyfind(Prop, 1, Values),
+	case fw_userdata_server:set_data(Bucket2,Key,<<"test">>,jsx:encode(Value),<<"test">>) of
+		ok ->
+			{{StatusFld, <<"Successfully inserted/updated">>}, Req4};
+		E = {error, _} ->
+			E
+	end;
+rule({StatusFld,{put,Bucket,{qs_binding,Binding},{qs_property,Prop}}},Req) ->
+	Bucket2 = atom_to_binary(Bucket, latin1),
+	{ok, Values, Req4} = cowboy_req:body_qs(Req),
+	{Binding, Key} = lists:keyfind(Binding, 1, Values),
+	{Prop, Value} = lists:keyfind(Prop, 1, Values),
+	case fw_userdata_server:set_data(Bucket2,Key,<<"test">>,jsx:encode(Value),<<"test">>) of
+		ok ->
+			{{StatusFld, <<"Successfully inserted/updated">>}, Req4};
+		E = {error, _} ->
+			E
+	end;
+
 rule({redirect,URL},Req) ->
 	{{redirect,URL},Req}.
 	%% @todo

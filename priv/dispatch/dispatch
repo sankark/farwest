@@ -1,5 +1,12 @@
 
 		{'_', [
+			{[<<"orion">>,<<"login">>,'...'], login_handler, []},
+			{[<<"orion">>,<<"workspace">>,'...'], workspace_handler, []},
+			{[<<"orion">>,<<"workspace">>,user], workspace_handler, []},
+			{[<<"orion">>,<<"users">>,'...'], users_handler, []},
+			{[<<"orion">>,<<"file">>,'...'], file_handler, []},
+			{[<<"orion">>,<<"file">>,user,dir,file], file_handler2, []},
+			{[<<"orion">>,'...'], orion_client_handler, []},
 			{[<<"test_test_test">>], fw_test, []},
 			{[<<"test">>,bucket,'...'], fw_test, []},
 			{[<<"farwest">>,<<"templates">>,name], fw_templates_handler, [{<<"value">>,<<"test">>}]},
