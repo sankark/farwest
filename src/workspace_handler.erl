@@ -76,7 +76,7 @@ content_types_accepted(Req, State=#state{collection=false}) ->
 	{[
 		{<<"application/x-www-form-urlencoded;charset=UTF-8">>,
 			template_from_form},
-		{<<"application/json">>, template_from_json}
+		{<<"application/json;charset=UTF-8">>, template_from_json}
 	], Req, State}.
 
 is_conflict(Req, State) ->
@@ -131,7 +131,9 @@ template_to_json(Req, State) ->
 
 template_from_json(Req, State) ->
 	%% @todo
-	{true, Req, State}.
+	Req2 = file_handler:create_file(Req, ""),
+	
+	{true, Req2, State}.
 
 %% @todo Later just send JSON from form directly.
 template_from_form(Req, State) ->

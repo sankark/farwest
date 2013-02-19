@@ -1,5 +1,7 @@
 backend_version=R15B
+dialyzer/dialyzeoncompile=true
 eclipse.preferences.version=1
 include_dirs=include
+nukeOutputOnClean=true
 output_dir=ebin
 source_dirs=src

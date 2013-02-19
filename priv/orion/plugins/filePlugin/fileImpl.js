@@ -141,6 +141,44 @@ define(["orion/Deferred", "orion/xhr", "orion/URL-shim"], function(Deferred, xhr
 		 * passed as a parameter to the provided onCreate function.
 		 * @param {String} name The name of the new workspace
 		 */
+		/* preview : function(location,previewJson){
+			var d = new Deferred();
+			xhr("PUT", "/orion/preview/" + location, {
+				headers: {
+					"Accept": "text/html",
+					"Orion-Version": "1"
+				},
+				timeout: 15000,
+				data: JSON.stringify({previewData : previewJson})
+			}).then(function(result) {
+				var jsonData = result.response ? JSON.parse(result.response) : {};
+				return jsonData;
+			});
+		},*/
+        
+		preview: function(location, previewJson) {
+			var headerData = {
+					"Orion-Version": "1",
+					"Content-Type": "text/plain;charset=UTF-8"
+				};
+			
+			var options = {
+				timeout: 5000,
+				headers: headerData,
+				data: JSON.stringify({previewData : previewJson}),
+				log: false
+			};
+						
+			return xhr("PUT", "/orion/preview/" + location, options).then(function(result) {
+				return result.response ? JSON.parse(result.response) : null;
+			}).then(function(result) {
+				if (this.makeAbsolute) {
+					_normalizeLocations(result);
+				}
+				return result;
+			}.bind(this));
+		},
+
 		_createWorkspace: function(name) {
 			//return the deferred so client can chain on post-processing
 			return xhr("PUT", this.workspaceBase, {

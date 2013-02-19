@@ -23,6 +23,7 @@ define({
 	"Save": "Save",
 	"Resource is out of sync with the server. Do you want to save it anyway?": "Resource is out of sync with the server. Do you want to save it anyway?",
 	"Save this file": "Save this file",
+	"Preview": "Preview",
 	"Go to Line": "Go to Line",
 	"Go to specified line number": "Go to specified line number",
 	"Go to line:": "Go to line:",

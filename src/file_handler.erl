@@ -19,6 +19,7 @@
 -export([template_from_form/2]).
 -export([delete_resource/2]).
 -export([delete_completed/2]).
+-export([create_file/2]).
 
 -record(state, {
 	auth = undefined,
@@ -167,20 +168,27 @@ template_to_json(Req, State) ->
 template_from_json(Req, State=#state{path=Paths}) ->
 	%% @todo
 	Path = get_path(Paths),
-	{ok, [{Body,_}], _Req2} = cowboy_req:body_qs(Req),
-	JsonReq = jsx:decode(Body),
-	io:format("req $$$$$$$$$$$$$$~p~n",[JsonReq]),
-	{_,Is_Dir} = lists:keyfind(<<"Directory">>, 1, JsonReq),
-	{_,FileName} = lists:keyfind(<<"Name">>, 1, JsonReq),
-	%%io:format("Is_Dir $$$$$$$$$$$$$$~p~n",[Is_Dir]),
-	case Is_Dir of
-		<<"true">>  -> file_util:create_file(Path++"/"++binary_to_list(FileName),true);
-		<<"false">> -> file_util:create_file(Path++"/"++binary_to_list(FileName),false)
-	end,
-	RespBody = get_meta(Path++"/"++binary_to_list(FileName)),
-	Req2 = cowboy_req:set_resp_body(RespBody,Req),	
+	Req2 = create_file(Req, Path),
 	%%io:format("req $$$$$$$$$$$$$$~p~n",[JsonReq]),
 	{true, Req2, State}.
+
+create_file(Req, Path) ->
+	   {ok, [{Body,_}], _Req2} = cowboy_req:body_qs(Req),
+	   JsonReq = jsx:decode(Body),
+	   io:format("req $$$$$$$$$$$$$$~p~n",[JsonReq]),
+	   {_,Is_Dir} = lists:keyfind(<<"Directory">>, 1, JsonReq),
+	   {_,FileName} = lists:keyfind(<<"Name">>, 1, JsonReq),
+	   %%io:format("Is_Dir $$$$$$$$$$$$$$~p~n",[Is_Dir]),
+		Path2 = case Path of
+			""->"";
+			Any -> Any ++ "/"
+		end,
+		  case Is_Dir of
+		   <<"true">> ->file_util:create_file(Path2++ binary_to_list(FileName),true);
+	    <<"false">> -> file_util:create_file(Path2++ binary_to_list(FileName),false)
+	   end,
+	   RespBody = get_meta(Path2 ++ binary_to_list(FileName)),
+    cowboy_req:set_resp_body(RespBody,Req).
 
 get_path(Paths) -> filename:join([binary_to_list(P)||P <- Paths]).
 

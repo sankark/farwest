@@ -1,5 +1,5 @@
 /*******************************************************************************
- * @license
+ * @licenscommandServicee
  * Copyright (c) 2010, 2012 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials are made 
  * available under the terms of the Eclipse Public License v1.0 
@@ -501,6 +501,9 @@ exports.setUpEditor = function(serviceRegistry, preferences, isReadOnly){
 	mGlobalCommands.generateBanner("orion-editor", serviceRegistry, commandService, preferences, searcher, editor, editor, escHandler); //$NON-NLS-0$
 	// Put the make favorite command in our toolbar."
 	commandService.registerCommandContribution("pageActions", "orion.makeFavorite", 2); //$NON-NLS-1$ //$NON-NLS-0$
+//$NON-NLS-1$ //$NON-NLS-0$
+	
+	
 
 		
 	var syntaxChecker = new mSyntaxchecker.SyntaxChecker(serviceRegistry, editor);

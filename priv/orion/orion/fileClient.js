@@ -115,6 +115,8 @@ define(['i18n!orion/navigate/nls/messages', "orion/Deferred", "orion/i18nUtil"],
 				d.reject(messages["no file service"]);
 				return d;
 			},
+
+			
 			loadWorkspaces: function() {
 				var d = new Deferred();
 				d.reject(messages['no file service']);
@@ -245,6 +247,12 @@ define(['i18n!orion/navigate/nls/messages', "orion/Deferred", "orion/i18nUtil"],
 		 */
 		createWorkspace: function(name) {
 			return _doServiceCall(this._getService(), "createWorkspace", arguments); //$NON-NLS-0$
+		},
+		
+		preview: function(location,name) {
+			var res = _doServiceCall(this._getService(), "preview", arguments); //$NON-NLS-0$
+			console.log(res);
+			return res;
 		},
 
 		/**

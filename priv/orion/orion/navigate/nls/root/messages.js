@@ -97,6 +97,7 @@ define({
 	"Open With": "Open With",
 	"Loading ": "Loading ",
 	"New": "New",
+	"Preview": "Preview",
 	"Click on an item to make a selection, then use this menu to see what actions are available.": "Click on an item to make a selection, then use this menu to see what actions are available.",
 	"Actions": "Actions",
 	"Orion Content": "Orion Content",

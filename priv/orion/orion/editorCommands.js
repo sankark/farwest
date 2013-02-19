@@ -16,8 +16,8 @@
 /**
  * @namespace The global container for orion APIs.
  */ 
-define(['i18n!orion/edit/nls/messages', 'orion/webui/littlelib', 'orion/Deferred', 'orion/URITemplate', 'orion/commands', 'orion/globalCommands', 'orion/extensionCommands', 'orion/contentTypes', 'orion/editor/keyBinding', 'orion/editor/undoStack', 'orion/searchUtils', 'orion/PageUtil'], 
-	function(messages, lib, Deferred, URITemplate, mCommands, mGlobalCommands, mExtensionCommands, mContentTypes, mKeyBinding, mUndoStack, mSearchUtils, mPageUtil) {
+define(['i18n!orion/edit/nls/messages','orion/uiUtils','orion/explorers/explorer', 'orion/webui/littlelib', 'orion/Deferred', 'orion/URITemplate', 'orion/commands', 'orion/globalCommands', 'orion/extensionCommands', 'orion/contentTypes', 'orion/editor/keyBinding', 'orion/editor/undoStack', 'orion/searchUtils', 'orion/PageUtil'], 
+	function(messages,mUIUtils, explorer, lib, Deferred, URITemplate, mCommands, mGlobalCommands, mExtensionCommands, mContentTypes, mKeyBinding, mUndoStack, mSearchUtils, mPageUtil) {
 
 var exports = {};
 
@@ -60,6 +60,47 @@ exports.EditorCommandFactory = (function() {
 				var keyBinding = new mKeyBinding.KeyBinding();
 				mKeyBinding.KeyBinding.apply(keyBinding, args);
 				return keyBinding;
+			}
+			
+			function forceSingleItem(item) {
+				if (!item) {
+					return {};
+				}
+				if (Array.isArray(item)) {
+					if (item.length === 1) {
+						item = item[0];
+					} else {
+						item = {};
+					}
+				}
+				return item;
+			}
+
+			function getNewItemName(explorer, item, domId, defaultName, onDone) {
+				var refNode, name, tempNode;
+					var nodes = explorer.makeNewItemPlaceHolder(item, domId);
+					if (nodes) {
+						refNode = nodes.refNode;
+						tempNode = nodes.tempNode;
+					} else {
+						refNode = lib.node(domId);
+					}
+				if (refNode) {
+					mUIUtils.getUserText(domId+"EditBox", refNode, false, defaultName,  //$NON-NLS-0$
+						function(name) { 
+							if (name) {
+								if (tempNode && tempNode.parentNode) {
+									tempNode.parentNode.removeChild(tempNode);
+								}
+								onDone(name);
+							}
+						}); 
+				} else {
+					name = window.prompt(defaultName);
+					if (name) {
+						onDone(name);
+					}
+				}
 			}
 	
 			function handleError(error) {
@@ -125,7 +166,7 @@ exports.EditorCommandFactory = (function() {
 									var forceSave = confirm(messages["Resource is out of sync with the server. Do you want to save it anyway?"]);
 									if (forceSave) {
 										// repeat save operation, but without ETag 
-										var def = self.fileClient.write(self.inputManager.getInput(), contents)
+										var def = self.fileClient.write(self.inputManager.getInput(), contents);
 										if(progress){
 											progress.progress(def, "Saving file " + self.inputManager.getInput());
 										}
@@ -147,6 +188,8 @@ exports.EditorCommandFactory = (function() {
 						return true;
 					}, {name: messages['Save']});
 				}
+				
+				
 				var saveCommand = new mCommands.Command({
 					name: messages['Save'],
 					tooltip: messages["Save this file"],
@@ -155,11 +198,62 @@ exports.EditorCommandFactory = (function() {
 						editor.getTextView().invokeAction("save"); //$NON-NLS-0$
 					}});
 					
-				
 					
-				this.commandService.addCommand(saveCommand);
-				this.commandService.registerCommandContribution(this.toolbarId, "orion.save", 1, null, false, new mCommands.CommandKeyBinding('s', true)); //$NON-NLS-1$ //$NON-NLS-0$
+					this.commandService.addCommand(saveCommand);
+				this.commandService.registerCommandContribution(this.toolbarId, "orion.save", 2, null, false, new mCommands.CommandKeyBinding('s', true)); //$NON-NLS-1$ //$NON-NLS-0$
 		
+				var previewParameters = new mCommands.ParametersDescription(
+				[new mCommands.CommandParameter('preview', 'text', 'Sample Data For Preview:', messages['Preview'],4)
+				]); 
+
+				var previewCommand = new mCommands.Command({
+				name: messages["Preview"],
+				tooltip: messages["Rename the selected files or folders"],
+				id: "orion.preview", //$NON-NLS-0$
+				parameters: previewParameters,
+				callback: function(data) {
+				var item = forceSingleItem(data.items);
+				
+				var Location = item.Name;	
+				var previewFunction = function(name) {
+						if (name) {
+						var def = self.fileClient.preview(item.Name,name);
+						def.then(
+							function(result) {
+								console.log("I am here"+result.redirect);
+								window.location.href = result.redirect;
+							},
+							function(error) {
+							}
+						);
+						
+					
+						}
+					};
+				if (data.parameters && data.parameters.valueFor('preview')) { //$NON-NLS-0$
+						previewFunction(data.parameters.valueFor('preview')); //$NON-NLS-0$
+					} else {
+						getNewItemName(explorer, item, data.domNode.id, messages['Preview'], previewFunction);
+					}
+				},
+				
+				visibleWhen: function(item) {
+				//console.log(item.Name);
+						item = forceSingleItem(item);
+						fileName = item.Name;
+						var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+						if(ext.toLowerCase() =="html" || ext.toLowerCase()=="dtl")
+						{
+							return true;
+						}
+					return false;
+				}
+
+				});
+				
+				this.commandService.addCommand(previewCommand);
+				this.commandService.registerCommandContribution(this.toolbarId, "orion.preview", 3, null, false, new mCommands.CommandKeyBinding('p', true)); //$NON-NLS-1$ //$NON-NLS-0$
+				
 				// page navigation commands (go to line)
 				var lineParameter = new mCommands.ParametersDescription([new mCommands.CommandParameter('line', 'number', 'Line:')], {hasOptionalParameters: false}, //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
 																		function() {
@@ -222,7 +316,7 @@ exports.EditorCommandFactory = (function() {
 							if (selection.end > selection.start) {//If there is selection from editor, we want to use it as the default keyword
 								var model = editor.getModel();
 								searchString = model.getText(selection.start, selection.end);
-								fromSelection = true;
+								var fromSelection = true;
 							} else {//If there is no selection from editor, we want to parse the parameter from URL binding
 								if (data.parameters && data.parameters.valueFor('find')) { //$NON-NLS-0$
 									searchString = data.parameters.valueFor('find');

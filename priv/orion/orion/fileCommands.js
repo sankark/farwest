@@ -405,6 +405,24 @@ define(['i18n!orion/navigate/nls/messages', 'require', 'orion/webui/littlelib', 
 			return true;
 		};
 		
+		var previewCommand = new mCommands.Command({
+				name: messages["Preview"],
+				tooltip: messages["Rename the selected files or folders"],
+				imageClass: "core-sprite-rename", //$NON-NLS-0$
+				id: "eclipse.preview", //$NON-NLS-0$
+				visibleWhen: function(item) {
+					if (Array.isArray(item)) {
+						return item.length === 1 && item[0].Name;
+					}
+					return item.Location;
+				},
+				callback: function(data) {
+				console.log(data);
+				}
+				
+				});
+		
+		commandService.addCommand(previewCommand);
 		var renameCommand = new mCommands.Command({
 				name: messages["Rename"],
 				tooltip: messages["Rename the selected files or folders"],
