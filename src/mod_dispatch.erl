@@ -1,13 +1,13 @@
 %% @author Administrator
-%% @doc @todo Add description to util.
+%% @doc @todo Add description to mod_dispatch.
 
 
--module(util).
+-module(mod_dispatch).
 
 %% ====================================================================
 %% API functions
 %% ====================================================================
--export([absolute_path/1]).
+-export([]).
 
 
 
@@ -15,8 +15,4 @@
 %% Internal functions
 %% ====================================================================
 
-absolute_path(Path)->
-	filename:join([code:lib_dir(farwest), "priv",Path]).
 
-
-	

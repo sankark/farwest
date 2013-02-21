@@ -17,11 +17,13 @@
 -behaviour(application).
 
 %% API.
+-export([start/0]).
 -export([start/2]).
 -export([stop/1]).
 
 %% API.
-
+start() ->
+	start([],[]).
 start(_, _) ->
 	set_path(),
 	Port = int_env(http_port, 8085),

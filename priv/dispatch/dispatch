@@ -6,6 +6,7 @@
 			{[<<"orion">>,<<"users">>,'...'], users_handler, []},
 			{[<<"orion">>,<<"file">>,'...'], file_handler, []},
 			{[<<"orion">>,<<"preview">>,'...'], preview_handler, []},
+			{[<<"orion">>,<<"compile">>], compile_handler, []},
 			{[<<"orion">>,<<"template">>,'...'], template_handler, []},
 			{[<<"orion">>,<<"file">>,user,dir,file], file_handler2, []},
 			{[<<"orion">>,'...'], orion_client_handler, []},

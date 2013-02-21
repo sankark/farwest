@@ -16,8 +16,8 @@
 /**
  * @namespace The global container for orion APIs.
  */ 
-define(['i18n!orion/edit/nls/messages','orion/uiUtils','orion/explorers/explorer', 'orion/webui/littlelib', 'orion/Deferred', 'orion/URITemplate', 'orion/commands', 'orion/globalCommands', 'orion/extensionCommands', 'orion/contentTypes', 'orion/editor/keyBinding', 'orion/editor/undoStack', 'orion/searchUtils', 'orion/PageUtil'], 
-	function(messages,mUIUtils, explorer, lib, Deferred, URITemplate, mCommands, mGlobalCommands, mExtensionCommands, mContentTypes, mKeyBinding, mUndoStack, mSearchUtils, mPageUtil) {
+define(['i18n!orion/edit/nls/messages','orion/uiUtils','orion/explorers/explorer', 'orion/webui/littlelib', 'orion/Deferred', 'orion/URITemplate', 'orion/commands', 'orion/globalCommands', 'orion/extensionCommands', 'orion/contentTypes', 'orion/editor/keyBinding', 'orion/editor/undoStack', 'orion/searchUtils', 'orion/PageUtil','orion/webui/dialogs/CompileDialog'], 
+	function(messages,mUIUtils, explorer, lib, Deferred, URITemplate, mCommands, mGlobalCommands, mExtensionCommands, mContentTypes, mKeyBinding, mUndoStack, mSearchUtils, mPageUtil,mCompileDialog) {
 
 var exports = {};
 
@@ -254,6 +254,47 @@ exports.EditorCommandFactory = (function() {
 				this.commandService.addCommand(previewCommand);
 				this.commandService.registerCommandContribution(this.toolbarId, "orion.preview", 3, null, false, new mCommands.CommandKeyBinding('p', true)); //$NON-NLS-1$ //$NON-NLS-0$
 				
+				
+
+				var compileCommand = new mCommands.Command({
+				name: "Compile",
+				tooltip: messages["Rename the selected files or folders"],
+				id: "orion.compile", //$NON-NLS-0$
+				callback: function(data) {
+				var item = forceSingleItem(data.items);
+						var def = self.fileClient.compile(item);
+						def.then(
+							function(result) {
+								var dialog = new mCompileDialog.CompileDialog({
+														body: result
+													});
+
+													dialog.show();
+								console.log("I am here"+result);
+							},
+							function(error) {
+							}
+						);
+						
+					
+						},
+
+				visibleWhen: function(item) {
+				//console.log(item.Name);
+						item = forceSingleItem(item);
+						fileName = item.Name;
+						var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+						if(ext.toLowerCase() =="erl" || ext.toLowerCase()=="java")
+						{
+							return true;
+						}
+					return false;
+				}
+
+				});
+				
+				this.commandService.addCommand(compileCommand);
+				this.commandService.registerCommandContribution(this.toolbarId, "orion.compile", 4, null, false, new mCommands.CommandKeyBinding('c', true)); //$NON-NLS-1$ //$NON-NLS-0$
 				// page navigation commands (go to line)
 				var lineParameter = new mCommands.ParametersDescription([new mCommands.CommandParameter('line', 'number', 'Line:')], {hasOptionalParameters: false}, //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
 																		function() {

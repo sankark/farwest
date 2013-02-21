@@ -255,6 +255,11 @@ define(['i18n!orion/navigate/nls/messages', "orion/Deferred", "orion/i18nUtil"],
 			return res;
 		},
 
+			compile: function(item) {
+			var res = _doServiceCall(this._getService(), "compile", arguments); //$NON-NLS-0$
+			console.log(res);
+			return res;
+		},
 		/**
 		 * Loads all the user's workspaces. Returns a deferred that will provide the loaded
 		 * workspaces when ready.

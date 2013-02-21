@@ -10961,3 +10961,847 @@ Error in process <0.736.0> on node 'eclipse@ip-0A5382EA.ec2.internal' with exit 
 ** Request was [{socket,#Port<0.10462>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.543.0>},{method,<<"GET">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/file/">>},{path_info,[]},{qs,<<"depth=1">>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/20100101 Firefox/18.0">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"accept-language">>,<<"en-US,en;q=0.5">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"orion-version">>,<<"1">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"cookie">>,<<"z_pid=DD2osGBy1CxcPKsEuDXb; __utma=96992031.1679259585.1358849968.1358849968.1358849968.1; __utmz=96992031.1358849968.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); JSESSIONID=1nttyilik3i9h13o9o0wdh0lew">>},{<<"connection">>,<<"keep-alive">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<>>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
 ** Stacktrace: [{file_handler,content_types_provided,[{http_req,#Port<0.10462>,ranch_tcp,keepalive,<0.543.0>,<<"GET">>,{1,1},undefined,<<"127.0.0.1">>,undefined,8085,<<"/orion/file/">>,[],<<"depth=1">>,undefined,<<>>,[],[{<<"host">>,<<"127.0.0.1:8085">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0; rv:18.0) Gecko/20100101 Firefox/18.0">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"accept-language">>,<<"en-US,en;q=0.5">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"orion-version">>,<<"1">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"cookie">>,<<"z_pid=DD2osGBy1CxcPKsEuDXb; __utma=96992031.1679259585.1358849968.1358849968.1358849968.1; __utmz=96992031.1358849968.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); JSESSIONID=1nttyilik3i9h13o9o0wdh0lew">>},{<<"connection">>,<<"keep-alive">>}],[{<<"connection">>,[<<"keep-alive">>]}],undefined,[],waiting,undefined,<<>>,waiting,[],<<>>,undefined},{state,undefined,true,undefined,[]}],[{file,"c:/tmp/farwest/src/file_handler.erl"},{line,57}]},{cowboy_rest,content_types_provided,2,[{file,"src/cowboy_rest.erl"},{line,203}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
 
+2013-02-20 06:36:55 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.13141>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.861.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"15">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"[object Object]">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,array,[<<"object Object]">>,{jsx_to_term,{[[],[]],{opts,binary,false}}},[array],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,235}]},{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,60}]}]
+
+2013-02-20 06:36:55 =ERROR REPORT====
+Error in process <0.932.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<4908 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:01:17 =ERROR REPORT====
+Error in process <0.1165.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.1167.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:01:18 =ERROR REPORT====
+Error in process <0.1191.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:07:54 =ERROR REPORT====
+Error in process <0.1401.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<2 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:07:55 =ERROR REPORT====
+Error in process <0.1402.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<2 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:14:43 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.157.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.156.0>]
+    messages: [{'EXIT',<0.158.0>,normal}]
+    links: [<0.156.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-20 07:18:41 =ERROR REPORT====
+Error in process <0.745.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<2 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:18:52 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.157.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.156.0>]
+    messages: [{'EXIT',<0.158.0>,normal}]
+    links: [<0.156.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-20 07:22:29 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.11900>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.461.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[{ok,r1,[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]},{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-20 07:22:47 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.11904>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.470.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[{ok,r1,[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]},{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-20 07:22:56 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.11913>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.484.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[{ok,r1,[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]},{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-20 07:23:18 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.12134>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.565.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[{ok,r1,[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]},{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-20 07:23:25 =ERROR REPORT====
+Error in process <0.605.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.607.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:23:26 =ERROR REPORT====
+Error in process <0.631.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:23:59 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.13877>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.632.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[{ok,r1,[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]},{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,65}]}]
+
+2013-02-20 07:23:59 =ERROR REPORT====
+Error in process <0.731.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<5443 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:25:28 =ERROR REPORT====
+Error in process <0.770.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.772.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:25:29 =ERROR REPORT====
+Error in process <0.796.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:25:53 =ERROR REPORT====
+Error in process <0.831.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.833.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:25:54 =ERROR REPORT====
+Error in process <0.856.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:27:47 =ERROR REPORT====
+Error in process <0.940.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.942.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:27:48 =ERROR REPORT====
+Error in process <0.964.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:28:41 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.19116>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.990.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[{ok,r1,[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]},{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,65}]}]
+
+2013-02-20 07:28:41 =ERROR REPORT====
+Error in process <0.1107.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<5443 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:30:36 =ERROR REPORT====
+Error in process <0.1148.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.1150.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:30:37 =ERROR REPORT====
+Error in process <0.1157.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:33:01 =ERROR REPORT====
+Error in process <0.1199.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.1201.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:33:01 =ERROR REPORT====
+Error in process <0.1223.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:33:37 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.22613>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.1235.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[{ok,r1,[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]},{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,65}]}]
+
+2013-02-20 07:33:37 =ERROR REPORT====
+Error in process <0.1388.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<5443 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:34:32 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.22783>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.1415.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}],{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-20 07:34:35 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.22787>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.1421.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}],{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-20 07:34:41 =ERROR REPORT====
+Error in process <0.1461.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.1463.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:34:41 =ERROR REPORT====
+Error in process <0.1487.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:35:10 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.24547>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.1488.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_decoder,value,[[{"c:/tmp/farwest/priv/resources/r1.erl",[{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}],{jsx_to_term,{[[]],{opts,binary,false}}},[],{opts,false,false,false,false,false,false,false,false,false,false}],[{file,"src/jsx_decoder.erl"},{line,187}]},{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,65}]}]
+
+2013-02-20 07:35:10 =ERROR REPORT====
+Error in process <0.1626.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<5444 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 07:36:50 =ERROR REPORT====
+Error in process <0.1690.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.1692.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:36:51 =ERROR REPORT====
+Error in process <0.1716.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:47:30 =ERROR REPORT====
+Error in process <0.2006.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.2008.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:47:31 =ERROR REPORT====
+Error in process <0.2032.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 07:47:55 =ERROR REPORT====
+Error in process <0.2101.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.2103.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 07:47:56 =ERROR REPORT====
+Error in process <0.2127.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 11:14:08 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{badmatch,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.33679>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.5958.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,64}]}]
+
+2013-02-20 11:22:47 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{badmatch,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.33681>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.5988.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,64}]}]
+
+2013-02-20 11:50:02 =ERROR REPORT====
+Error in process <0.6081.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<2 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 11:50:02 =ERROR REPORT====
+Error in process <0.6082.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<2 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-20 11:50:12 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-20 11:50:19 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.7569>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.343.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,64}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-20 11:50:40 =ERROR REPORT====
+Error in process <0.382.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.384.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-20 11:50:40 =ERROR REPORT====
+Error in process <0.409.0> on node 'eclipse@ip-0A54D5DE.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-20 11:50:49 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.10278>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.411.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,64}]}]
+
+2013-02-20 11:51:23 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.97.0>
+    registered_name: []
+    exception exit: {{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.94.0>,ranch_sup,<0.81.0>]
+    messages: []
+    links: [<0.94.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 380
+  neighbours:
+2013-02-20 11:51:23 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{{'EXIT',{{badmatch,{error,{{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{child,undefined,ranch_acceptors_sup,{ranch_acceptors_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,<0.95.0>,<0.96.0>]},permanent,5000,supervisor,[ranch_acceptors_sup]}}}},[{ranch_listener_sup,start_link,6,[{file,"src/ranch_listener_sup.erl"},{line,40}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,handle_start_child,2,[{file,"supervisor.erl"},{line,674}]},{supervisor,handle_call,3,[{file,"supervisor.erl"},{line,383}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{child,undefined,{ranch_listener_sup,farwest_http},{ranch_listener_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,[{dispatch,[{'_',[{[<<"orion">>,<<"login">>,'...'],login_handler,[]},{[<<"orion">>,<<"workspace">>,'...'],workspace_handler,[]},{[<<"orion">>,<<"workspace">>,user],workspace_handler,[]},{[<<"orion">>,<<"users">>,'...'],users_handler,[]},{[<<"orion">>,<<"file">>,'...'],file_handler,[]},{[<<"orion">>,<<"preview">>,'...'],preview_handler,[]},{[<<"orion">>,<<"compile">>],compile_handler,[]},{[<<"orion">>,<<"template">>,'...'],template_handler,[]},{[<<"orion">>,<<"file">>,user,dir,file],file_handler2,[]},{[<<"orion">>,'...'],orion_client_handler,[]},{[<<"test_test_test">>],fw_test,[]},{[<<"test">>,bucket,'...'],fw_test,[]},{[<<"farwest">>,<<"templates">>,name],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"farwest">>,<<"templates">>],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"static">>,<<"farwest">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"css">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/css">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"js">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/js">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"jquery">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/jquery">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"bootstrap">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/bootstrap">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"farwest">>,<<"userfiles">>,name],fw_userfiles_handler,[]},{[<<"signup">>],fw_signup_handler,[{template,signup}]},{[<<"farwest">>,<<"userfiles">>],fw_userfiles_handler,[]},{[<<"farwest">>,<<"userdata">>],fw_userdata_handler,[]},{[<<"farwest">>,<<"userdata">>,bucket,'...'],fw_userdata_handler,[]},{[<<"user">>,key],fw_general_handler,[{template,signup},{get_rules,[{user_data,{get,userdata_profiles,{binding,key}}}]},{put_rules,[{status,{put,userdata_profiles,{binding,key}}}]}]}]}]}]]},permanent,5000,supervisor,[ranch_listener_sup]}}}},[{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,36}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-20 11:51:54 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.97.0>
+    registered_name: []
+    exception exit: {{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.94.0>,ranch_sup,<0.81.0>]
+    messages: []
+    links: [<0.94.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 380
+  neighbours:
+2013-02-20 11:51:54 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{{'EXIT',{{badmatch,{error,{{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{child,undefined,ranch_acceptors_sup,{ranch_acceptors_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,<0.95.0>,<0.96.0>]},permanent,5000,supervisor,[ranch_acceptors_sup]}}}},[{ranch_listener_sup,start_link,6,[{file,"src/ranch_listener_sup.erl"},{line,40}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,handle_start_child,2,[{file,"supervisor.erl"},{line,674}]},{supervisor,handle_call,3,[{file,"supervisor.erl"},{line,383}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{child,undefined,{ranch_listener_sup,farwest_http},{ranch_listener_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,[{dispatch,[{'_',[{[<<"orion">>,<<"login">>,'...'],login_handler,[]},{[<<"orion">>,<<"workspace">>,'...'],workspace_handler,[]},{[<<"orion">>,<<"workspace">>,user],workspace_handler,[]},{[<<"orion">>,<<"users">>,'...'],users_handler,[]},{[<<"orion">>,<<"file">>,'...'],file_handler,[]},{[<<"orion">>,<<"preview">>,'...'],preview_handler,[]},{[<<"orion">>,<<"compile">>],compile_handler,[]},{[<<"orion">>,<<"template">>,'...'],template_handler,[]},{[<<"orion">>,<<"file">>,user,dir,file],file_handler2,[]},{[<<"orion">>,'...'],orion_client_handler,[]},{[<<"test_test_test">>],fw_test,[]},{[<<"test">>,bucket,'...'],fw_test,[]},{[<<"farwest">>,<<"templates">>,name],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"farwest">>,<<"templates">>],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"static">>,<<"farwest">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"css">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/css">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"js">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/js">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"jquery">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/jquery">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"bootstrap">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/bootstrap">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"farwest">>,<<"userfiles">>,name],fw_userfiles_handler,[]},{[<<"signup">>],fw_signup_handler,[{template,signup}]},{[<<"farwest">>,<<"userfiles">>],fw_userfiles_handler,[]},{[<<"farwest">>,<<"userdata">>],fw_userdata_handler,[]},{[<<"farwest">>,<<"userdata">>,bucket,'...'],fw_userdata_handler,[]},{[<<"user">>,key],fw_general_handler,[{template,signup},{get_rules,[{user_data,{get,userdata_profiles,{binding,key}}}]},{put_rules,[{status,{put,userdata_profiles,{binding,key}}}]}]}]}]}]]},permanent,5000,supervisor,[ranch_listener_sup]}}}},[{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,36}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-20 11:52:18 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.97.0>
+    registered_name: []
+    exception exit: {{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.94.0>,ranch_sup,<0.81.0>]
+    messages: []
+    links: [<0.94.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 380
+  neighbours:
+2013-02-20 11:52:18 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{{'EXIT',{{badmatch,{error,{{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{child,undefined,ranch_acceptors_sup,{ranch_acceptors_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,<0.95.0>,<0.96.0>]},permanent,5000,supervisor,[ranch_acceptors_sup]}}}},[{ranch_listener_sup,start_link,6,[{file,"src/ranch_listener_sup.erl"},{line,40}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,handle_start_child,2,[{file,"supervisor.erl"},{line,674}]},{supervisor,handle_call,3,[{file,"supervisor.erl"},{line,383}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{child,undefined,{ranch_listener_sup,farwest_http},{ranch_listener_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,[{dispatch,[{'_',[{[<<"orion">>,<<"login">>,'...'],login_handler,[]},{[<<"orion">>,<<"workspace">>,'...'],workspace_handler,[]},{[<<"orion">>,<<"workspace">>,user],workspace_handler,[]},{[<<"orion">>,<<"users">>,'...'],users_handler,[]},{[<<"orion">>,<<"file">>,'...'],file_handler,[]},{[<<"orion">>,<<"preview">>,'...'],preview_handler,[]},{[<<"orion">>,<<"compile">>],compile_handler,[]},{[<<"orion">>,<<"template">>,'...'],template_handler,[]},{[<<"orion">>,<<"file">>,user,dir,file],file_handler2,[]},{[<<"orion">>,'...'],orion_client_handler,[]},{[<<"test_test_test">>],fw_test,[]},{[<<"test">>,bucket,'...'],fw_test,[]},{[<<"farwest">>,<<"templates">>,name],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"farwest">>,<<"templates">>],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"static">>,<<"farwest">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"css">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/css">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"js">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/js">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"jquery">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/jquery">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"bootstrap">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/bootstrap">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"farwest">>,<<"userfiles">>,name],fw_userfiles_handler,[]},{[<<"signup">>],fw_signup_handler,[{template,signup}]},{[<<"farwest">>,<<"userfiles">>],fw_userfiles_handler,[]},{[<<"farwest">>,<<"userdata">>],fw_userdata_handler,[]},{[<<"farwest">>,<<"userdata">>,bucket,'...'],fw_userdata_handler,[]},{[<<"user">>,key],fw_general_handler,[{template,signup},{get_rules,[{user_data,{get,userdata_profiles,{binding,key}}}]},{put_rules,[{status,{put,userdata_profiles,{binding,key}}}]}]}]}]}]]},permanent,5000,supervisor,[ranch_listener_sup]}}}},[{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,36}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-20 11:58:06 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.97.0>
+    registered_name: []
+    exception exit: {{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.94.0>,ranch_sup,<0.81.0>]
+    messages: []
+    links: [<0.94.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 380
+  neighbours:
+2013-02-20 11:58:06 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{{'EXIT',{{badmatch,{error,{{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{child,undefined,ranch_acceptors_sup,{ranch_acceptors_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,<0.95.0>,<0.96.0>]},permanent,5000,supervisor,[ranch_acceptors_sup]}}}},[{ranch_listener_sup,start_link,6,[{file,"src/ranch_listener_sup.erl"},{line,40}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,handle_start_child,2,[{file,"supervisor.erl"},{line,674}]},{supervisor,handle_call,3,[{file,"supervisor.erl"},{line,383}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{child,undefined,{ranch_listener_sup,farwest_http},{ranch_listener_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,[{dispatch,[{'_',[{[<<"orion">>,<<"login">>,'...'],login_handler,[]},{[<<"orion">>,<<"workspace">>,'...'],workspace_handler,[]},{[<<"orion">>,<<"workspace">>,user],workspace_handler,[]},{[<<"orion">>,<<"users">>,'...'],users_handler,[]},{[<<"orion">>,<<"file">>,'...'],file_handler,[]},{[<<"orion">>,<<"preview">>,'...'],preview_handler,[]},{[<<"orion">>,<<"compile">>],compile_handler,[]},{[<<"orion">>,<<"template">>,'...'],template_handler,[]},{[<<"orion">>,<<"file">>,user,dir,file],file_handler2,[]},{[<<"orion">>,'...'],orion_client_handler,[]},{[<<"test_test_test">>],fw_test,[]},{[<<"test">>,bucket,'...'],fw_test,[]},{[<<"farwest">>,<<"templates">>,name],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"farwest">>,<<"templates">>],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"static">>,<<"farwest">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"css">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/css">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"js">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/js">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"jquery">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/jquery">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"bootstrap">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/bootstrap">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"farwest">>,<<"userfiles">>,name],fw_userfiles_handler,[]},{[<<"signup">>],fw_signup_handler,[{template,signup}]},{[<<"farwest">>,<<"userfiles">>],fw_userfiles_handler,[]},{[<<"farwest">>,<<"userdata">>],fw_userdata_handler,[]},{[<<"farwest">>,<<"userdata">>,bucket,'...'],fw_userdata_handler,[]},{[<<"user">>,key],fw_general_handler,[{template,signup},{get_rules,[{user_data,{get,userdata_profiles,{binding,key}}}]},{put_rules,[{status,{put,userdata_profiles,{binding,key}}}]}]}]}]}]]},permanent,5000,supervisor,[ranch_listener_sup]}}}},[{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,36}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-20 12:07:19 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.97.0>
+    registered_name: []
+    exception exit: {{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.94.0>,ranch_sup,<0.81.0>]
+    messages: []
+    links: [<0.94.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 380
+  neighbours:
+2013-02-20 12:07:20 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{{'EXIT',{{badmatch,{error,{{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{child,undefined,ranch_acceptors_sup,{ranch_acceptors_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,<0.95.0>,<0.96.0>]},permanent,5000,supervisor,[ranch_acceptors_sup]}}}},[{ranch_listener_sup,start_link,6,[{file,"src/ranch_listener_sup.erl"},{line,40}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,handle_start_child,2,[{file,"supervisor.erl"},{line,674}]},{supervisor,handle_call,3,[{file,"supervisor.erl"},{line,383}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{child,undefined,{ranch_listener_sup,farwest_http},{ranch_listener_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,[{dispatch,[{'_',[{[<<"orion">>,<<"login">>,'...'],login_handler,[]},{[<<"orion">>,<<"workspace">>,'...'],workspace_handler,[]},{[<<"orion">>,<<"workspace">>,user],workspace_handler,[]},{[<<"orion">>,<<"users">>,'...'],users_handler,[]},{[<<"orion">>,<<"file">>,'...'],file_handler,[]},{[<<"orion">>,<<"preview">>,'...'],preview_handler,[]},{[<<"orion">>,<<"compile">>],compile_handler,[]},{[<<"orion">>,<<"template">>,'...'],template_handler,[]},{[<<"orion">>,<<"file">>,user,dir,file],file_handler2,[]},{[<<"orion">>,'...'],orion_client_handler,[]},{[<<"test_test_test">>],fw_test,[]},{[<<"test">>,bucket,'...'],fw_test,[]},{[<<"farwest">>,<<"templates">>,name],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"farwest">>,<<"templates">>],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"static">>,<<"farwest">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"css">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/css">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"js">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/js">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"jquery">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/jquery">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"bootstrap">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/bootstrap">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"farwest">>,<<"userfiles">>,name],fw_userfiles_handler,[]},{[<<"signup">>],fw_signup_handler,[{template,signup}]},{[<<"farwest">>,<<"userfiles">>],fw_userfiles_handler,[]},{[<<"farwest">>,<<"userdata">>],fw_userdata_handler,[]},{[<<"farwest">>,<<"userdata">>,bucket,'...'],fw_userdata_handler,[]},{[<<"user">>,key],fw_general_handler,[{template,signup},{get_rules,[{user_data,{get,userdata_profiles,{binding,key}}}]},{put_rules,[{status,{put,userdata_profiles,{binding,key}}}]}]}]}]}]]},permanent,5000,supervisor,[ranch_listener_sup]}}}},[{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,36}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-20 12:07:29 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.97.0>
+    registered_name: []
+    exception exit: {{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,328}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.94.0>,ranch_sup,<0.81.0>]
+    messages: []
+    links: [<0.94.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 380
+  neighbours:
+2013-02-20 12:07:29 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{{'EXIT',{{badmatch,{error,{{{badmatch,{error,eaddrinuse}},[{ranch_acceptors_sup,init,1,[{file,"src/ranch_acceptors_sup.erl"},{line,38}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,233}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{child,undefined,ranch_acceptors_sup,{ranch_acceptors_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,<0.95.0>,<0.96.0>]},permanent,5000,supervisor,[ranch_acceptors_sup]}}}},[{ranch_listener_sup,start_link,6,[{file,"src/ranch_listener_sup.erl"},{line,40}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,handle_start_child,2,[{file,"supervisor.erl"},{line,674}]},{supervisor,handle_call,3,[{file,"supervisor.erl"},{line,383}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}},{child,undefined,{ranch_listener_sup,farwest_http},{ranch_listener_sup,start_link,[farwest_http,100,ranch_tcp,[{port,8085}],cowboy_protocol,[{dispatch,[{'_',[{[<<"orion">>,<<"login">>,'...'],login_handler,[]},{[<<"orion">>,<<"workspace">>,'...'],workspace_handler,[]},{[<<"orion">>,<<"workspace">>,user],workspace_handler,[]},{[<<"orion">>,<<"users">>,'...'],users_handler,[]},{[<<"orion">>,<<"file">>,'...'],file_handler,[]},{[<<"orion">>,<<"preview">>,'...'],preview_handler,[]},{[<<"orion">>,<<"compile">>],compile_handler,[]},{[<<"orion">>,<<"template">>,'...'],template_handler,[]},{[<<"orion">>,<<"file">>,user,dir,file],file_handler2,[]},{[<<"orion">>,'...'],orion_client_handler,[]},{[<<"test_test_test">>],fw_test,[]},{[<<"test">>,bucket,'...'],fw_test,[]},{[<<"farwest">>,<<"templates">>,name],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"farwest">>,<<"templates">>],fw_templates_handler,[{<<"value">>,<<"test">>}]},{[<<"static">>,<<"farwest">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"css">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/css">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"js">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/js">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"jquery">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/jquery">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"static">>,<<"bootstrap">>,'...'],cowboy_static,[{directory,{priv_dir,farwest,[<<"static/bootstrap">>]}},{mimetypes,[{<<".css">>,[<<"text/css">>]},{<<".js">>,[<<"application/javascript">>]}]}]},{[<<"farwest">>,<<"userfiles">>,name],fw_userfiles_handler,[]},{[<<"signup">>],fw_signup_handler,[{template,signup}]},{[<<"farwest">>,<<"userfiles">>],fw_userfiles_handler,[]},{[<<"farwest">>,<<"userdata">>],fw_userdata_handler,[]},{[<<"farwest">>,<<"userdata">>,bucket,'...'],fw_userdata_handler,[]},{[<<"user">>,key],fw_general_handler,[{template,signup},{get_rules,[{user_data,{get,userdata_profiles,{binding,key}}}]},{put_rules,[{status,{put,userdata_profiles,{binding,key}}}]}]}]}]}]]},permanent,5000,supervisor,[ranch_listener_sup]}}}},[{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,36}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-20 12:08:06 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-20 12:11:28 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.6157>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.314.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,64}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 06:59:05 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 07:01:46 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.6647>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.370.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,64}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 07:03:12 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.210.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"farwest_app.erl"},{line,39}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.209.0>]
+    messages: [{'EXIT',<0.211.0>,normal}]
+    links: [<0.209.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-21 07:03:58 =ERROR REPORT====
+Error in process <0.732.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.734.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-21 07:03:59 =ERROR REPORT====
+Error in process <0.819.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"farwest.erl"},{line,25}]}]}
+
+2013-02-21 07:04:21 =ERROR REPORT====
+Error in process <0.1629.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"farwest.erl"},{line,25}]}]}
+
+2013-02-21 07:04:59 =ERROR REPORT====
+Module erlide_debug must be purged before loading
+
+2013-02-21 07:05:22 =ERROR REPORT====
+Error in process <0.2536.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {badarg,[{erlide_jrpc,get_service_listeners,1,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_jrpc.erl"},{line,81}]},{erlide_jrpc,notify,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.commo... 
+
+2013-02-21 07:05:22 =ERROR REPORT====
+Error in process <0.2537.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {badarg,[{erlide_jrpc,get_service_listeners,1,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_jrpc.erl"},{line,81}]},{erlide_jrpc,notify,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.commo... 
+
+2013-02-21 07:05:22 =ERROR REPORT====
+Error in process <0.2539.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {badarg,[{erlide_jrpc,get_service_listeners,1,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_jrpc.erl"},{line,81}]},{erlide_jrpc,notify,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.commo... 
+
+2013-02-21 07:06:00 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.211.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"farwest_app.erl"},{line,39}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.210.0>]
+    messages: [{'EXIT',<0.212.0>,normal}]
+    links: [<0.210.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-21 07:06:28 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.8243>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.425.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,64}]}]
+
+2013-02-21 07:06:28 =ERROR REPORT====
+Error in process <0.1581.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<2 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-21 07:08:13 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.211.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"farwest_app.erl"},{line,39}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.210.0>]
+    messages: [{'EXIT',<0.212.0>,normal}]
+    links: [<0.210.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-21 07:10:29 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.209.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"farwest_app.erl"},{line,39}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.208.0>]
+    messages: [{'EXIT',<0.210.0>,normal}]
+    links: [<0.208.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-21 07:11:19 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.8245>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.429.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{jsx_encoder,object,[[{"status","Failure"},{"error",<<"{\"c:/tmp/farwest/priv/resources/r1.erl\",[{4,erl_parse,\"bad function arity\"}]}">>},{"warnings",<<"{\"c:/tmp/farwest/priv/resources/r1.erl\",\n [{27,erl_lint,{unused_function,{init,3}}},\n  {30,erl_lint,{unused_function,{rest_init,2}}},\n  {156,erl_lint,{unused_function,{delete_resource,2}}},\n  {161,erl_lint,{unused_function,{delete_completed,2}}}]}">>}],{jsx_to_json,{[object_start],[[],<<"{">>],{opts,0,0,0}}},{opts,false,false,false,false,false,true,false,false,false,false}],[{file,"src/jsx_encoder.erl"},{line,112}]},{jsx_encoder,start,3,[{file,"src/jsx_encoder.erl"},{line,52}]},{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,68}]}]
+
+2013-02-21 07:11:19 =ERROR REPORT====
+Error in process <0.553.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<6029 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-21 07:21:21 =ERROR REPORT====
+Error in process <0.3355.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.3357.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-21 07:21:23 =ERROR REPORT====
+Error in process <0.3434.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"farwest.erl"},{line,25}]}]}
+
+2013-02-21 07:22:48 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 07:25:55 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 08:01:36 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 08:01:45 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.7570>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.343.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{io_lib,format,["~p",[{<<"status">>,<<"Failure">>},{<<"error">>,<<"{\"c:/tmp/farwest/priv/resources/r1.erl\",[{4,erl_parse,\"bad function arity\"}]}">>},{<<"warnings">>,<<"{\"c:/tmp/farwest/priv/resources/r1.erl\",\n [{27,erl_lint,{unused_function,{init,3}}},\n  {30,erl_lint,{unused_function,{rest_init,2}}},\n  {156,erl_lint,{unused_function,{delete_resource,2}}},\n  {161,erl_lint,{unused_function,{delete_completed,2}}}]}">>}]],[{file,"io_lib.erl"},{line,133}]},{compile_handler,convert,1,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,74}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,68}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 08:03:16 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 08:03:22 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.7571>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.343.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{io_lib,format,["~p",{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}],[{file,"io_lib.erl"},{line,133}]},{compile_handler,convert,1,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,71}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 08:03:56 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 08:04:04 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.7575>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.348.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{io_lib,format,["~p",{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{4,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{27,erl_lint,{unused_function,{init,3}}},{30,erl_lint,{unused_function,{rest_init,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}],[{file,"io_lib.erl"},{line,133}]},{compile_handler,convert,1,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,71}]},{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,65}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 08:04:55 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 08:11:10 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 08:19:42 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.211.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"farwest_app.erl"},{line,39}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.210.0>]
+    messages: [{'EXIT',<0.212.0>,normal}]
+    links: [<0.210.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 98
+  neighbours:
+2013-02-21 09:25:33 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.136.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.135.0>]
+    messages: [{'EXIT',<0.137.0>,normal}]
+    links: [<0.135.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 09:25:47 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{18,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{130,erl_lint,{unused_function,{template_from_json,2}}},{137,erl_lint,{unused_function,{template_from_form,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.7957>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.346.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,66}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 09:25:59 =ERROR REPORT====
+Error in process <0.385.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.387.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-21 09:25:59 =ERROR REPORT====
+Error in process <0.394.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"src/farwest.erl"},{line,25}]}]}
+
+2013-02-21 09:26:05 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{18,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{130,erl_lint,{unused_function,{template_from_json,2}}},{137,erl_lint,{unused_function,{template_from_form,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.10103>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.402.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,66}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 09:26:06 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{18,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{130,erl_lint,{unused_function,{template_from_json,2}}},{137,erl_lint,{unused_function,{template_from_form,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.10105>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.407.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"c:/tmp/farwest/src/compile_handler.erl"},{line,66}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+2013-02-21 09:26:12 =ERROR REPORT====
+Error in process <0.446.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {badarg,[{erlang,register,[erlide_builder,<0.448.0>],[]},{erlide_batch,start,2,[{file,"c:/ErlangTools/erlide/org.erlide.kernel.common/src/erlide_batch.erl"},{line,48}]},{erlide_kernel_common,startup,4,[{file,"c:/ErlangTools... 
+
+2013-02-21 09:26:14 =ERROR REPORT====
+Error in process <0.528.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {{badmatch,{error,{already_started,compiler}}},[{farwest,start,0,[{file,"farwest.erl"},{line,25}]}]}
+
+2013-02-21 09:26:36 =ERROR REPORT====
+** Cowboy handler compile_handler terminating in rest_init/2
+   for the reason error:{case_clause,{error,[{"c:/tmp/farwest/priv/resources/r1.erl",[{18,erl_parse,"bad function arity"}]}],[{"c:/tmp/farwest/priv/resources/r1.erl",[{130,erl_lint,{unused_function,{template_from_json,2}}},{137,erl_lint,{unused_function,{template_from_form,2}}},{156,erl_lint,{unused_function,{delete_resource,2}}},{161,erl_lint,{unused_function,{delete_completed,2}}}]}]}}
+** Options were []
+** Request was [{socket,#Port<0.12347>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.546.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/compile">>},{path_info,undefined},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"connection">>,<<"keep-alive">>},{<<"content-length">>,<<"59">>},{<<"orion-version">>,<<"1">>},{<<"origin">>,<<"http://127.0.0.1:8085">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17">>},{<<"content-type">>,<<"application/json;charset=UTF-8">>},{<<"accept">>,<<"*/*">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"accept-encoding">>,<<"gzip,deflate,sdch">>},{<<"accept-language">>,<<"en-US,en;q=0.8">>},{<<"accept-charset">>,<<"ISO-8859-1,utf-8;q=0.7,*;q=0.3">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"r1.erl\",\"Location\":\"/orion/file/resources/r1.erl\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{compile_handler,template_from_json,2,[{file,"compile_handler.erl"},{line,66}]}]
+
+2013-02-21 09:26:37 =ERROR REPORT====
+Error in process <0.650.0> on node 'eclipse@ip-0A2773B7.ec2.internal' with exit value: {function_clause,[{erlide_dbg_istk,'-all_frames/1-lc$^0/1-0-',[{stack,<<2 bytes>>}],[{file,"c:/ErlangTools/erlide/org.erlide.kernel.debugger/src/erlide_dbg_istk.erl"},{line,57}]},{erlide_dbg_ieval,exit_info,5,[{file,"c:/Erla... 
+
+2013-02-21 09:31:26 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:
+2013-02-21 09:36:31 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.91.0>
+    registered_name: []
+    exception exit: {{bad_return,{{farwest_app,start,[normal,[]]},{'EXIT',{undef,[{lager,info,["Farwest listening on port ~p~n",[8085]],[]},{farwest_app,start,2,[{file,"c:/tmp/farwest/src/farwest_app.erl"},{line,39}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,274}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.90.0>]
+    messages: [{'EXIT',<0.92.0>,normal}]
+    links: [<0.90.0>,<0.6.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 137
+  neighbours:

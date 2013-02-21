@@ -1,6 +1,6 @@
 -module(orion_client_handler).
 
--export([ handle/2, init/3, terminate/2]).
+-export([init/3, terminate/2, handle/2]).
 
 -import(ezwebframe_mochijson2, [encode/1, decode/1]).
 
@@ -88,13 +88,11 @@ classify_extension(".jpg") -> jpg;
 classify_extension(".png") -> png;
 classify_extension(".js")  -> js;
 classify_extension(".css") -> css;
-classify_extension(".ico")  -> ico;
 classify_extension(_)      -> html.
 
 mime_type(gif)     -> "image/gif";
 mime_type(jpg)     -> "image/jpeg";
 mime_type(png)     -> "image/png";
-mime_type(ico)     -> "image/ico";
 mime_type(css)     -> "text/css";
 mime_type(special) -> "text/plain; charset=x-user-defined";
 mime_type(json)    -> "application/json";

@@ -110,7 +110,6 @@ define(['i18n!orion/navigate/nls/messages', 'orion/bootstrap', 'orion/webui/litt
 		
 		// define the command contributions - where things appear, first the groups
 		commandService.addCommandGroup("pageActions", "orion.new", 1000, messages["New"]); //$NON-NLS-1$ //$NON-NLS-0$
-		commandService.addCommandGroup("pageActions", "eclipse.preview", 300, messages["Preview"]); //$NON-NLS-1$ //$NON-NLS-0$
 		commandService.addCommandGroup("pageActions", "orion.gitGroup", 200); //$NON-NLS-1$ //$NON-NLS-0$
 		commandService.addCommandGroup("selectionTools", "orion.selectionGroup", 500, messages["Actions"], null, messages["Click on an item to make a selection, then use this menu to see what actions are available."]); //$NON-NLS-1$ //$NON-NLS-0$
 		commandService.addCommandGroup("selectionTools", "orion.importExportGroup", 100, null, "orion.selectionGroup");		 //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$

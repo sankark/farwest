@@ -170,13 +170,31 @@ define(["orion/Deferred", "orion/xhr", "orion/URL-shim"], function(Deferred, xhr
 			};
 						
 			return xhr("PUT", "/orion/preview/" + location, options).then(function(result) {
-				return result.response ? JSON.parse(result.response) : null;
+				return result;
 			}).then(function(result) {
 				if (this.makeAbsolute) {
 					_normalizeLocations(result);
 				}
 				return result;
 			}.bind(this));
+		},
+		
+		
+			compile: function(item) {
+			var headerData = {
+					"Orion-Version": "1",
+					"Content-Type": "application/json;charset=UTF-8"
+				};
+			
+			var options = {
+				timeout: 15000,
+				headers: headerData,
+				data: JSON.stringify({Name:item.Name,Location:item.Location})
+			};
+						
+			return xhr("PUT", "/orion/compile", options).then(function(result) {
+				return result.response ? result.response : null;
+			});
 		},
 
 		_createWorkspace: function(name) {
