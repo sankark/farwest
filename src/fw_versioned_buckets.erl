@@ -58,25 +58,7 @@ set(RiakPid, Bucket, Key, EditBy, Value, Comments) ->
 	EditDateTime = format_date(calendar:universal_time()),
 	case riakc_pb_socket:get(RiakPid, Bucket, Key) of
 		{ok, Object} ->
-			JSON = riakc_obj:get_value(Object),
-			Data = jsx:decode(JSON),
-			{<<"next_revision">>, Revision}
-				= lists:keyfind(<<"next_revision">>, 1, Data),
-			{<<"history">>, History}
-				= lists:keyfind(<<"history">>, 1, Data),
-			Edit = [
-				{<<"revision">>, Revision},
-				{<<"edit_by">>, EditBy},
-				{<<"edit_datetime">>, EditDateTime},
-				{<<"value">>, Value},
-				{<<"comments">>, Comments}
-			],
-			Data2 = lists:keyreplace(<<"next_revision">>, 1, Data,
-				{<<"next_revision">>, Revision + 1}),
-			Data3 = lists:keyreplace(<<"history">>, 1, Data2,
-				{<<"history">>, [Edit|History]}),
-			JSON2 = jsx:encode(Data3),
-			Object2 = riakc_obj:update_value(Object, JSON2),
+			Object2 = update_object(EditBy, Value, Comments, EditDateTime, Object),
 			riakc_pb_socket:put(RiakPid, Object2),
 			ok;
 		{error, notfound} ->
@@ -96,6 +78,27 @@ set(RiakPid, Bucket, Key, EditBy, Value, Comments) ->
 			riakc_pb_socket:put(RiakPid, Object),
 			ok
 	end.
+
+update_object(EditBy, Value, Comments, EditDateTime, Object) ->
+			 JSON = riakc_obj:get_value(Object),
+			 Data = jsx:decode(JSON),
+				{<<"next_revision">>, Revision}
+			  = lists:keyfind(<<"next_revision">>, 1, Data),
+				{<<"history">>, History}
+			  = lists:keyfind(<<"history">>, 1, Data),
+				Edit = [
+				 {<<"revision">>, Revision},
+				 {<<"edit_by">>, EditBy},
+				 {<<"edit_datetime">>, EditDateTime},
+				 {<<"value">>, Value},
+			  {<<"comments">>, Comments}
+			 ],
+				Data2 = lists:keyreplace(<<"next_revision">>, 1, Data,
+			  {<<"next_revision">>, Revision + 1}),
+				Data3 = lists:keyreplace(<<"history">>, 1, Data2,
+			  {<<"history">>, [Edit|History]}),
+			 JSON2 = jsx:encode(Data3),
+    riakc_obj:update_value(Object, JSON2).
 
 %% Internal.
 

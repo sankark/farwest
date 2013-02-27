@@ -6,5 +6,8 @@
 
 [{riak_ip,"i-88b704f6"},
  {riak_port,8081},
- {template_dir,"C:/farwest/priv/templates"}
+ {template_dir,"C:/tmp/farwest/priv/templates"},
+ {dispatch_file,"C:/tmp/farwest/priv/dispatch/dispatch"},
+ {sites_dir,"C:/tmp/farwest/priv/sites"},
+ {skeleton_dir,"C:/tmp/farwest/priv/skeleton"}
  ].

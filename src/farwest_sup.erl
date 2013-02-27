@@ -45,6 +45,9 @@ init([]) ->
 			permanent, 5000, worker, [fw_data_server]},
 		{fw_userfiles_server,
 			{fw_userfiles_server, start_link, []},
-			permanent, 5000, worker, [fw_userfiles_server]}
+			permanent, 5000, worker, [fw_userfiles_server]},
+		{file_watcher,
+			{file_watcher, start_link, []},
+			permanent, 5000, worker, [file_watcher]}	
 	],
 	{ok, {{one_for_one, 10, 10}, Procs}}.

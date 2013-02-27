@@ -1,0 +1,12 @@
+<div class="container_16">
+	
+		<div class="grid_16" >
+			<div class="grid_3"><a href="/farwest/templates"> Template Editor</a></div>
+			<div class="grid_3"><a href="/farwest/userdata"> UserData Editor</a></div>
+			<div class="grid_3"><a href="/farwest/userfiles"> Files Uplaod</a></div>
+			<div class="grid_3"><a href="/farwest/config"> Config Editor</a></div>
+			
+		</div>
+		
+	
+	</div>

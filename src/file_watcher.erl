@@ -4,18 +4,10 @@
 
 %% gen_server exports
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2, terminate/2, code_change/3]).
--export([start_link/1,notify/1,is_modified/2]).
+-export([start_link/0,notify/1,is_modified/2]).
 
 -include_lib("kernel/include/file.hrl").
 
--define(TIMEOUT, 60000).
-
--define(TIMER_INTERVAL, [ {1, tick_1s}, 
-                          {60, tick_1m}, 
-                          {3600, tick_1h},
-                          {7200, tick_2h},
-                          {43200, tick_12h},
-                          {86400, tick_24h} ]).
 -record(state,{file,callback,last_poll_time}).
 
 %%====================================================================
@@ -23,8 +15,8 @@
 %%====================================================================
 %% @spec start_link(SiteProps) -> {ok,Pid} | ignore | {error,Error}
 %% @doc Starts the notification server
-start_link(Args)->
-    gen_server:start_link({local, ?MODULE}, ?MODULE, Args, []).
+start_link()->
+    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
 %%====================================================================
 %% API for notification
@@ -35,11 +27,12 @@ start_link(Args)->
 %% @doc Cast the event to all observers. The prototype of the observer is: f(Msg, Context) -> void
 notify(State=#state{file=FileName,callback=CallBack,last_poll_time=Poll}) ->
      NewPol = case ?MODULE:is_modified(FileName,Poll) of
-		{true,NewPoll} -> CallBack([]),
+		{true,NewPoll} -> io:format("file modified"),
+							CallBack([]),
 						  NewPoll;
 		{false,NewPoll}      ->NewPoll
 	end,
-	State = #state{last_poll_time=NewPol}.
+	State#state{last_poll_time=NewPol}.
     
     
 
@@ -52,9 +45,11 @@ notify(State=#state{file=FileName,callback=CallBack,last_poll_time=Poll}) ->
 %%                     ignore               |
 %%                     {stop, Reason}
 %% @doc Initiates the server, creates a new observer list
-init([FileName,CallBack]) ->
-    timer:send_interval(5000, {tick}),
+init([]) ->
+	FileName=fw_config:get(dispatch_file),
+	CallBack=fun mod_dispatch:update/1,
     State = #state{file=FileName,callback=CallBack,last_poll_time=0},
+	timer:send_interval(5000, {tick}),
     {ok, State}.
 
 

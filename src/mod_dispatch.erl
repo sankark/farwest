@@ -7,7 +7,7 @@
 %% ====================================================================
 %% API functions
 %% ====================================================================
--export([]).
+-export([update/1]).
 
 
 
@@ -15,4 +15,8 @@
 %% Internal functions
 %% ====================================================================
 
-
+update(_Args)->
+	io:format("updating"),
+	Dispatch = fw_config:get(dispatch_file),
+	{ok, Routes} = file:consult(Dispatch),
+	ranch:set_protocol_options(farwest_http,[{dispatch, Routes}]).

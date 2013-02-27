@@ -36,13 +36,13 @@ start(_, _) ->
 	{ok, _} = cowboy:start_http(farwest_http, 100,
 		[{port, Port}], [{dispatch, Routes}]
 	),
-	lager:info("Farwest listening on port ~p~n", [Port]),
+	%%lager:info("Farwest listening on port ~p~n", [Port]),
 	{ok, _} = cowboy:start_https(farwest_https, 100,
 		[{port, SSLPort}, {certfile, Certfile},
 			{cacertfile, CACertfile}, {verify, verify_peer}],
 		[{dispatch, Routes}]
 	),
-	lager:info("Farwest securely listening on port ~p~n", [SSLPort]),
+	%%lager:info("Farwest securely listening on port ~p~n", [SSLPort]),
 	farwest_sup:start_link().
 
 stop(_) ->

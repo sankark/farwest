@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="/static/css/960.css" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container_16">
+	
+	<form id="form" action = "" method="put">
+		<div class="grid_16" >
+			<div class="grid_4" >Dispatch Name : </div>
+			<div class="grid_8"><input type="text" name="d_name" value="" /></div>
+			
+			
+		</div>
+
+		<div class="grid_16" >
+			<div class="grid_4" >Dispatch Name : </div>
+			<div class="grid_8"><input type="text" name="d_value" value="" size = "100" /></div>
+			
+			
+		</div>
+
+
+		<div class="grid_16" >
+			<div class="grid_4" ><input type="submit" class="btn" value="add"/></div>
+			
+			
+			
+		</div>
+		
+	</form>
+
+
+	
+		<div class="grid_16" >
+			<div class="grid_4" >Dispatch Name  </div>
+			<div class="grid_8">Dispatch Value </div>
+			
+			
+		</div>
+	{% for d in dispatch %}
+		<div class="grid_16" >
+			<div class="grid_4 suffix_1" >"{{d.d_name}}"</div>
+			<div class="grid_8">"{{d.d_value}}"</div>
+			
+			
+		</div>
+
+	{% endfor %}
+	</div>
+	
+	
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/jquery/jquery.min.js"></script>
+	<script src="/static/jquery/jquery.form.js"></script>
+	<script src="/static/jquery/jquery.json.js"></script>
+	<script src="/static/js/form_submit.js"></script>
+</body>
+</html>

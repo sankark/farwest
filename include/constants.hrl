@@ -60,3 +60,8 @@
 -define(KEY_PREVIOUS_LOCATION , <<"PreviousLocation">>).
 -define(KEY_NEXT_LOCATION , <<"NextLocation">>). 
 -define(PATH_DRIVE , <<"drive">>).
+-define(SITE_CONFIG,<<"SiteConfigurations">>).
+-define(SITE_HOST_HINT,<<"HostHint">>).
+-define(SITE_MAPPINGS,<<"Mappings">>).
+-define(SITE_SOURCE,<<"Source">>).
+-define(SITE_TARGET,<<"Target">>).

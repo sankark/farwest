@@ -55,10 +55,9 @@ content_types_accepted(Req, State) ->
 
 
 template_from_json(Req, State) ->
-	%% @todo
-	{ok, [{Body,_}], _Req2} = cowboy_req:body_qs(Req),
-	JsonReq = jsx:decode(Body),
-	Location = binary_to_list(proplists:get_value(<<"Location">>, JsonReq)),
+	Body = util:get_json_from_req(Req),
+	JsonReq = util:json_to_term(Body),
+	Location = binary_to_list(util:get_value_from_proplist(<<"Location">>,JsonReq)),
 	Loc2 = remove_url_string(Location),
 	Absolute = util:absolute_path(Loc2),
 	Resp = mod_compile:compile(Absolute),

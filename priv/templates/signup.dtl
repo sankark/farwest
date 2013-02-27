@@ -10,26 +10,26 @@
 	<form id="form" action="" method="put">
 		<div class="grid_12" >
 			<div class="grid_3 suffix_1">UserName</div>
-			<div class="grid_3"><input name="user_name" value="{{user_data.user_name}}"></input></div>
+			<div class="grid_3"><input type = "text" name="user_name" value="{{user_data.user_name}}"></div>
 		</div>
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Password</div>
-			<div class="grid_3"><input name="password" value="{{user_data.password}}"></input></div>
+			<div class="grid_3"><input name="password" value="{{user_data.password}}"></div>
 		</div>
 		
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Email-Id</div>
-			<div class="grid_3"><input name="email_id"></input></div>
+			<div class="grid_3"><input name="email_id"></div>
 		</div>
 		
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Address</div>
-			<div class="grid_3"><input name="address"></input></div>
+			<div class="grid_3"><input name="address"></div>
 		</div>
 		
 		<div class="grid_12">
 			<div class="grid_3 suffix_1">Phone</div>
-			<div class="grid_3"><input name="phone_no"></input></div>
+			<div class="grid_3"><input name="phone_no"></div>
 		</div>
 		
 		<div class="grid_12">
@@ -39,10 +39,11 @@
 	</div>
 	
 	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/static/jquery/jquery.min.js"></script>
+	<script src="/static/jquery/jquery-1.7.2.min.js"></script>
 	<script src="/static/jquery/jquery.form.js"></script>
 	<script src="/static/jquery/jquery.json.js"></script>
+<script src="/static/jquery/jquery-ui-1.8.18.min.js"></script>
 	
-<script src="/static/js/form_submit.js"></script>
+<script src="/static/js/form_submit2.js"></script>
 </body>
 </html>

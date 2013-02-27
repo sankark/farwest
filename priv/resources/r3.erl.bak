@@ -1,5 +1,5 @@
 %% /farwest/templates/[name]
--module(r1).
+-module(r3).
 -export([init/3]).
 -export([rest_init/2]).
 -export([allowed_methods/2]).
@@ -16,8 +16,7 @@
 -export([template_to_json/2]).
 -export([template_from_json/2]).
 -export([template_from_form/2]).
--export([delete_resource/2]).
--export([delete_completed/2]).
+
 
 -record(state, {
 	auth = undefined,
