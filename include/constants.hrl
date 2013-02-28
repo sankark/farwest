@@ -63,5 +63,7 @@
 -define(SITE_CONFIG,<<"SiteConfigurations">>).
 -define(SITE_HOST_HINT,<<"HostHint">>).
 -define(SITE_MAPPINGS,<<"Mappings">>).
+-define(SITE_HOST_STATUS,<<"HostingStatus">>).
 -define(SITE_SOURCE,<<"Source">>).
+-define(SITE_LOCATION,<<"SiteLocation">>).
 -define(SITE_TARGET,<<"Target">>).

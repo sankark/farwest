@@ -121,7 +121,7 @@ define(['i18n!orion/sites/nls/messages', 'require', 'orion/commands', 'orion/sit
 				var starts = items.map(function(item) {
 					var newItem = userData.site || {} /* just update the HostingStatus */;
 					newItem.HostingStatus = { Status: "started" }; //$NON-NLS-0$
-					var location = item.Location;
+					var location = item.SiteLocation;
 					var siteService = mSiteClient.forLocation(serviceRegistry, location);
 					return siteService.updateSiteConfiguration(location, newItem);
 				});
@@ -155,7 +155,7 @@ define(['i18n!orion/sites/nls/messages', 'require', 'orion/commands', 'orion/sit
 				var stops = items.map(function(item) {
 					var newItem = userData.site || {} /* just update the HostingStatus */;
 					newItem.HostingStatus = { Status: "stopped" }; //$NON-NLS-0$
-					var location = item.Location;
+					var location = item.SiteLocation;
 					var siteService = mSiteClient.forLocation(serviceRegistry, location);
 					return siteService.updateSiteConfiguration(location, newItem);
 				});

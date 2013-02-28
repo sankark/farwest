@@ -65,13 +65,22 @@ content_types_accepted(Req, State) ->
 	 ], Req, State}.
 
 
-from_json(Req, State) ->
+from_json(Req, State=#state{collection=true}) ->
 	JSON = util:get_body_from_req(Req),
 	JSONTerm = jsx:decode(JSON),
 	Response = case site_service:create_site(JSONTerm) of
 				   {ok, Resp}-> Resp;
-				   {error, Msg} -> {error, Msg}
+				   {error, Msg} -> [{error, Msg}]
 			   end,
+	%% @todo
+	Req2 = util:set_json_resp(jsx:encode(Response),Req),
+	{true, Req2, State};
+
+from_json(Req, State=#state{collection=false}) ->
+	{[Name], _Req2} = cowboy_req:path_info(Req),
+	JSON = util:get_body_from_req(Req),
+	JSONTerm = jsx:decode(JSON),
+	{ok,Response} = site_service:parse_request(Name,JSONTerm),
 	%% @todo
 	Req2 = util:set_json_resp(jsx:encode(Response),Req),
 	{true, Req2, State}.

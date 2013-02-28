@@ -21,10 +21,20 @@ define(['require', 'orion/fileUtils', 'orion/URITemplate', 'orion/sites/siteUtil
 	 * @function
 	 */
 	function generateEditSiteHref(site) {
-		var base = require.toUrl("sites/site.html"); //$NON-NLS-0$
+		 //$NON-NLS-0$
+		if (typeof(site.Location) != "undefined")
+		{
+		var base = require.toUrl("navigate/table.html");
 		return new URITemplate(base + "#{,resource,params*}").expand({ //$NON-NLS-0$
 			resource: mFileUtil.makeRelative(site.Location)
 		});
+		}
+		else
+		{
+		alert("error : "+site.error);
+		return "";
+		}
+
 	}
 	return {
 		generateEditSiteHref: generateEditSiteHref

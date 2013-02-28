@@ -1,0 +1,85 @@
+
+		{'_', [
+			{[<<"test">>], hello, []},
+			{[<<"orion">>,<<"login">>,'...'], login_handler, []},
+			{[<<"orion">>,<<"site">>,'...'], site_handler, []},
+			{[<<"orion">>,<<"workspace">>,'...'], workspace_handler, []},
+			{[<<"orion">>,<<"workspace">>,user], workspace_handler, []},
+			{[<<"orion">>,<<"users">>,'...'], users_handler, []},
+			{[<<"orion">>,<<"file">>,'...'], file_handler, []},
+			{[<<"orion">>,<<"preview">>,'...'], preview_handler, []},
+			{[<<"orion">>,<<"compile">>], compile_handler, []},
+			{[<<"orion">>,<<"template">>,'...'], template_handler, []},
+			{[<<"orion">>,<<"file">>,user,dir,file], file_handler2, []},
+			{[<<"orion">>,'...'], orion_client_handler, []},
+			{[<<"test_test_test">>], fw_test, []},
+			{[<<"test">>,bucket,'...'], fw_test, []},
+			{[<<"farwest">>,<<"templates">>,name], fw_templates_handler, [{<<"value">>,<<"test">>}]},
+			{[<<"farwest">>,<<"templates">>], fw_templates_handler, [{<<"value">>,<<"test">>}]},
+		{[<<"static">>,<<"farwest">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, []}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+		{[<<"static">>,<<"css">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"static/css">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+		{[<<"static">>,<<"js">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"static/js">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+
+		{[<<"static">>,<<"jquery">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"static/jquery">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+
+		{[<<"static">>,<<"bootstrap">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"static/bootstrap">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]},{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			
+		},
+			{[<<"farwest">>,<<"userfiles">>,name], fw_userfiles_handler, []},
+			{[<<"signup">>], fw_signup_handler, [{template,signup}]},
+			{[<<"farwest">>,<<"userfiles">>], fw_userfiles_handler, []},
+			{[<<"farwest">>,<<"userdata">>], fw_userdata_handler, []},
+			{[<<"farwest">>,<<"userdata">>,bucket,'...'], fw_userdata_handler, []},
+			{[<<"user">>,key], fw_general_handler,
+					[{template,signup},
+					 {get_rules,
+								[{user_data, {get, userdata_profiles, {binding, key}}}]
+					 },
+
+					 {put_rules,
+								[{status, {put, userdata_profiles, {binding, key}}}]
+					 }
+
+					
+					]
+				
+			}
+			
+
+		]}
+	.
+
+
+
+	

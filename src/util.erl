@@ -9,7 +9,7 @@
 %% ====================================================================
 -export([absolute_path/1,add_site_path/1]).
 
--export([set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2]).
+-export([set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2,get_site_home/1]).
 
 
 
@@ -55,6 +55,9 @@ recursive_copy(From, To) ->
     [ok = rec_copy(From, To, X) || X <- Files],
     ok.
 
+start_slave(Site)->
+slave:start_link(list_to_atom(net_adm:localhost()),Site,"-setcookie cookie -pa ./deps/cowboy/ebin ./deps/ranch/ebin ./ebin").
+
 rec_copy(From, To, File) ->
 
     NewFrom = filename:join([From, File]),
@@ -81,4 +84,6 @@ make_dir(Dir)->
 		{error,eexist} -> ok;
 		 _  -> ok
 	 end.
-	
+
+get_site_home(SiteName) ->
+    filename:join([code:lib_dir(farwest), "priv", "sites",SiteName]).
