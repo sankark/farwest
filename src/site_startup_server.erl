@@ -28,14 +28,15 @@ stop() ->
 
 %% gen_server.
 
-init(SiteName) ->
+init(Site) ->
+	SiteName = atom_to_list(Site),
 	process_flag(trap_exit, true),
 	Port = site_config:get(http_port, 8085),
 	SSLPort = site_config:get(https_port, 8443),
 	Certfile = site_config:get(https_cert),
 	CACertfile = site_config:get(https_cacert),
 	SitesHome = util:get_site_home(SiteName),
-	IP = {127,0,0,3},
+	IP = site_config:get(ip, {127,0,0,1}),
 	{ok, Routes} = file:consult(filename:join([SitesHome, "dispatch","dispatch"])),
 	%% HTTP.
 	io:format("routes ~p",[Routes]),

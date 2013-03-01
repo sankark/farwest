@@ -21,7 +21,9 @@
 	{mimetypes, ".*",
 		{git, "git://github.com/spawngrid/mimetypes.git", "master"}},
 	{uuid, ".*",
-		{git, "git://github.com/avtobiff/erlang-uuid.git", "master"}}
+		{git, "git://github.com/avtobiff/erlang-uuid.git", "master"}},
+	{sync, ".*",
+		{git, "git://github.com/rustyio/sync.git", "master"}}
 ]}.
 {eunit_opts, [verbose, {report, {eunit_surefire, [{dir, "."}]}}]}.
 

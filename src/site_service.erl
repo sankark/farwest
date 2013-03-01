@@ -7,7 +7,7 @@
 %% ====================================================================
 %% API functions
 %% ====================================================================
--export([create_site/1,start_site/1,stop_site/1,get_sites/0,get_site_details/1,parse_request/2]).
+-export([create_site/1,start_site/1,stop_site/1,get_sites/0,get_site_details/1,parse_request/2,get_site_names/0,get_site_abs/1]).
 -define(BUCKET,<<"sites">>).
 
 create_site(JsonTerm)->
@@ -17,7 +17,7 @@ create_site(JsonTerm)->
 		{error, Any} -> {error, Any}
 	end.
 start_site(SiteName)->
-	[].
+	util:start_slave(binary_to_list(SiteName)).
 stop_site(SiteName)->
 	[].
 
@@ -36,12 +36,16 @@ parse_request(Site,JSONTerm)->
 	end.
 
 get_sites()->
-	{ok,Keys} = fw_data_server:get_keys(<<"sites">>),
+	Keys = get_site_names(),
 	Sites = case Keys of
 		[] -> [];
 		_ -> [jsx:decode(get_value(K))||K<-Keys]
 			end,
 	[{?SITE_CONFIG,Sites}].
+
+get_site_names() ->
+    {ok,Keys} = fw_data_server:get_keys(<<"sites">>),
+    Keys.
 
 
 get_value(K)->
@@ -83,7 +87,15 @@ create_site_structure(SiteName)->
 copy_structure(SiteName)->
 	SkelDir = fw_config:get(skeleton_dir),
 	NewSiteDir = get_site_abs(SiteName),
-	util:recursive_copy(SkelDir,NewSiteDir).
+	util:recursive_copy(SkelDir,NewSiteDir),
+	create_site_module(SiteName),
+	ok.
+
+create_site_module(SiteName)->
+	Forms = code_gen:gen_site_module(list_to_atom(binary_to_list(SiteName))),
+	OutFile = filename:join([get_site_abs(SiteName),binary_to_list(SiteName)++".erl"]),
+	parse_trans_pp:pp_src(Forms, OutFile),
+	ok.
 check_if_exist(SiteName)->
 	case fw_data_server:get_value(?BUCKET, SiteName) of
 		{ok, _} -> true;

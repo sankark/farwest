@@ -9,7 +9,7 @@
 %% ====================================================================
 -export([absolute_path/1,add_site_path/1]).
 
--export([set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2,get_site_home/1]).
+-export([set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2,get_site_home/1,start_slave/1]).
 
 
 
@@ -56,7 +56,12 @@ recursive_copy(From, To) ->
     ok.
 
 start_slave(Site)->
-slave:start_link(list_to_atom(net_adm:localhost()),Site,"-setcookie cookie -pa ./deps/cowboy/ebin ./deps/ranch/ebin ./ebin").
+	SiteBin = filename:join([".","priv","sites",Site,"ebin"]),
+	slave:start(list_to_atom(net_adm:localhost()),Site,"-setcookie cookie -pa ./deps/cowboy/ebin ./deps/ranch/ebin ./ebin "++SiteBin),
+	Node = list_to_atom(Site++"@"++net_adm:localhost()),
+	io:format("started"),
+	Res = rpc:call(Node, list_to_atom(Site), start, []),
+	io:format("Res ~p",[Res]).
 
 rec_copy(From, To, File) ->
 
@@ -85,5 +90,7 @@ make_dir(Dir)->
 		 _  -> ok
 	 end.
 
+get_site_home(SiteName) when is_atom(SiteName) ->
+	get_site_home(atom_to_list(SiteName));
 get_site_home(SiteName) ->
     filename:join([code:lib_dir(farwest), "priv", "sites",SiteName]).

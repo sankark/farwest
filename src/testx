@@ -1,0 +1,7 @@
+-file("c:/tmp/farwest/src/site_template.erl", 1).
+-module(site_template).
+-export([start/0]).
+start() ->
+    site_sup:start_link(site_template).
+
+

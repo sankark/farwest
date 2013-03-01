@@ -11504,3 +11504,743 @@ c:/tmp/farwest/src/site_service.erl:0: Recompiled with 1 warnings
 2013-02-28 12:30:51.365 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A5529AE'
 2013-02-28 12:30:51.376 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A5529AE'
 2013-02-28 12:30:52.121 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A5529AE'
+2013-03-01 05:53:32.426 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:32.489 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:32.520 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:32.582 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:35.454 [error] <0.506.0> CRASH REPORT Process <0.506.0> with 1 neighbours exited with reason: {tcp,nxdomain} in gen_server:init_it/6 line 320
+2013-03-01 05:53:35.469 [error] <0.502.0> Supervisor farwest_sup had child fw_templates_server started with fw_templates_server:start_link() at undefined exit with reason {tcp,nxdomain} in context start_error
+2013-03-01 05:53:35.500 [info] <0.6.0> Application farwest exited with reason: {shutdown,{farwest_app,start,[normal,[]]}}
+2013-03-01 05:53:52.135 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:52.151 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:52.151 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:52.166 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:53:54.569 [error] <0.506.0> CRASH REPORT Process <0.506.0> with 1 neighbours exited with reason: {tcp,nxdomain} in gen_server:init_it/6 line 320
+2013-03-01 05:53:54.569 [error] <0.502.0> Supervisor farwest_sup had child fw_templates_server started with fw_templates_server:start_link() at undefined exit with reason {tcp,nxdomain} in context start_error
+2013-03-01 05:53:54.585 [info] <0.6.0> Application farwest exited with reason: {shutdown,{farwest_app,start,[normal,[]]}}
+2013-03-01 05:54:17.165 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:17.181 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:17.181 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:17.196 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:19.615 [error] <0.506.0> CRASH REPORT Process <0.506.0> with 1 neighbours exited with reason: {tcp,nxdomain} in gen_server:init_it/6 line 320
+2013-03-01 05:54:19.615 [error] <0.502.0> Supervisor farwest_sup had child fw_templates_server started with fw_templates_server:start_link() at undefined exit with reason {tcp,nxdomain} in context start_error
+2013-03-01 05:54:19.646 [info] <0.6.0> Application farwest exited with reason: {shutdown,{farwest_app,start,[normal,[]]}}
+2013-03-01 05:54:49.264 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:49.295 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:49.295 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:49.295 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:54:51.714 [error] <0.506.0> CRASH REPORT Process <0.506.0> with 1 neighbours exited with reason: {tcp,nxdomain} in gen_server:init_it/6 line 320
+2013-03-01 05:54:51.714 [error] <0.502.0> Supervisor farwest_sup had child fw_templates_server started with fw_templates_server:start_link() at undefined exit with reason {tcp,nxdomain} in context start_error
+2013-03-01 05:54:51.729 [info] <0.6.0> Application farwest exited with reason: {shutdown,{farwest_app,start,[normal,[]]}}
+2013-03-01 05:55:24.250 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:55:24.265 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:55:24.265 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:55:24.281 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:55:26.684 [error] <0.506.0> CRASH REPORT Process <0.506.0> with 1 neighbours exited with reason: {tcp,nxdomain} in gen_server:init_it/6 line 320
+2013-03-01 05:55:26.700 [error] <0.502.0> Supervisor farwest_sup had child fw_templates_server started with fw_templates_server:start_link() at undefined exit with reason {tcp,nxdomain} in context start_error
+2013-03-01 05:55:26.715 [info] <0.6.0> Application farwest exited with reason: {shutdown,{farwest_app,start,[normal,[]]}}
+2013-03-01 05:56:47.423 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:56:47.454 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:56:47.454 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:56:47.454 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 05:56:49.186 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:04:04.637 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:04:04.653 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:04:04.653 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:04:04.669 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:04:05.386 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:28:05.420 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:28:05.437 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:28:05.441 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:28:05.452 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:28:06.283 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:30:06.293 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:30:06.310 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:30:06.313 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:30:06.324 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:30:07.089 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:09.953 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:09.970 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:09.974 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:09.986 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:10.793 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:53.931 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:53.966 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:53.969 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:53.982 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:34:54.755 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:35:25.313 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:35:25.329 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:35:25.344 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:35:25.344 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:35:26.120 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:37:37.826 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:37:37.843 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:37:37.846 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:37:37.857 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:37:38.779 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:39:20.376 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:39:20.392 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:39:20.395 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:39:20.406 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:39:21.218 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:41:55.134 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:41:55.151 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:41:55.154 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:41:55.165 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:41:55.930 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:42:33.552 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:42:33.569 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:42:33.573 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:42:33.584 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:42:34.359 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:46:46.962 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:46:46.978 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:46:46.981 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:46:46.992 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:46:47.757 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:48:29.627 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:48:29.631 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:48:29.634 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:48:29.644 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:48:30.438 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:53:09.443 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:53:09.460 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:53:09.464 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:53:09.476 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:53:10.269 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:54:13.732 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:54:13.750 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:54:13.754 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:54:13.767 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:54:14.571 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:55:30.320 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:55:30.338 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:55:30.341 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:55:30.378 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 06:55:31.141 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:16:29.852 [error] <0.541.0> CRASH REPORT Process <0.541.0> with 1 neighbours exited with reason: {start_spec,{invalid_mfa,{site_config,start_link,site_template}}} in gen_server:init_it/6 line 320
+2013-03-01 07:28:38.346 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:28:38.362 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:28:38.377 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:28:38.377 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:28:39.231 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:33:42.657 [error] <0.537.0> CRASH REPORT Process <0.537.0> with 1 neighbours exited with reason: {start_spec,{invalid_mfa,{site_config,start_link,site_template}}} in gen_server:init_it/6 line 320
+2013-03-01 07:37:10.602 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:37:10.618 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:37:10.618 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:37:10.633 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:37:11.380 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:40:41.685 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:40:41.701 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:40:41.701 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:40:41.717 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:40:42.472 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:44:02.370 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:44:02.386 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:44:02.386 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:44:02.401 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:44:03.166 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:45:01.998 [error] <0.527.0> Supervisor site_sup had child site_config started with site_config:start_link(116, 101, 115, 116) at undefined exit with reason {'EXIT',{undef,[{site_config,start_link,"test",[]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}} in context start_error
+2013-03-01 07:55:12.418 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:55:12.434 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:55:12.450 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:55:12.450 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:55:13.197 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:55:30.018 [error] <0.539.0> ** Cowboy handler site_handler terminating in rest_init/2
+   for the reason error:badarg
+** Options were []
+** Request was [{socket,#Port<0.10604>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.539.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/site">>},{path_info,[]},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0; rv:19.0) Gecko/20100101 Firefox/19.0">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"accept-language">>,<<"en-US,en;q=0.5">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"content-type">>,<<"application/json; charset=utf-8">>},{<<"orion-version">>,<<"1">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/site/sitePlugin.html">>},{<<"content-length">>,<<"50">>},{<<"cookie">>,<<"z_pid=DD2osGBy1CxcPKsEuDXb; __utma=96992031.1679259585.1358849968.1358849968.1358849968.1; __utmz=96992031.1358849968.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); JSESSIONID=1t4iv5g0dbez01nxfb4m2npu9x">>},{<<"connection">>,<<"keep-alive">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"m1\",\"Workspace\":\"sankar\",\"HostHint\":\"m1\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{erlang,'++',[<<"m1">>,".erl"],[]},{site_service,create_site_module,1,[{file,"c:/tmp/farwest/src/site_service.erl"},{line,91}]},{site_service,copy_structure,1,[{file,"c:/tmp/farwest/src/site_service.erl"},{line,87}]},{site_service,create_site,1,[{file,"c:/tmp/farwest/src/site_service.erl"},{line,15}]},{site_handler,from_json,2,[{file,"c:/tmp/farwest/src/site_handler.erl"},{line,71}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+
+2013-03-01 07:56:52.865 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:56:52.882 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:56:52.886 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:56:52.921 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:56:53.710 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 07:57:48.559 [error] <0.525.0> ** Cowboy handler site_handler terminating in rest_init/2
+   for the reason error:{case_clause,error}
+** Options were []
+** Request was [{socket,#Port<0.10128>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.525.0>},{method,<<"PUT">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/site">>},{path_info,[]},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0; rv:19.0) Gecko/20100101 Firefox/19.0">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"accept-language">>,<<"en-US,en;q=0.5">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"content-type">>,<<"application/json; charset=utf-8">>},{<<"orion-version">>,<<"1">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/site/sitePlugin.html">>},{<<"content-length">>,<<"50">>},{<<"cookie">>,<<"z_pid=DD2osGBy1CxcPKsEuDXb; __utma=96992031.1679259585.1358849968.1358849968.1358849968.1; __utmz=96992031.1358849968.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); JSESSIONID=1t4iv5g0dbez01nxfb4m2npu9x">>},{<<"connection">>,<<"keep-alive">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<"{\"Name\":\"m2\",\"Workspace\":\"sankar\",\"HostHint\":\"m2\"}">>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{parse_trans_mod,compile_and_load_forms,2,[{file,"c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl"},{line,77}]},{site_service,copy_structure,1,[{file,"c:/tmp/farwest/src/site_service.erl"},{line,87}]},{site_service,create_site,1,[{file,"c:/tmp/farwest/src/site_service.erl"},{line,15}]},{site_handler,from_json,2,[{file,"c:/tmp/farwest/src/site_handler.erl"},{line,71}]},{cowboy_rest,choose_content_type,5,[{file,"src/cowboy_rest.erl"},{line,734}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+
+2013-03-01 08:03:14.674 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:03:14.692 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:03:14.696 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:03:14.707 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:03:15.452 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:04:26.765 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:04:26.780 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:04:26.796 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:04:26.796 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:04:27.587 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:06:20.363 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:06:20.380 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:06:20.384 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:06:20.395 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:06:21.191 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:11:21.999 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:11:22.017 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:11:22.021 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:11:22.035 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:11:22.851 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:12:48.452 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:12:48.485 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:12:48.485 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:12:48.495 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:12:49.296 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:13.079 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:13.097 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:13.101 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:13.112 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:13.923 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:58.120 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:58.139 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:58.142 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:58.155 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:14:58.978 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:16:11.674 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:16:11.691 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:16:11.695 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:16:11.706 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:16:12.482 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:17:32.414 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:17:32.431 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:17:32.434 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:17:32.446 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:17:33.290 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:18:09.393 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:18:09.410 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:18:09.414 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:18:09.425 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:18:10.213 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:25:44.245 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:25:44.261 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:25:44.276 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:25:44.276 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:25:45.082 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:26:13.385 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:26:13.403 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:26:13.406 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:26:13.418 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:26:14.147 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:27:32.233 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:27:32.249 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:27:32.264 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:27:32.264 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:27:33.033 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:11.702 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:11.708 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:11.711 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:11.723 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:12.460 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:30.549 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:30.564 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:30.580 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:30.580 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:28:31.382 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:29:26.343 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:29:26.358 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:29:26.374 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:29:26.374 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 08:29:27.169 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:36:06.683 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:36:06.699 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:36:06.699 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:36:06.714 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:36:07.480 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:41:45.103 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:41:45.122 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:41:45.126 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:41:45.145 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 09:41:45.912 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:05:14.829 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:05:14.846 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:05:14.849 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:05:14.860 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:05:15.691 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:21:17.319 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:21:17.336 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:21:17.339 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:21:17.350 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:21:18.103 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:38:51.701 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:38:51.718 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:38:51.721 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:38:51.757 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:56:54.974 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:56:54.991 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:56:54.994 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:56:55.005 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 10:56:55.771 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:04:38.182 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:04:38.199 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:04:38.203 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:04:38.215 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:04:38.995 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:08:14.739 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:08:14.756 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:08:14.759 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:08:14.770 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:08:15.721 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:20:10.743 [error] <0.523.0> gen_server file_watcher terminated with reason: no match of right hand value {error,{3,erl_parse,["syntax error before: ","'['"]}} in mod_dispatch:update/1 line 21
+2013-03-01 11:20:10.760 [error] <0.523.0> CRASH REPORT Process file_watcher with 0 neighbours exited with reason: no match of right hand value {error,{3,erl_parse,["syntax error before: ","'['"]}} in mod_dispatch:update/1 line 21 in gen_server:terminate/6 line 747
+2013-03-01 11:20:10.767 [error] <0.502.0> Supervisor farwest_sup had child file_watcher started with file_watcher:start_link() at <0.523.0> exit with reason no match of right hand value {error,{3,erl_parse,["syntax error before: ","'['"]}} in mod_dispatch:update/1 line 21 in context child_terminated
+2013-03-01 11:20:15.772 [error] <0.528.0> gen_server file_watcher terminated with reason: no match of right hand value {error,{3,erl_parse,["syntax error before: ","'['"]}} in mod_dispatch:update/1 line 21
+2013-03-01 11:20:15.784 [error] <0.528.0> CRASH REPORT Process file_watcher with 0 neighbours exited with reason: no match of right hand value {error,{3,erl_parse,["syntax error before: ","'['"]}} in mod_dispatch:update/1 line 21 in gen_server:terminate/6 line 747
+2013-03-01 11:20:15.793 [error] <0.502.0> Supervisor farwest_sup had child file_watcher started with file_watcher:start_link() at <0.528.0> exit with reason no match of right hand value {error,{3,erl_parse,["syntax error before: ","'['"]}} in mod_dispatch:update/1 line 21 in context child_terminated
+2013-03-01 11:51:12.840 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:51:12.860 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:51:12.860 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:51:12.880 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:51:13.675 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:51:50.421 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:51:50.470 [error] <0.529.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:51:50.480 [error] <0.529.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:51:50.535 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.529.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:51:50.553 [error] <0.532.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:51:50.581 [error] <0.532.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:51:50.639 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.532.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:51:50.647 [error] <0.533.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:51:50.664 [error] <0.533.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:51:50.719 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.533.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:51:50.739 [error] <0.534.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:51:50.756 [error] <0.534.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:51:50.807 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.534.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:51:50.827 [error] <0.535.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:51:50.849 [error] <0.535.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:51:50.903 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.535.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:51:50.938 [error] <0.536.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:51:50.947 [error] <0.536.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:51:50.959 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.536.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:51:50.966 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.536.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 11:51:50.974 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 11:52:53.433 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:52:53.480 [error] <0.547.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:52:53.497 [error] <0.547.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:52:53.551 [error] <0.546.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.547.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:52:53.564 [error] <0.550.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:52:53.582 [error] <0.550.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:52:53.639 [error] <0.546.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.550.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:52:53.656 [error] <0.551.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:52:53.673 [error] <0.551.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:52:53.732 [error] <0.546.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.551.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:52:53.740 [error] <0.552.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:52:53.757 [error] <0.552.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:52:53.811 [error] <0.546.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.552.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:52:53.824 [error] <0.553.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:52:53.842 [error] <0.553.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:52:53.903 [error] <0.546.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.553.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:52:53.934 [error] <0.554.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:52:53.960 [error] <0.554.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:52:53.972 [error] <0.546.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.554.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:52:53.989 [error] <0.546.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.554.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 11:52:54.020 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 11:53:28.064 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:53:28.081 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:53:28.084 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:53:28.094 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:53:28.909 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:53:31.839 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 11:53:31.905 [error] <0.528.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:53:31.932 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:53:32.000 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:53:32.016 [error] <0.531.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:53:32.031 [error] <0.531.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:53:32.081 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.531.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:53:32.107 [error] <0.532.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:53:32.123 [error] <0.532.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:53:32.177 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.532.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:53:32.211 [error] <0.533.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:53:32.227 [error] <0.533.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:53:32.281 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.533.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:53:32.299 [error] <0.534.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:53:32.315 [error] <0.534.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:53:32.384 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.534.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:53:32.403 [error] <0.535.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 11:53:32.437 [error] <0.535.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 11:53:32.467 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.535.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 11:53:32.475 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.535.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 11:53:32.486 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 12:00:04.804 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:00:04.845 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:00:04.849 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:00:04.860 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:00:05.649 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:00:09.168 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:00:09.218 [error] <0.528.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 12:00:09.238 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 12:00:09.294 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 12:00:09.316 [error] <0.531.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 12:00:09.331 [error] <0.531.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 12:00:09.388 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.531.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 12:00:09.420 [error] <0.532.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 12:00:09.443 [error] <0.532.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 12:00:09.503 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.532.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 12:00:09.529 [error] <0.533.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 12:00:09.546 [error] <0.533.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 12:00:09.597 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.533.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 12:00:09.626 [error] <0.534.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 12:00:09.643 [error] <0.534.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 12:00:09.718 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.534.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 12:00:09.741 [error] <0.535.0> gen_server sync_scanner terminated with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196
+2013-03-01 12:00:09.774 [error] <0.535.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in gen_server:terminate/6 line 747
+2013-03-01 12:00:09.788 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.535.0> exit with reason no function clause matching lists:foldl(#Fun<sync_scanner.1.3472509>, [], ok) line 1196 in context child_terminated
+2013-03-01 12:00:09.803 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.535.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 12:00:09.823 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 12:02:29.590 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:02:29.607 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:02:29.611 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:02:29.626 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:02:30.432 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:02:33.674 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:02:33.753 [error] <0.528.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156
+2013-03-01 12:02:33.780 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:02:33.849 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:02:33.872 [error] <0.531.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test2/modules",[{outdir,"c:/tmp/farwest/priv/sites/test2/ebin"},report]},...], []) line 156
+2013-03-01 12:02:33.900 [error] <0.531.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test2/modules",[{outdir,"c:/tmp/farwest/priv/sites/test2/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:02:33.960 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.531.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test2/modules",[{outdir,"c:/tmp/farwest/priv/sites/test2/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:02:33.989 [error] <0.532.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/hi/modules",[{outdir,"c:/tmp/farwest/priv/sites/hi/ebin"},report]},...], []) line 156
+2013-03-01 12:02:34.004 [error] <0.532.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/hi/modules",[{outdir,"c:/tmp/farwest/priv/sites/hi/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:02:34.062 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.532.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/hi/modules",[{outdir,"c:/tmp/farwest/priv/sites/hi/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:02:34.092 [error] <0.533.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t1/modules",[{outdir,"c:/tmp/farwest/priv/sites/t1/ebin"},report]},...], []) line 156
+2013-03-01 12:02:34.116 [error] <0.533.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t1/modules",[{outdir,"c:/tmp/farwest/priv/sites/t1/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:02:34.178 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.533.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t1/modules",[{outdir,"c:/tmp/farwest/priv/sites/t1/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:02:34.204 [error] <0.534.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test4/modules",[{outdir,"c:/tmp/farwest/priv/sites/test4/ebin"},report]},...], []) line 156
+2013-03-01 12:02:34.229 [error] <0.534.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test4/modules",[{outdir,"c:/tmp/farwest/priv/sites/test4/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:02:34.290 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.534.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test4/modules",[{outdir,"c:/tmp/farwest/priv/sites/test4/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:02:34.312 [error] <0.535.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156
+2013-03-01 12:02:34.350 [error] <0.535.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:02:34.375 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.535.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:02:34.395 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.535.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 12:02:34.411 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 12:03:52.430 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:03:52.447 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:03:52.450 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:03:52.462 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:03:53.249 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:05:15.427 [error] <0.532.0> ** Cowboy handler file_handler terminating in rest_init/2
+   for the reason error:{case_clause,enoent}
+** Options were []
+** Request was [{socket,#Port<0.10398>},{transport,ranch_tcp},{connection,keepalive},{pid,<0.532.0>},{method,<<"GET">>},{version,{1,1}},{peer,undefined},{host,<<"127.0.0.1">>},{host_info,undefined},{port,8085},{path,<<"/orion/file/sites/hi2">>},{path_info,[<<"sites">>,<<"hi2">>]},{qs,<<>>},{qs_vals,undefined},{fragment,<<>>},{bindings,[]},{headers,[{<<"host">>,<<"127.0.0.1:8085">>},{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 6.0; rv:19.0) Gecko/20100101 Firefox/19.0">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"accept-language">>,<<"en-US,en;q=0.5">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"orion-version">>,<<"1">>},{<<"x-requested-with">>,<<"XMLHttpRequest">>},{<<"referer">>,<<"http://127.0.0.1:8085/orion/plugins/fileClientPlugin.html">>},{<<"cookie">>,<<"z_pid=DD2osGBy1CxcPKsEuDXb; __utma=96992031.1679259585.1358849968.1358849968.1358849968.1; __utmz=96992031.1358849968.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); JSESSIONID=1t4iv5g0dbez01nxfb4m2npu9x">>},{<<"connection">>,<<"keep-alive">>}]},{p_headers,[{<<"connection">>,[<<"keep-alive">>]}]},{cookies,undefined},{meta,[]},{body_state,waiting},{multipart,undefined},{buffer,<<>>},{resp_state,waiting},{resp_headers,[]},{resp_body,<<>>},{onresponse,undefined}]
+** Stacktrace: [{file_handler,template_to_html,2,[{file,"src/file_handler.erl"},{line,127}]},{cowboy_rest,set_resp_body,2,[{file,"src/cowboy_rest.erl"},{line,786}]},{cowboy_rest,upgrade,4,[{file,"src/cowboy_rest.erl"},{line,66}]},{cowboy_protocol,upgrade_protocol,5,[{file,"src/cowboy_protocol.erl"},{line,513}]}]
+
+
+2013-03-01 12:05:55.657 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:05:55.722 [error] <0.558.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156
+2013-03-01 12:05:55.740 [error] <0.558.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:05:55.814 [error] <0.557.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.558.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:05:55.838 [error] <0.561.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]},...], []) line 156
+2013-03-01 12:05:55.861 [error] <0.561.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:05:55.975 [error] <0.557.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.561.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:05:56.004 [error] <0.562.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156
+2013-03-01 12:05:56.029 [error] <0.562.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:05:56.100 [error] <0.557.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.562.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:05:56.128 [error] <0.563.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test3/modules",[{outdir,"c:/tmp/farwest/priv/sites/test3/ebin"},report]},...], []) line 156
+2013-03-01 12:05:56.145 [error] <0.563.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test3/modules",[{outdir,"c:/tmp/farwest/priv/sites/test3/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:05:56.215 [error] <0.557.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.563.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test3/modules",[{outdir,"c:/tmp/farwest/priv/sites/test3/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:05:56.246 [error] <0.564.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t1/modules",[{outdir,"c:/tmp/farwest/priv/sites/t1/ebin"},report]},...], []) line 156
+2013-03-01 12:05:56.261 [error] <0.564.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t1/modules",[{outdir,"c:/tmp/farwest/priv/sites/t1/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:05:56.334 [error] <0.557.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.564.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t1/modules",[{outdir,"c:/tmp/farwest/priv/sites/t1/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:05:56.367 [error] <0.565.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156
+2013-03-01 12:05:56.400 [error] <0.565.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:05:56.423 [error] <0.557.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.565.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:05:56.434 [error] <0.557.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.565.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 12:05:56.446 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 12:06:07.044 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:06:07.131 [error] <0.570.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156
+2013-03-01 12:06:07.154 [error] <0.570.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:06:07.225 [error] <0.569.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.570.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t2/modules",[{outdir,"c:/tmp/farwest/priv/sites/t2/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:06:07.261 [error] <0.573.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156
+2013-03-01 12:06:07.282 [error] <0.573.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:06:07.353 [error] <0.569.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.573.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:06:07.410 [error] <0.574.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156
+2013-03-01 12:06:07.431 [error] <0.574.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:06:07.509 [error] <0.569.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.574.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/t3/modules",[{outdir,"c:/tmp/farwest/priv/sites/t3/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:06:07.535 [error] <0.575.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test2/modules",[{outdir,"c:/tmp/farwest/priv/sites/test2/ebin"},report]},...], []) line 156
+2013-03-01 12:06:07.559 [error] <0.575.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test2/modules",[{outdir,"c:/tmp/farwest/priv/sites/test2/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:06:07.631 [error] <0.569.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.575.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test2/modules",[{outdir,"c:/tmp/farwest/priv/sites/test2/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:06:07.655 [error] <0.576.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test/modules",[{outdir,"c:/tmp/farwest/priv/sites/test/ebin"},report]},...], []) line 156
+2013-03-01 12:06:07.671 [error] <0.576.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test/modules",[{outdir,"c:/tmp/farwest/priv/sites/test/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:06:07.737 [error] <0.569.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.576.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test/modules",[{outdir,"c:/tmp/farwest/priv/sites/test/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:06:07.758 [error] <0.577.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test/modules",[{outdir,"c:/tmp/farwest/priv/sites/test/ebin"},report]},...], []) line 156
+2013-03-01 12:06:07.796 [error] <0.577.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test/modules",[{outdir,"c:/tmp/farwest/priv/sites/test/ebin"},report]},...], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:06:07.809 [error] <0.569.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.577.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/test/modules",[{outdir,"c:/tmp/farwest/priv/sites/test/ebin"},report]},...], []) line 156 in context child_terminated
+2013-03-01 12:06:07.845 [error] <0.569.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.577.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 12:06:07.865 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 12:07:01.891 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:07:01.953 [error] <0.594.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156
+2013-03-01 12:07:01.991 [error] <0.594.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:07:02.058 [error] <0.593.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.594.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in context child_terminated
+2013-03-01 12:07:02.086 [error] <0.597.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156
+2013-03-01 12:07:02.108 [error] <0.597.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:07:02.183 [error] <0.593.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.597.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in context child_terminated
+2013-03-01 12:07:02.208 [error] <0.598.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156
+2013-03-01 12:07:02.241 [error] <0.598.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:07:02.311 [error] <0.593.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.598.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in context child_terminated
+2013-03-01 12:07:02.360 [error] <0.599.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156
+2013-03-01 12:07:02.373 [error] <0.599.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:07:02.443 [error] <0.593.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.599.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in context child_terminated
+2013-03-01 12:07:02.480 [error] <0.600.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156
+2013-03-01 12:07:02.493 [error] <0.600.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:07:02.563 [error] <0.593.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.600.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in context child_terminated
+2013-03-01 12:07:02.586 [error] <0.601.0> gen_server sync_scanner terminated with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156
+2013-03-01 12:07:02.617 [error] <0.601.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in gen_server:terminate/6 line 747
+2013-03-01 12:07:02.634 [error] <0.593.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.601.0> exit with reason no function clause matching sync_scanner:'-handle_cast/2-fun-1-'([{"c:/tmp/farwest/priv/sites/abcd/modules",[{outdir,"c:/tmp/farwest/priv/sites/abcd/ebin"},report]}], []) line 156 in context child_terminated
+2013-03-01 12:07:02.646 [error] <0.593.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.601.0> exit with reason reached_max_restart_intensity in context shutdown
+2013-03-01 12:07:02.662 [info] <0.6.0> Application sync exited with reason: shutdown
+2013-03-01 12:11:42.878 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:11:42.920 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:11:42.923 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:11:42.933 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:11:43.659 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:11:45.458 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:14:03.085 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:14:03.103 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:14:03.107 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:14:03.119 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:14:03.955 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:14:06.071 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:17:12.554 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:17:12.571 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:17:12.574 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:17:12.585 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:17:13.410 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:17:14.949 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:18:17.281 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:18:17.298 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:18:17.301 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:18:17.312 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:18:18.106 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:18:19.694 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:21:10.668 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:21:10.685 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:21:10.689 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:21:10.700 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:21:11.489 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:21:15.256 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:24:47.305 [error] <0.528.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:24:47.337 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:24:47.392 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:24:53.358 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:24:53.375 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:24:53.378 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:24:53.390 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:24:54.172 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:24:56.044 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:25:12.688 [error] <0.528.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:25:12.722 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:25:12.771 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:27:00.999 [error] <0.563.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:27:01.030 [error] <0.563.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:27:01.086 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.563.0> exit with reason no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:27:22.778 [error] <0.755.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:27:22.827 [error] <0.755.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:27:22.875 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.755.0> exit with reason no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:27:31.292 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:27:31.308 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:27:31.311 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:27:31.322 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:27:32.127 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:27:33.507 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:27:43.978 [error] <0.528.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:27:44.007 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:27:44.065 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:28:25.446 [error] <0.553.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,sync_scanner} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:28:25.478 [error] <0.553.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,sync_scanner} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:28:25.535 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.553.0> exit with reason no case clause matching {ok,sync_scanner} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:28:37.991 [error] <0.628.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:28:38.096 [error] <0.628.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:28:38.150 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.628.0> exit with reason no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:28:42.834 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:28:42.851 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:28:42.854 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:28:42.865 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:28:43.656 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:28:45.821 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:28:52.145 [error] <0.528.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:28:52.176 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:28:52.231 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:31:19.161 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:31:19.178 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:31:19.181 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:31:19.193 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:31:19.957 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:31:21.532 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:31:30.942 [error] <0.528.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:31:30.974 [error] <0.528.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:31:31.030 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.528.0> exit with reason no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:33:06.904 [error] <0.550.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:33:06.939 [error] <0.550.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:33:07.005 [error] <0.527.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.550.0> exit with reason no case clause matching {ok,sync_service} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:33:12.861 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:33:12.879 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:33:12.882 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:33:12.893 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:33:13.735 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:33:34.194 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:33:38.443 [error] <0.529.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:33:38.473 [error] <0.529.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:33:38.528 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.529.0> exit with reason no case clause matching {ok,abcd} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:34:56.101 [error] <0.542.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,sync_scanner} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:34:56.279 [error] <0.542.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,sync_scanner} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:34:56.392 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.542.0> exit with reason no case clause matching {ok,sync_scanner} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:35:27.607 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:35:27.625 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:35:27.628 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:35:27.639 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:35:28.436 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:35:31.533 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:41:46.949 [info] <0.528.0> c:/tmp/farwest/priv/sites/abcd/resources/welcome_handler.erl:58: Warning: variable 'Opts' is unused
+c:/tmp/farwest/priv/sites/abcd/resources/welcome_handler.erl:0: Recompiled with 1 warnings
+2013-03-01 12:45:03.701 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:45:03.724 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:45:03.728 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:45:03.740 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:45:04.558 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:45:12.326 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:48:37.792 [info] <0.531.0> c:/tmp/farwest/deps/sync/src/sync_scanner.erl:353: Error: function recompile_src_file/2 undefined
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:363: Error: function recompile_src_file/2 undefined
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:368: Error: function recompile_src_file/2 undefined
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:389: Error: syntax error before: 'case'
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:422: Warning: function print_results/4 is unused
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:444: Warning: function format_errors/3 is unused
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:457: Warning: function growl_format_errors/2 is unused
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:537: Warning: function growl_errors/1 is unused
+c:/tmp/farwest/deps/sync/src/sync_scanner.erl:540: Warning: function growl_warnings/1 is unused
+2013-03-01 12:48:47.589 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:48:47.606 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:48:47.634 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:48:47.645 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:48:48.440 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:48:52.660 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:52:06.491 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:52:06.509 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:52:06.512 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:52:06.548 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:52:07.298 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:52:12.637 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 12:52:55.070 [info] <0.529.0> c:/tmp/farwest/priv/sites/abcd/abcd.erl:2: Error: function start/0 undefined
+c:/tmp/farwest/priv/sites/abcd/abcd.erl:4: Error: syntax error before: 
+2013-03-01 12:58:00.268 [error] <0.529.0> gen_server sync_scanner terminated with reason: no case clause matching {ok,abcd2,<<70,79,82,49,0,0,2,112,66,69,65,77,65,116,111,109,0,0,0,76,0,0,0,8,5,97,98,99,100,50,5,115,116,97,114,116,4,97,98,99,100,8,115,105,116,101,95,115,117,112,10,115,116,97,114,116,95,108,105,110,107,11,109,111,100,117,108,101,95,105,110,102,111,6,101,114,108,97,110,103,15,103,101,116,95,109,111,100,117,108,101,95,105,110,102,111,67,111,100,101,0,0,0,78,0,0,0,16,0,0,0,0,0,0,0,153,0,0,0,7,0,0,0,3,1,16,153,16,2,18,34,0,1,32,64,50,3,153,32,78,16,0,1,48,153,0,2,18,98,0,1,64,64,18,3,153,0,...>>,...} in sync_scanner:recompile_src_file/2 line 390
+2013-03-01 12:58:00.302 [error] <0.529.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no case clause matching {ok,abcd2,<<70,79,82,49,0,0,2,112,66,69,65,77,65,116,111,109,0,0,0,76,0,0,0,8,5,97,98,99,100,50,5,115,116,97,114,116,4,97,98,99,100,8,115,105,116,101,95,115,117,112,10,115,116,97,114,116,95,108,105,110,107,11,109,111,100,117,108,101,95,105,110,102,111,6,101,114,108,97,110,103,15,103,101,116,95,109,111,100,117,108,101,95,105,110,102,111,67,111,100,101,0,0,0,78,0,0,0,16,0,0,0,0,0,0,0,153,0,0,0,7,0,0,0,3,1,16,153,16,2,18,34,0,1,32,64,50,3,153,32,78,16,0,1,48,153,0,2,18,98,0,1,64,64,18,3,153,0,...>>,...} in sync_scanner:recompile_src_file/2 line 390 in gen_server:terminate/6 line 747
+2013-03-01 12:58:00.354 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.529.0> exit with reason no case clause matching {ok,abcd2,<<70,79,82,49,0,0,2,112,66,69,65,77,65,116,111,109,0,0,0,76,0,0,0,8,5,97,98,99,100,50,5,115,116,97,114,116,4,97,98,99,100,8,115,105,116,101,95,115,117,112,10,115,116,97,114,116,95,108,105,110,107,11,109,111,100,117,108,101,95,105,110,102,111,6,101,114,108,97,110,103,15,103,101,116,95,109,111,100,117,108,101,95,105,110,102,111,67,111,100,101,0,0,0,78,0,0,0,16,0,0,0,0,0,0,0,153,0,0,0,7,0,0,0,3,1,16,153,16,2,18,34,0,1,32,64,50,3,153,32,78,16,0,1,48,153,0,2,18,98,0,1,64,64,18,3,153,0,...>>,...} in sync_scanner:recompile_src_file/2 line 390 in context child_terminated
+2013-03-01 12:58:07.667 [info] <0.1168.0> c:/tmp/farwest/priv/sites/abcd/resources/abcd.erl:none: Error: no such file or directory
+2013-03-01 13:00:35.979 [info] <0.1168.0> c:/tmp/farwest/priv/sites/abcd/resources/abcd2.erl:none: Error: no such file or directory
+2013-03-01 13:04:18.634 [info] <0.1168.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:58: Warning: function start_slave/2 is unused
+c:/tmp/farwest/src/util.erl:58: Warning: variable 'BeamDir' is unused
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:07:29.246 [info] <0.1168.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:58: Warning: function start_slave/1 is unused
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:08:36.366 [info] <0.1168.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:58: Warning: function start_slave/1 is unused
+c:/tmp/farwest/src/util.erl:59: Warning: variable 'SiteBin' is unused
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:08:50.985 [info] <0.1168.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:58: Warning: function start_slave/1 is unused
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:13:13.259 [error] <0.1168.0> gen_server sync_scanner terminated with reason: no match of right hand value error in sync_scanner:process_beam_lastmod/4 line 270
+2013-03-01 13:13:13.305 [error] <0.1168.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no match of right hand value error in sync_scanner:process_beam_lastmod/4 line 270 in gen_server:terminate/6 line 747
+2013-03-01 13:13:13.341 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.1168.0> exit with reason no match of right hand value error in sync_scanner:process_beam_lastmod/4 line 270 in context child_terminated
+2013-03-01 13:13:17.940 [info] <0.2834.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:58: Warning: function start_slave/1 is unused
+c:/tmp/farwest/src/util.erl:62: Error: variable 'Args' is unbound
+c:/tmp/farwest/src/util.erl:62: Error: variable 'Function' is unbound
+c:/tmp/farwest/src/util.erl:62: Error: variable 'Module' is unbound
+2013-03-01 13:13:45.986 [info] <0.2834.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:58: Warning: function start_slave/1 is unused
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:14:36.791 [info] <0.2834.0> c:/tmp/farwest/src/site_service.erl:10: Error: function start_site/1 undefined
+c:/tmp/farwest/src/site_service.erl:10: Error: function stop_site/1 undefined
+c:/tmp/farwest/src/site_service.erl:21: Error: syntax error before: '->'
+c:/tmp/farwest/src/site_service.erl:29: Error: function start_site/1 undefined
+2013-03-01 13:14:39.079 [info] <0.2834.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:14:41.394 [error] <0.2834.0> gen_server sync_scanner terminated with reason: no match of right hand value error in sync_scanner:process_beam_lastmod/4 line 270
+2013-03-01 13:14:41.425 [error] <0.2834.0> CRASH REPORT Process sync_scanner with 0 neighbours exited with reason: no match of right hand value error in sync_scanner:process_beam_lastmod/4 line 270 in gen_server:terminate/6 line 747
+2013-03-01 13:14:41.491 [error] <0.528.0> Supervisor sync had child sync_scanner started with sync_scanner:start_link() at <0.2834.0> exit with reason no match of right hand value error in sync_scanner:process_beam_lastmod/4 line 270 in context child_terminated
+2013-03-01 13:15:05.928 [info] <0.3009.0> c:/tmp/farwest/src/site_service.erl:21: Warning: variable 'SiteName' is unused
+c:/tmp/farwest/src/site_service.erl:0: Recompiled with 1 warnings
+2013-03-01 13:15:31.860 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:15:31.878 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:15:31.881 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:15:31.891 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:15:32.683 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:15:41.298 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:18:55.757 [info] <0.529.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:19:16.430 [info] <0.529.0> c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:79: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:81: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:104: Warning: function rename_file/2 is unused
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:0: Recompiled with 1 warnings
+2013-03-01 13:19:16.493 [info] <0.529.0> c:/tmp/farwest/priv/sites/test/resources/welcome_handler.erl:58: Warning: variable 'Opts' is unused
+c:/tmp/farwest/priv/sites/test/resources/welcome_handler.erl:0: Recompiled with 1 warnings
+2013-03-01 13:21:24.463 [info] <0.529.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:63: Warning: variable 'Res' is unused
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:21:49.402 [info] <0.529.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:21:56.620 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:21:56.637 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:21:56.642 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:21:56.677 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:21:57.466 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:29:46.506 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:29:46.523 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:29:46.526 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:29:46.538 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:29:47.308 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:30:37.550 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:30:37.564 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:30:37.568 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:30:37.580 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:30:38.370 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:31:36.166 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:31:36.183 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:31:36.186 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:31:36.197 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:31:36.957 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:34:21.996 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:34:22.014 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:34:22.018 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:34:22.030 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:34:22.818 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:34:25.967 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:34:59.477 [info] <0.528.0> c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:79: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:81: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:104: Warning: function rename_file/2 is unused
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:0: Recompiled with 1 warnings
+2013-03-01 13:34:59.546 [info] <0.528.0> c:/tmp/farwest/priv/sites/t9/resources/welcome_handler.erl:58: Warning: variable 'Opts' is unused
+c:/tmp/farwest/priv/sites/t9/resources/welcome_handler.erl:0: Recompiled with 1 warnings
+2013-03-01 13:36:36.548 [info] <0.528.0> c:/tmp/farwest/src/util.erl:12: Warning: function set_resp_header/3 already exported
+c:/tmp/farwest/src/util.erl:0: Recompiled with 1 warnings
+2013-03-01 13:36:44.188 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:36:44.206 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:36:44.209 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:36:44.245 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:36:45.033 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:36:48.261 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:37:22.971 [info] <0.528.0> c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:79: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:81: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:104: Warning: function rename_file/2 is unused
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:0: Recompiled with 1 warnings
+2013-03-01 13:37:23.048 [info] <0.528.0> c:/tmp/farwest/priv/sites/m1/resources/welcome_handler.erl:58: Warning: variable 'Opts' is unused
+c:/tmp/farwest/priv/sites/m1/resources/welcome_handler.erl:0: Recompiled with 1 warnings
+2013-03-01 13:37:45.215 [error] <13958.39.0> CRASH REPORT Process <13958.39.0> with 1 neighbours exited with reason: {start_spec,{invalid_mfa,{site_config,start_link,m1}}} in gen_server:init_it/6 line 320
+2013-03-01 13:41:55.606 [info] <0.6.0> Application lager started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:41:55.623 [info] <0.6.0> Application gproc started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:41:55.626 [info] <0.6.0> Application ranch started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:41:55.637 [info] <0.6.0> Application cowboy started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:41:56.390 [info] <0.6.0> Application farwest started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:42:05.583 [info] <0.6.0> Application sync started on node 'farwest@ip-0A206FC8'
+2013-03-01 13:42:40.472 [info] <0.533.0> c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:79: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:81: Warning: this clause cannot match because a previous clause at line 78 always matches
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:104: Warning: function rename_file/2 is unused
+c:/tmp/farwest/deps/parse_trans/src/parse_trans_mod.erl:0: Recompiled with 1 warnings
+2013-03-01 13:42:40.585 [info] <0.533.0> c:/tmp/farwest/priv/sites/m2/resources/welcome_handler.erl:58: Warning: variable 'Opts' is unused
+c:/tmp/farwest/priv/sites/m2/resources/welcome_handler.erl:0: Recompiled with 1 warnings
+2013-03-01 13:42:58.666 [error] <13958.39.0> CRASH REPORT Process <13958.39.0> with 1 neighbours exited with reason: {start_spec,{invalid_mfa,{site_config,start_link,m2}}} in gen_server:init_it/6 line 320

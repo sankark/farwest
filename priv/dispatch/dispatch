@@ -1,5 +1,6 @@
 
 		{'_', [
+			{['_'],welcome_handler,[]},
 			{[<<"test">>], hello, []},
 			{[<<"orion">>,<<"login">>,'...'], login_handler, []},
 			{[<<"orion">>,<<"site">>,'...'], site_handler, []},
