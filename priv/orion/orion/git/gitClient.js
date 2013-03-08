@@ -68,10 +68,10 @@ eclipse.GitService = (function() {
 			gitapiCloneUrl = gitapiCloneUrl.substring(0,gitapiCloneUrl.length-2);
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitapiCloneUrl, { 
+			xhr("PUT", gitapiCloneUrl, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -92,7 +92,7 @@ eclipse.GitService = (function() {
 			xhr("DELETE", repositoryLocation, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -112,7 +112,7 @@ eclipse.GitService = (function() {
 			xhr("GET", url, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -132,7 +132,7 @@ eclipse.GitService = (function() {
 			xhr("PUT", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -152,7 +152,7 @@ eclipse.GitService = (function() {
 			xhr("PUT", gitCloneURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -172,10 +172,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", location, { 
+			xhr("PUT", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -195,10 +195,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", location, { 
+			xhr("PUT", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$,
@@ -221,7 +221,7 @@ eclipse.GitService = (function() {
 			xhr("PUT", gitCloneURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -242,10 +242,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", location, { 
+			xhr("PUT", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -266,7 +266,7 @@ eclipse.GitService = (function() {
 			xhr("GET", gitCloneURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -286,7 +286,7 @@ eclipse.GitService = (function() {
 			xhr("GET", gitCloneConfigURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -306,7 +306,7 @@ eclipse.GitService = (function() {
 			xhr("GET", gitBranchURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -326,7 +326,7 @@ eclipse.GitService = (function() {
 			xhr("GET", gitRemoteURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -346,7 +346,7 @@ eclipse.GitService = (function() {
 			xhr("PUT", gitCloneURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -366,10 +366,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitIndexURI, { 
+			xhr("PUT", gitIndexURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -394,10 +394,10 @@ eclipse.GitService = (function() {
 			if (startPoint) postData.Branch = startPoint;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitBranchParentURI, { 
+			xhr("PUT", gitBranchParentURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -418,7 +418,7 @@ eclipse.GitService = (function() {
 			xhr("DELETE", gitBranchURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -435,10 +435,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitRemoteParentURI, { 
+			xhr("PUT", gitRemoteParentURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -462,7 +462,7 @@ eclipse.GitService = (function() {
 			xhr("DELETE", gitRemoteURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -482,7 +482,7 @@ eclipse.GitService = (function() {
 			xhr("GET", gitLogURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -499,10 +499,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitDiffURI, { 
+			xhr("PUT", gitDiffURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -522,10 +522,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitRemoteBranchURI, { 
+			xhr("PUT", gitRemoteBranchURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -547,25 +547,19 @@ eclipse.GitService = (function() {
 			return clientDeferred;
 		},
 		
-		doPull : function(gitCloneURI, force, gitSshUsername, gitSshPassword, gitSshKnownHost, gitPrivateKey, gitPassphrase) {
+		doPull : function(fileLocation) {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitCloneURI, { 
+			xhr("PUT", "/orion/gitapi/pull", { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
 				data: JSON.stringify({
-					"Pull" : "true", //$NON-NLS-1$ //$NON-NLS-0$
-					"Force" : force, //$NON-NLS-0$
-					"GitSshUsername" : gitSshUsername, //$NON-NLS-0$
-					"GitSshPassword" : gitSshPassword, //$NON-NLS-0$
-					"GitSshKnownHost" : gitSshKnownHost, //$NON-NLS-0$
-					"GitSshPrivateKey" : gitPrivateKey, //$NON-NLS-0$
-					"GitSshPassphrase" : gitPassphrase //$NON-NLS-0$
+					"Path":fileLocation
 				})
 			}).then(function(result) {
 				service._getGitServiceResponse(clientDeferred, result);
@@ -580,10 +574,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitHeadURI, { 
+			xhr("PUT", gitHeadURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -604,10 +598,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitHeadURI, { 
+			xhr("PUT", gitHeadURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -630,10 +624,10 @@ eclipse.GitService = (function() {
 			if (operation) postData.Operation = operation;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitHeadURI, { 
+			xhr("PUT", gitHeadURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -651,10 +645,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", gitBranchURI, { 
+			xhr("PUT", gitBranchURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -682,10 +676,10 @@ eclipse.GitService = (function() {
 			var clientDeferred = new Deferred();
 			var clientDeferred1 = new Deferred();
 			
-			xhr("POST", gitCommitURI, { 
+			xhr("PUT", gitCommitURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -702,7 +696,7 @@ eclipse.GitService = (function() {
 				xhr("GET", scopedGitCommitURI, { 
 					headers : { 
 						"Orion-Version" : "1",
-						"Content-Type" : "charset=UTF-8"
+						"Content-Type" : "application/json;charset=UTF-8"
 					},
 					timeout : 15000,
 					handleAs : "json" //$NON-NLS-0$
@@ -724,7 +718,7 @@ eclipse.GitService = (function() {
 			xhr("GET", gitRemoteURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -738,7 +732,7 @@ eclipse.GitService = (function() {
 				xhr("GET", remoteJsonData.Children[0].Location, { 
 					headers : { 
 						"Orion-Version" : "1",
-						"Content-Type" : "charset=UTF-8"
+						"Content-Type" : "application/json;charset=UTF-8"
 					},
 					timeout : 15000,
 					handleAs : "json" //$NON-NLS-0$
@@ -759,7 +753,7 @@ eclipse.GitService = (function() {
 			xhr("PUT", gitCommitURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -782,7 +776,7 @@ eclipse.GitService = (function() {
 			xhr("DELETE", gitTagURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -802,7 +796,7 @@ eclipse.GitService = (function() {
 			xhr("PUT", gitCloneURI, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -823,10 +817,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", location, { 
+			xhr("PUT", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -850,7 +844,7 @@ eclipse.GitService = (function() {
 			xhr("PUT", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$
@@ -873,7 +867,7 @@ eclipse.GitService = (function() {
 			xhr("DELETE", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json" //$NON-NLS-0$
@@ -890,10 +884,10 @@ eclipse.GitService = (function() {
 			var service = this;
 			
 			var clientDeferred = new Deferred();
-			xhr("POST", location, { 
+			xhr("PUT", location, { 
 				headers : { 
 					"Orion-Version" : "1",
-					"Content-Type" : "charset=UTF-8"
+					"Content-Type" : "application/json;charset=UTF-8"
 				},
 				timeout : 15000,
 				handleAs : "json", //$NON-NLS-0$

@@ -31,5 +31,6 @@ start() ->
 	ok = application:start(gproc),
 	ok = application:start(ranch),
 	ok = application:start(cowboy),
+	ok = application:start(sync),
 	application:start(farwest).
 

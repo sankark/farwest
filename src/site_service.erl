@@ -17,22 +17,37 @@ create_site(JsonTerm)->
 		{error, Any} -> {error, Any}
 	end.
 start_site(SiteName)->
-	util:start_slave(binary_to_list(SiteName)).
+	{IP,PORT}=util:start_slave(binary_to_list(SiteName)),
+	IPString = inet_parse:ntoa(IP),
+	PortString = integer_to_list(PORT),
+	{IPString,PortString}.
 stop_site(SiteName)->
-	[].
+	util:stop_slave(binary_to_list(SiteName)).
 
 parse_request(Site,JSONTerm)->
 	SiteStatus = proplists:get_value(?SITE_HOST_STATUS, JSONTerm,[]),
 	%%io:format("Site Status ~p~n",[SiteStatus]),
 	case SiteStatus of
 		[] -> get_site_details(Site);
-		[{_,<<"started">>}] -> start_site(Site),
+		[{_,<<"started">>}] -> {IP,Port}= start_site(Site),
+						 URL = list_to_binary("http://"++IP++":"++Port),
 						 {ok,Details}= get_site_details(Site),
 						 DetTerm = jsx:decode(Details),
-						 Result = merge(JSONTerm,DetTerm),
+						 Status = proplists:get_value(?SITE_HOST_STATUS, JSONTerm),
+						 UpdStatus = [{?SITE_HOST_STATUS,[{<<"URL">>,URL}|Status]}],
+						 %%io:format("~p:~p~n",[DetTerm,UpdStatus]),
+						 Result = merge(UpdStatus,DetTerm),
+						 %%io:format("~p:~n",[Result]),
+						 store_data(Site,Result),
+						 {ok, Result};
+		[{_,<<"stopped">>}] -> stop_site(Site),
+						 {ok,Details}= get_site_details(Site),
+						 DetTerm = jsx:decode(Details),
+						 Status = proplists:get_value(?SITE_HOST_STATUS, JSONTerm),
+						 UpdStatus = [{?SITE_HOST_STATUS,[{<<"URL">>,""}|Status]}],
+						 Result = merge(UpdStatus,DetTerm),
 						 store_data(Site,Result),
 						 {ok, Result}
-						 
 	end.
 
 get_sites()->

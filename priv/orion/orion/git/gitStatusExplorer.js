@@ -203,20 +203,7 @@ define(
 															function(resp) {
 																var repositories = resp.Children;
 
-																progressService
-																		.progress(
-																				that.registry
-																						.getService("orion.git.provider").getGitCloneConfig(repositories[0].ConfigLocation), "Getting repository configuration ", repositories[0].Name).then( //$NON-NLS-0$
-																				function(resp) {
-																					var config = resp.Children;
-
-																					status.Clone = repositories[0];
-																					status.Clone.Config = [];
-
-																					for ( var i = 0; i < config.length; i++) {
-																						if (config[i].Key === "user.name" || config[i].Key === "user.email") //$NON-NLS-1$ //$NON-NLS-0$
-																							status.Clone.Config.push(config[i])
-																					}
+																
 
 																					var tableNode = lib.node('table'); //$NON-NLS-0$
 																					lib.empty(tableNode);
@@ -234,9 +221,7 @@ define(
 																				}, function(error) {
 																					that.handleError(error);
 																				});
-															}, function(error) {
-																that.handleError(error);
-															});
+															
 										}
 									}, function(error) {
 										loadingDeferred.callback();
@@ -248,7 +233,7 @@ define(
 					var item = {};
 
 					// TODO add info about branch or detached
-					item.Name = messages["Status"] + ((status.RepositoryState && status.RepositoryState.indexOf("REBASING") !== -1) ? messages[" (Rebase in Progress)"] : ""); //$NON-NLS-1$
+					item.Name = "test"
 					item.Parents = [];
 					item.Parents[0] = {};
 					item.Parents[0].Name = repository.Name;
@@ -284,9 +269,9 @@ define(
 								type : renderType,
 								location : groupData[j].Location,
 								path : groupData[j].Path,
-								commitURI : groupData[j].Git.CommitLocation,
-								indexURI : groupData[j].Git.IndexLocation,
-								diffURI : groupData[j].Git.DiffLocation,
+								commitURI : "",
+								indexURI : "",
+								diffURI : "",
 								CloneLocation : this._model.items.CloneLocation,
 								conflicting : isConflict(renderType)
 								});
@@ -778,30 +763,10 @@ define(
 					preferenceService : this.registry.getService("orion.core.preference") //$NON-NLS-0$
 					});
 
-					var progress = titleWrapper.createProgressMonitor();
+					currentBranch = repository;
 
-					progress.begin(messages['Getting current branch']);
-					this.registry
-							.getService("orion.page.progress").progress(this.registry.getService("orion.git.provider").getGitBranch(repository.BranchLocation), "Getting current branch " + repository.Name).then( //$NON-NLS-0$
-									function(resp) {
-										var branches = resp.Children;
-										var currentBranch;
-										for ( var i = 0; i < branches.length; i++) {
-											if (branches[i].Current) {
-												currentBranch = branches[i];
-												break;
-											}
-										}
-										
-										if (!currentBranch){
-											progress.done();
-											return;
-										}
-
-										var tracksRemoteBranch = (currentBranch.RemoteLocation.length === 1 && currentBranch.RemoteLocation[0].Children.length === 1);
-
-										titleWrapper.setTitle(i18nUtil.formatMessage(messages["Commits for \"${0}\" branch"], currentBranch.Name));
-
+					titleWrapper.setTitle(i18nUtil.formatMessage(messages["Commits for \"${0}\" branch"], currentBranch.Name));
+									
 										that.commandService.registerCommandContribution(titleWrapper.actionsNode.id,
 												"eclipse.orion.git.repositories.viewAllCommand", 10); //$NON-NLS-0$
 										that.commandService
@@ -809,88 +774,17 @@ define(
 														titleWrapper.actionsNode.id,
 														titleWrapper.actionsNode.id,
 														{
-															"ViewAllLink" : "/git/git-log.html#" + currentBranch.CommitLocation + "?page=1", "ViewAllLabel" : messages['See Full Log'], "ViewAllTooltip" : messages["See the full log"]}, that, "button"); //$NON-NLS-7$ //$NON-NLS-6$ //$NON-NLS-5$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
+															"ViewAllLink" : "/git/git-log.html#" + currentBranch + "?page=1", "ViewAllLabel" : messages['See Full Log'], "ViewAllTooltip" : messages["See the full log"]}, that, "button"); //$NON-NLS-7$ //$NON-NLS-6$ //$NON-NLS-5$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
 
-										if (tracksRemoteBranch) {
-											that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.fetch", 100); //$NON-NLS-0$
-											that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.merge", 100); //$NON-NLS-0$
-											that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.rebase", 100); //$NON-NLS-0$
-											that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.resetIndex", 100); //$NON-NLS-0$
-											that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id,
-													currentBranch.RemoteLocation[0].Children[0], that, "button"); //$NON-NLS-0$
-										}
-
+										
+										
+											
 										that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.push", 100); //$NON-NLS-0$
 										that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, currentBranch, that,
 												"button"); //$NON-NLS-0$
+												
 
-										if (currentBranch.RemoteLocation[0] === null) {
-											progress.done();
-											that.renderNoCommit();
-											return;
-										}
-
-										progress.worked(i18nUtil.formatMessage(messages['Getting commits for \"${0}\" branch'], currentBranch.Name));
-
-										if (tracksRemoteBranch && currentBranch.RemoteLocation[0].Children[0].CommitLocation) {
-											that.registry
-													.getService("orion.page.progress")
-													.progress(
-															that.registry.getService("orion.git.provider").getLog(
-																	currentBranch.RemoteLocation[0].Children[0].CommitLocation + "?page=1&pageSize=20", "HEAD"),
-															i18nUtil.formatMessage(messages['Getting commits for \"${0}\" branch'], currentBranch.Name)).then( //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
-															function(resp) {
-																progress.worked(messages['Rendering commits']);
-
-																var commitsCount = resp.Children.length;
-
-																for ( var i = 0; i < resp.Children.length; i++) {
-																	that.renderCommit(resp.Children[i], true, i);
-																}
-
-																progress.worked(messages['Getting outgoing commits']);
-																that.registry
-																		.getService("orion.page.progress").progress(that.registry.getService("orion.git.provider").getLog(currentBranch.CommitLocation + "?page=1&pageSize=20", currentBranch.RemoteLocation[0].Children[0].Id), messages['Getting outgoing commits']).then( //$NON-NLS-1$ //$NON-NLS-0$
-																		function(resp) {
-																			progress.worked(messages['Rendering commits']);
-																			for ( var i = 0; i < resp.Children.length; i++) {
-																				that.renderCommit(resp.Children[i], false, i + commitsCount);
-																			}
-
-																			commitsCount = commitsCount + resp.Children.length;
-
-																			if (commitsCount === 0) {
-																				that.renderNoCommit();
-																			}
-
-																			progress.done();
-																		}, function(error) {
-																			progress.done(error);
-																		});
-															}, function(error) {
-																progress.done(error);
-															});
-										} else {
-											that.registry.getService("orion.page.progress").progress(
-													that.registry.getService("orion.git.provider").doGitLog(
-															currentBranch.CommitLocation + "?page=1&pageSize=20"),
-													i18nUtil.formatMessage(messages['Getting commits for \"${0}\" branch'], currentBranch.Name)).then( //$NON-NLS-1$ //$NON-NLS-0$
-											function(resp) {
-												progress.worked(messages['Rendering commits']);
-												for ( var i = 0; i < resp.Children.length; i++) {
-													that.renderCommit(resp.Children[i], true, i);
-												}
-
-												if (resp.Children.length === 0) {
-													that.renderNoCommit();
-												}
-
-												progress.done();
-											}, function(error) {
-												progress.done(error);
-											});
-										}
-									});
+									
 				};
 
 				GitStatusExplorer.prototype.renderNoCommit = function() {

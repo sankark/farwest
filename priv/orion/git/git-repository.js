@@ -47,14 +47,16 @@ mBootstrap.startup().then(function(core) {
 	commandService.addCommandGroup("pageActions", "eclipse.gitGroup", 100); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.addCommandGroup("pageActions", "eclipse.gitGroup", 200); //$NON-NLS-1$ //$NON-NLS-0$
 	
+	
 	commandService.registerCommandContribution("reposPageActions", "eclipse.cloneGitRepository", 100, "eclipse.gitGroup", false, null, new mCommands.URLBinding("cloneGitRepository", "url")); //$NON-NLS-4$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("reposPageActions", "eclipse.initGitRepository", 200, "eclipse.gitGroup"); //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
+	commandService.registerCommandContribution("reposPageActions", "eclipse.git.deleteClone", 300, "eclipse.gitGroup"); 
 	
 	commandService.registerCommandContribution("repoPageActions", "eclipse.orion.git.pull", 100, "eclipse.gitGroup"); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("repoPageActions", "eclipse.orion.git.applyPatch", 200, "eclipse.gitGroup"); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("repoPageActions", "eclipse.git.deleteClone", 300, "eclipse.gitGroup"); //$NON-NLS-1$ //$NON-NLS-0$
 	
-	commandService.registerCommandContribution("reposPageActions", "eclipse.orion.git.openCommitCommand", 1000, "eclipse.gitGroup", true,  //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
+	commandService.registerCommandContribution("reposPageActions", "eclipse.orion.git.openCommitCommand", 2000, "eclipse.gitGroup", true,  //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
 			new mCommands.CommandKeyBinding('h', true, true), new mCommands.URLBinding("openGitCommit", "commitName")); //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
 
 	// object contributions
@@ -62,6 +64,7 @@ mBootstrap.startup().then(function(core) {
 	commandService.registerCommandContribution("itemLevelCommands", "eclipse.openGitStatus", 100); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("itemLevelCommands", "eclipse.openGitLog", 100); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("itemLevelCommands", "eclipse.orion.git.pull", 200); //$NON-NLS-1$ //$NON-NLS-0$
+	commandService.registerCommandContribution("itemLevelCommands", "eclipse.orion.git.push", 200); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("itemLevelCommands", "eclipse.removeBranch", 1000); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("itemLevelCommands", "eclipse.checkoutTag", 200); //$NON-NLS-1$ //$NON-NLS-0$
 	commandService.registerCommandContribution("itemLevelCommands", "eclipse.removeTag", 1000); //$NON-NLS-1$ //$NON-NLS-0$

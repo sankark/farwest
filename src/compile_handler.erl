@@ -55,7 +55,7 @@ content_types_accepted(Req, State) ->
 
 
 template_from_json(Req, State) ->
-	Body = util:get_json_from_req(Req),
+	Body = util:get_body_from_req(Req),
 	JsonReq = util:json_to_term(Body),
 	Location = binary_to_list(util:get_value_from_proplist(<<"Location">>,JsonReq)),
 	Loc2 = remove_url_string(Location),

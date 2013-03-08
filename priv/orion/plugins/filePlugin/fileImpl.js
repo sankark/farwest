@@ -170,13 +170,9 @@ define(["orion/Deferred", "orion/xhr", "orion/URL-shim"], function(Deferred, xhr
 			};
 						
 			return xhr("PUT", "/orion/preview/" + location, options).then(function(result) {
-				return result;
-			}).then(function(result) {
-				if (this.makeAbsolute) {
-					_normalizeLocations(result);
-				}
-				return result;
-			}.bind(this));
+				var jsonData = result.response ? JSON.parse(result.response) : {};
+				return jsonData;
+			});
 		},
 		
 		

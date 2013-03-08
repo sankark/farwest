@@ -32,11 +32,11 @@ start_link(Args) ->
 init(Args) ->
 	Procs = [
 	        {site_config,
-			{site_config, start_link, Args},
+			{site_config, start_link, [Args]},
 			permanent, 5000, worker, [site_config]},
 	     	{site_startup_server,
-			{site_startup_server, start_link, Args},
+			{site_startup_server, start_link, [Args]},
 			permanent, 5000, worker, [site_startup_server]}
 		
 	],
-	{ok, {{one_for_one, 0, 1}, Procs}}.
+	{ok, {{one_for_one, 10, 10}, Procs}}.

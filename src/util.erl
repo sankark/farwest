@@ -9,7 +9,9 @@
 %% ====================================================================
 -export([absolute_path/1,add_site_path/1]).
 
--export([set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2,get_site_home/1,start_slave/1]).
+-export([set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2,get_site_home/1,start_slave/1,stop_slave/1]).
+
+-export([get_priv/0,path_info/1]).
 
 
 
@@ -40,9 +42,9 @@ set_json_resp(Body,Req)->
 	set_resp_body(Body,Req2).
 
 get_body_from_req(Req) ->
-    %% @todo
-    {ok, [{Body,_}], _Req2} = cowboy_req:body_qs(Req),
-    Body.
+	%% @todo
+	{ok, [{Body,_}], _Req2} = cowboy_req:body_qs(Req),
+	Body.
 
 key_merge(NewList,OldList) ->
 	lists:ukeymerge(1,NewList,OldList).
@@ -51,46 +53,63 @@ key_merge(NewList,OldList) ->
 %% Recursively copy directories
 -spec recursive_copy(list(), list()) -> ok.                            
 recursive_copy(From, To) ->
-    {ok, Files} = file:list_dir(From),
-    [ok = rec_copy(From, To, X) || X <- Files],
-    ok.
+	{ok, Files} = file:list_dir(From),
+	[ok = rec_copy(From, To, X) || X <- Files],
+	ok.
 
 start_slave(Site)->
 	SiteBin = filename:join([".","priv","sites",Site,"ebin"]),
 	slave:start(list_to_atom(net_adm:localhost()),Site,"-setcookie cookie -pa ./deps/cowboy/ebin ./deps/ranch/ebin ./ebin "++SiteBin),
 	Node = list_to_atom(Site++"@"++net_adm:localhost()),
 	io:format("started"),
-	Res = rpc:call(Node, list_to_atom(Site), start, []),
-	io:format("Res ~p",[Res]).
+	rpc:call(Node, list_to_atom(Site), start, []).
+
+stop_slave(Site)->
+	Node = list_to_atom(Site++"@"++net_adm:localhost()),
+	slave:stop(Node).
 
 rec_copy(From, To, File) ->
-
-    NewFrom = filename:join([From, File]),
-    NewTo   = filename:join([To, File]),
-  io:format("File ~p   ~p    ~n",[NewFrom,NewTo]),
-    case filelib:is_dir(NewFrom) of
-        true  ->
-            ok = make_dir(NewTo),
-            recursive_copy(NewFrom, NewTo);
-        
-        false ->
-            case filelib:is_file(NewFrom) of                
-                true  ->
-                    ok = filelib:ensure_dir(NewTo),
-                    {ok, _} = file:copy(NewFrom, NewTo),
-                    ok;
-                false ->
-                    ok            
-            end
-    end.
 	
-make_dir(Dir)->
-	 case file:make_dir(Dir) of
-		{error,eexist} -> ok;
-		 _  -> ok
-	 end.
+	NewFrom = filename:join([From, File]),
+	NewTo   = filename:join([To, File]),
+	io:format("File ~p   ~p    ~n",[NewFrom,NewTo]),
+	case filelib:is_dir(NewFrom) of
+		true  ->
+			ok = make_dir(NewTo),
+			recursive_copy(NewFrom, NewTo);
+		
+		false ->
+			case filelib:is_file(NewFrom) of                
+				true  ->
+					ok = filelib:ensure_dir(NewTo),
+					{ok, _} = file:copy(NewFrom, NewTo),
+					ok;
+				false ->
+					ok            
+			end
+	end.
 
-get_site_home(SiteName) when is_atom(SiteName) ->
-	get_site_home(atom_to_list(SiteName));
+make_dir(Dir)->
+	case file:make_dir(Dir) of
+		{error,eexist} -> ok;
+		_  -> ok
+	end.
+
+get_site_home(SiteName) when is_list(SiteName) ->
+	get_site_home(list_to_atom(SiteName));
 get_site_home(SiteName) ->
-    filename:join([code:lib_dir(farwest), "priv", "sites",SiteName]).
+	BeamPath = code:which(SiteName),
+	SplitPath = filename:split(BeamPath),
+	SplitPath2 = lists:sublist(SplitPath,length(SplitPath)-2),
+	SiteHome = filename:join(SplitPath2),
+	io:format("Site dir ~p",[SiteHome]),
+	SiteHome.
+
+
+get_priv()->
+	filename:join([code:lib_dir(farwest), "priv"]).
+
+path_info(Req) ->
+	%%io:format("path info ~p",[cowboy_req:path_info(Req)]),
+	{PI,_} = cowboy_req:path_info(Req),
+	PI.

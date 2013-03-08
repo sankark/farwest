@@ -469,7 +469,7 @@ exports.GitRepositoryExplorer = (function() {
 					actionsArea.className = "sectionTableItemActions";
 					actionsArea.id = "repositoryActionsArea";
 					horizontalBox.appendChild(actionsArea);
-					
+					//alert(that.actionScopeId+":"+actionsArea);
 					that.commandService.renderCommands(that.actionScopeId, actionsArea, repositories[i], that, "tool"); //$NON-NLS-0$
 				}
 			},

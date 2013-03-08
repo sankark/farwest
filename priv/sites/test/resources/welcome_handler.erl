@@ -67,7 +67,6 @@ is_authorized(Req, State) ->
 allowed_methods(Req, State) ->
 	{[<<"GET">>, <<"PUT">>,<<"DELETE">>], Req, State}.
 
-
 content_types_provided(Req, State) ->
 	{[
 		{<<"text/html">>, to_html},

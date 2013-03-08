@@ -126,7 +126,15 @@ dat_time_to_millis({{Y,M,D}, Time})->
 	 ?MILLI_SECONDS_PER_DAY*calendar:date_to_gregorian_days(Y-1970,M,D) + calendar:time_to_seconds(Time)*1000.
 
 list_dir(Dir) ->
-    {ok, _Files} = file:list_dir(Dir).
+    {ok, Files} = file:list_dir(Dir),
+	{ok,remove_hidden(Files)}.
+remove_hidden(Files)->
+	[Filename||Filename<-Files, false =:= is_hidden(Filename)].
+is_hidden(Filename)->
+	case Filename of
+		"."++_Rest ->true;
+		_ -> false
+	end.
 filter_dir(Files,Root)->
 	{ok,lists:filter(fun(F)-> filelib:is_dir(filename:join(Root, F)) end, Files)}.
 

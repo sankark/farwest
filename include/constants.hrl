@@ -67,3 +67,8 @@
 -define(SITE_SOURCE,<<"Source">>).
 -define(SITE_LOCATION,<<"SiteLocation">>).
 -define(SITE_TARGET,<<"Target">>).
+-define(CLONE_LOCATION,<<"CloneLocation">>).
+-define(GIT_URL,<<"GitUrl">>).
+-define(GIT_CONTENT_LOCATION,<<"ContentLocation">>).
+-define(GIT_STATUS_LOCATION,<<"StatusLocation">>).
+-define(GIT_COMMIT_LOCATION,<<"CommitLocation">>).

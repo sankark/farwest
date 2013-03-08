@@ -606,6 +606,36 @@ var exports = {};
 			}
 		});
 		commandService.addCommand(removeRemoteCommand);
+		
+		
+		var pushCommand = new mCommands.Command({
+			name : messages["Push All"],
+			tooltip: messages["Push commits and tags from your local branch into the remote branch"],
+			imageClass: "git-sprite-pull", //$NON-NLS-0$
+			spriteClass: "gitCommandSprite", //$NON-NLS-0$
+			id : "eclipse.orion.git.push", //$NON-NLS-0$
+			callback: function(data) {
+			console.log(data.items);
+				//previously saved target branch
+				var gitService = serviceRegistry.getService("orion.git.provider");
+				var progress = serviceRegistry.getService("orion.page.progress"); 
+				var deferred = progress.progress(gitService.doPush(item.ContentLocation), messages['Pushing remote: '] + name);
+				progressService.createProgressMonitor(deferred, messages['Pushing remote: '] + name);
+				var handleResponse= function(jsonData){
+				console.log(jsonData);
+				}
+				deferred.then(
+					function(jsonData){
+						handleResponse(jsonData);
+						});
+			},
+			visibleWhen : function(item) {
+				return true;
+				
+			}
+		});
+		commandService.addCommand(pushCommand);
+		
 
 		var pullCommand = new mCommands.Command({
 			name : messages["Pull"],
@@ -615,42 +645,85 @@ var exports = {};
 			id : "eclipse.orion.git.pull", //$NON-NLS-0$
 			callback: function(data) {
 				var item = data.items;
-				var path = item.Location;
-				exports.getDefaultSshOptions(serviceRegistry).then(function(options) {
-					var func = arguments.callee;
-					var gitService = serviceRegistry.getService("orion.git.provider"); //$NON-NLS-0$
-					var statusService = serviceRegistry.getService("orion.page.message"); //$NON-NLS-0$
-					var progress = serviceRegistry.getService("orion.page.progress"); //$NON-NLS-0$
-					var pullDeferred = progress.progress(gitService.doPull(path, false,
-							options.gitSshUsername,
-							options.gitSshPassword,
-							options.knownHosts,
-							options.gitPrivateKey,
-							options.gitPassphrase), messages["Pulling : "] + path);
- 
-					statusService.createProgressMonitor(pullDeferred, messages["Pulling : "] + path);
-					var pullOperationLocation;
+				console.log(item);
+				var handleResponse= function(jsonData){
+				console.log(jsonData);
+				}
+				var gitService = serviceRegistry.getService("orion.git.provider");
+				var progress = serviceRegistry.getService("orion.page.progress"); 
+				var pullDeferred = progress.progress(gitService.doPull(item.ContentLocation), messages["Pulling : "] + item.Name);
 					pullDeferred.then(function(jsonData) {
-						exports.handleProgressServiceResponse(jsonData, options, serviceRegistry, function(jsonData) {
-							if (item.Type === "Clone") { //$NON-NLS-0$
-								explorer.changedItem(item);
-							}
-						}, func, "Pull Git Repository"); //$NON-NLS-0$
-					}, function(jsonData, secondArg) {
-						if(pullOperationLocation)
-							jsonData.failedOperation = pullOperationLocation;
-						exports.handleProgressServiceResponse(jsonData, options, serviceRegistry, function() {}, func, messages["Pull Git Repository"]);
-					}, function(operation){
-						pullOperationLocation = operation.Location;
+						handleResponse(jsonData);
+					}, function(error) {
+						
 					});
-				});
-			},
+				},
 			visibleWhen : function(item) {
 				return item.Type === "Clone"; //$NON-NLS-0$
 			}
 		});
 		commandService.addCommand(pullCommand);
 
+		
+		var commitMessageParameters = new mCommands.ParametersDescription(
+			[new mCommands.CommandParameter('name', 'text', messages['Commit message:'], "", 4), new mCommands.CommandParameter('amend', 'boolean', messages['Amend:'], false)], //$NON-NLS-4$ //$NON-NLS-3$ //$NON-NLS-1$ //$NON-NLS-0$
+			 {hasOptionalParameters: true});
+		
+		var commitCommand = new mCommands.Command({
+			name: "Commit", //$NON-NLS-0$
+			tooltip: "Commit", //$NON-NLS-0$
+			id: "eclipse.orion.git.commitCommand", //$NON-NLS-0$
+			parameters: commitMessageParameters,
+			callback: function(data) {
+				var item = data.items.status;
+				
+				var commitFunction = function(body){		
+					var progressService = serviceRegistry.getService("orion.page.message"); //$NON-NLS-0$
+					var progress = serviceRegistry.getService("orion.page.progress"); //$NON-NLS-0$
+					var deferred = progress.progress(serviceRegistry.getService("orion.git.provider").commitAll(item.CommitLocation, null, JSON.stringify(body)), messages["Committing changes"]); //$NON-NLS-0$ 
+					progressService.createProgressMonitor(
+						deferred,
+						messages["Committing changes"]);
+					deferred.then(
+						function(jsonData){
+							explorer.changedItem(item);
+						}, displayErrorOnStatus
+					);
+				};
+				
+				var body = {};
+				body.Message = data.parameters.valueFor("name"); //$NON-NLS-0$
+				body.Amend = data.parameters.valueFor("amend"); //$NON-NLS-0$
+				
+				// var config = item.Clone.Config;
+				// for (var i=0; i < config.length; i++){
+					// if (config[i].Key === "user.name"){ //$NON-NLS-0$
+						// body.CommitterName = config[i].Value;
+						// body.AuthorName = config[i].Value;
+					// } else if (config[i].Key === "user.email"){ //$NON-NLS-0$
+						// body.CommitterEmail = config[i].Value;
+						// body.AuthorEmail = config[i].Value;
+					// }					
+				// }
+				
+
+				if (body.Message && body.CommitterName && body.CommitterEmail && !data.parameters.optionsRequested) {
+					commitFunction(body);
+				} else {
+					var dialog = new mCommit.CommitDialog({
+						body: body,
+						func: commitFunction
+					});
+
+					dialog.show();
+				}
+			},
+			visibleWhen: function(item) {
+				return true;
+			}
+		});	
+
+		commandService.addCommand(commitCommand);
 		var openGitLog = new mCommands.Command({
 			name : messages["Git Log"],
 			tooltip: messages["Open the log for the branch"],
@@ -666,6 +739,8 @@ var exports = {};
 			}
 		});
 		commandService.addCommand(openGitLog);
+		
+		
 
 		var openGitLogAll = new mCommands.Command({
 			name : messages['Git Log'],
@@ -1245,194 +1320,7 @@ var exports = {};
 		});
 		commandService.addCommand(rebaseCommand);
 		
-		var pushCommand = new mCommands.Command({
-			name : messages["Push All"],
-			tooltip: messages["Push commits and tags from your local branch into the remote branch"],
-			imageClass: "git-sprite-push", //$NON-NLS-0$
-			spriteClass: "gitCommandSprite", //$NON-NLS-0$
-			id : "eclipse.orion.git.push", //$NON-NLS-0$
-			callback: function(data) {
-				//previously saved target branch
-				var itemTargetBranch = data.targetBranch;
-			
-				var target;
-				var item = data.items;
-				if (item.toRef) {
-					item = item.toRef;
-				}
-				var commandInvocation = data;
-				
-				var parts = item.CloneLocation.split("/");
-				
-				var handleResponse = function(jsonData, commandInvocation){
-					if (jsonData.JsonData.HostKey){
-						commandInvocation.parameters = null;
-						commandInvocation.errorData = jsonData.JsonData;
-						commandInvocation.errorData.failedOperation = jsonData.failedOperation;
-						commandService.collectParameters(commandInvocation);
-					} else if (!commandInvocation.optionsRequested){
-						var gitPreferenceStorage = new GitPreferenceStorage(serviceRegistry);
-						gitPreferenceStorage.isEnabled().then(
-							function(isEnabled){
-								if(isEnabled){
-									if (jsonData.JsonData.User)
-										commandInvocation.parameters = new mCommands.ParametersDescription([new mCommands.CommandParameter("sshpassword", "password", messages["SSH Password:"]), new mCommands.CommandParameter("saveCredentials", "boolean", messages["Don't prompt me again:"])], {hasOptionalParameters: true}); //$NON-NLS-1$ //$NON-NLS-0$
-									else
-										commandInvocation.parameters = new mCommands.ParametersDescription([new mCommands.CommandParameter("sshuser", "text", messages["SSH User Name:"]), new mCommands.CommandParameter("sshpassword", "password", messages['SSH Password:']), new mCommands.CommandParameter("saveCredentials", "boolean", messages["Don't prompt me again:"])], {hasOptionalParameters: true}); //$NON-NLS-4$ //$NON-NLS-3$ //$NON-NLS-1$ //$NON-NLS-0$
-								} else {
-									if (jsonData.JsonData.User)
-										commandInvocation.parameters = new mCommands.ParametersDescription([new mCommands.CommandParameter("sshpassword", "password", messages["SSH Password:"])], {hasOptionalParameters: true}); //$NON-NLS-1$ //$NON-NLS-0$
-									else
-										commandInvocation.parameters = new mCommands.ParametersDescription([new mCommands.CommandParameter("sshuser", "text", messages["SSH User Name:"]), new mCommands.CommandParameter("sshpassword", "password", messages['SSH Password:'])], {hasOptionalParameters: true}); //$NON-NLS-4$ //$NON-NLS-3$ //$NON-NLS-1$ //$NON-NLS-0$
-								}
-								
-								commandInvocation.errorData = jsonData.JsonData;
-								commandInvocation.errorData.failedOperation = jsonData.failedOperation;
-								commandService.collectParameters(commandInvocation);
-							}
-						);
-					} else {
-						commandInvocation.errorData = jsonData.JsonData;
-						commandInvocation.errorData.failedOperation = jsonData.failedOperation;
-						commandService.collectParameters(commandInvocation);
-					}
-				};
-				
-				if (commandInvocation.parameters && commandInvocation.parameters.optionsRequested){
-					commandInvocation.parameters = null;
-					commandInvocation.optionsRequested = true;
-					commandService.collectParameters(commandInvocation);
-					return;
-				}
-				var gitService = serviceRegistry.getService("orion.git.provider");
-				var progress = serviceRegistry.getService("orion.page.progress"); //$NON-NLS-0$
-				
-				if(commandInvocation.errorData && commandInvocation.errorData.failedOperation){
-					progress.removeOperation(commandInvocation.errorData.failedOperation);
-				}
-				
-				var handlePush = function(options, location, ref, name, force){
-					var progressService = serviceRegistry.getService("orion.page.message"); //$NON-NLS-0$
-					var deferred = progress.progress(gitService.doPush(location, ref, true, force, //$NON-NLS-0$
-							options.gitSshUsername, options.gitSshPassword, options.knownHosts,
-							options.gitPrivateKey, options.gitPassphrase), messages['Pushing remote: '] + name);
-					progressService.createProgressMonitor(deferred, messages['Pushing remote: '] + name);
-					deferred.then(
-						function(jsonData){
-							exports.handleGitServiceResponse(jsonData, serviceRegistry, 
-								function() {
-									explorer.changedItem();
-								}, function (jsonData) {
-									handleResponse(jsonData, commandInvocation);
-								}
-							);
-						}, function(jsonData, secondArg) {
-							exports.handleGitServiceResponse(jsonData, serviceRegistry, 
-								function() {
-									explorer.changedItem();
-								}, function (jsonData) {
-									handleResponse(jsonData, commandInvocation);
-								}
-							);
-						}
-					);
-				};
-
-				progress.progress(gitService.getGitClone(item.CloneLocation), "Getting git repository details " + item.Name).then(
-					function(clone){
-						var remoteLocation = clone.Children[0].RemoteLocation;
-						var locationToChange = clone.Children[0].ConfigLocation;
-						
-						exports.gatherSshCredentials(serviceRegistry, commandInvocation).then(
-							function(options) {
-								var result = new Deferred();
-								
-								if (item.RemoteLocation.length === 1 && item.RemoteLocation[0].Children.length === 1) { //when we push next time - chance to switch saved remote
-									result = progress.progress(gitService.getGitRemote(remoteLocation), "Getting git remote details " + item.Name);
-								} else {
-									var remotes = {};
-									remotes.Children = item.RemoteLocation;
-									result.resolve(remotes);
-									
-								}
-						
-								result.then(
-									function(remotes){
-										if(itemTargetBranch){
-											handlePush(options, itemTargetBranch.Location, "HEAD", itemTargetBranch.Name, false);
-											return;
-										}
-									
-										var dialog = new mRemotePrompter.RemotePrompterDialog({
-											title: messages["Choose Branch"],
-											serviceRegistry: serviceRegistry,
-											gitClient: gitService,
-											treeRoot: {
-												Children: remotes.Children
-											},
-											hideNewBranch: false,
-											func: function(targetBranch, remote, optional) {
-												if(targetBranch === null){
-													target = optional;
-												}
-												else{
-													target = targetBranch;
-												}
-												var locationToUpdate = "/gitapi/config/" + "branch." + item.Name + ".remote"  + "/clone/file/" + parts[4];
-												progress.progress(gitService.addCloneConfigurationProperty(locationToChange,"branch." + item.Name + ".remote" ,target.parent.Name), "Adding git configuration property "+ item.Name).then(
-													function(){
-														commandInvocation.targetBranch = target;
-														handlePush(options, target.Location, "HEAD",target.Name, false);
-													}, function(err){
-														if(err.status == 409){ //when confing entry is already defined we have to edit it
-															progress.progress(gitService.editCloneConfigurationProperty(locationToUpdate,target.parent.Name), "Updating configuration property " + target.parent.Name).then(
-																function(){
-																	commandInvocation.targetBranch = target;
-																	handlePush(options, target.Location, "HEAD",target.Name, false);
-																}
-															);
-														}
-													}
-												);
-											}
-										});
-										
-										if (item.RemoteLocation.length === 1 && item.RemoteLocation[0].Children.length === 1) { //when we push next time - chance to switch saved remote
-											var dialog2 = dialog;
-											
-											dialog = new mConfirmPush.ConfirmPushDialog({
-												title: messages["Choose Branch"],
-												serviceRegistry: serviceRegistry,
-												gitClient: gitService,
-												dialog: dialog2,
-												location: item.RemoteLocation[0].Children[0].Name,
-												func: function(){
-													commandInvocation.targetBranch = item.RemoteLocation[0].Children[0];
-													handlePush(options,item.RemoteLocation[0].Children[0].Location, "HEAD", item.Location, false);
-												}
-											});
-										}
-										
-										dialog.show();
-									}
-								);
-						
-							}
-						);
-					}
-				);
-			},
-			visibleWhen : function(item) {
-				if (item.toRef)
-					// for action in the git log
-					return item.RepositoryPath === "" && item.toRef.Type === "Branch" && item.toRef.Current && item.toRef.RemoteLocation; //$NON-NLS-0$
-				else
-					// for action in the repo view
-					return item.Type === "Branch" && item.Current && item.RemoteLocation; //$NON-NLS-0$
-				
-			}
-		});
-		commandService.addCommand(pushCommand);
+		
 
 		var pushForceCommand = new mCommands.Command({
 			name : messages["Force Push All"],
@@ -2564,65 +2452,7 @@ var exports = {};
 		
 		commandService.addCommand(unstageCommand);
 		
-		var commitMessageParameters = new mCommands.ParametersDescription(
-			[new mCommands.CommandParameter('name', 'text', messages['Commit message:'], "", 4), new mCommands.CommandParameter('amend', 'boolean', messages['Amend:'], false)], //$NON-NLS-4$ //$NON-NLS-3$ //$NON-NLS-1$ //$NON-NLS-0$
-			 {hasOptionalParameters: true});
 		
-		var commitCommand = new mCommands.Command({
-			name: "Commit", //$NON-NLS-0$
-			tooltip: "Commit", //$NON-NLS-0$
-			id: "eclipse.orion.git.commitCommand", //$NON-NLS-0$
-			parameters: commitMessageParameters,
-			callback: function(data) {
-				var item = data.items.status;
-				
-				var commitFunction = function(body){		
-					var progressService = serviceRegistry.getService("orion.page.message"); //$NON-NLS-0$
-					var progress = serviceRegistry.getService("orion.page.progress"); //$NON-NLS-0$
-					var deferred = progress.progress(serviceRegistry.getService("orion.git.provider").commitAll(item.Clone.HeadLocation, null, JSON.stringify(body)), messages["Committing changes"]); //$NON-NLS-0$ 
-					progressService.createProgressMonitor(
-						deferred,
-						messages["Committing changes"]);
-					deferred.then(
-						function(jsonData){
-							explorer.changedItem(item);
-						}, displayErrorOnStatus
-					);
-				};
-				
-				var body = {};
-				body.Message = data.parameters.valueFor("name"); //$NON-NLS-0$
-				body.Amend = data.parameters.valueFor("amend"); //$NON-NLS-0$
-				
-				var config = item.Clone.Config;
-				for (var i=0; i < config.length; i++){
-					if (config[i].Key === "user.name"){ //$NON-NLS-0$
-						body.CommitterName = config[i].Value;
-						body.AuthorName = config[i].Value;
-					} else if (config[i].Key === "user.email"){ //$NON-NLS-0$
-						body.CommitterEmail = config[i].Value;
-						body.AuthorEmail = config[i].Value;
-					}					
-				}
-				
-
-				if (body.Message && body.CommitterName && body.CommitterEmail && !data.parameters.optionsRequested) {
-					commitFunction(body);
-				} else {
-					var dialog = new mCommit.CommitDialog({
-						body: body,
-						func: commitFunction
-					});
-
-					dialog.show();
-				}
-			},
-			visibleWhen: function(item) {
-				return true;
-			}
-		});	
-
-		commandService.addCommand(commitCommand);
 
 		var resetCommand = new mCommands.Command({
 			name: messages['Reset'],
