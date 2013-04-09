@@ -9,7 +9,7 @@
 %% ====================================================================
 -export([absolute_path/1,add_site_path/1]).
 
--export([set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2,get_site_home/1,start_slave/1,stop_slave/1]).
+-export([get_path/1,set_resp_header/3,key_merge/2,set_json_resp/2,get_value_from_proplist/2,json_to_term/1,term_to_json/1,set_resp_header/3,set_resp_body/2,get_body_from_req/1,recursive_copy/2,get_site_home/1,start_slave/1,stop_slave/1]).
 
 -export([get_priv/0,path_info/1]).
 
@@ -105,7 +105,11 @@ get_site_home(SiteName) ->
 	io:format("Site dir ~p",[SiteHome]),
 	SiteHome.
 
-
+get_path(Req) ->
+	%%io:format("path info ~p",[cowboy_req:path_info(Req)]),
+	{PI,_} = cowboy_req:path_info(Req),
+	binary_to_list(filename:join(PI)).
+	
 get_priv()->
 	filename:join([code:lib_dir(farwest), "priv"]).
 
@@ -113,3 +117,4 @@ path_info(Req) ->
 	%%io:format("path info ~p",[cowboy_req:path_info(Req)]),
 	{PI,_} = cowboy_req:path_info(Req),
 	PI.
+

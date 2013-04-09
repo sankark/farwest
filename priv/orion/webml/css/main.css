@@ -1,0 +1,141 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #E6E6E6;
+	color: #424242;
+}
+
+a{ outline:none; }
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:active { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button{ outline:none; }
+input[type="button"],input[type="submit"]{ outline:none; }
+
+th{ text-align:left; font-weight:normal; cursor:default; }
+
+.unselectable { -moz-user-select: none; -khtml-user-select: none; user-select: none; outline:none; }
+
+#preheader{ 
+	margin:0;
+	padding:0;
+	text-align: right;
+	height:10px;
+}
+
+#header{ border-bottom: 1px solid #000; border-top: 1px solid #000; height:50px; margin:0; padding-top: 2px; padding-left: 15px; padding-right:15px; background-color: #606060; color: white; }
+#header img{ float:left; padding-right: 4px; z-index:9; position:relative; }
+#header h1{ font-size: 20px; margin: 0px; padding: 0px; }
+#header h2{ font-size: 16px; margin: 0px; padding: 0px; color:#F5FBEF; font-family: monospace}
+#header ul{ height: 15px; padding:0; margin:0; text-align:right; list-style-type: none; float: right;}
+#header ul li{ height: 15px; padding:0; margin:0; padding-left:5px; text-align:right; list-style-type: none; display:inline-block; }
+#header ul li a{ color: #FFF; }
+
+#header #loading_progress { font-size: 16px; color:#F5FBEF; }
+
+
+#mainMenu { position:relative; z-index: 2900; }
+#mainMenu.mainmenu-container{ display:inline-block; margin:0px; padding-top:3px; padding-left: 4px; padding-right:4px; padding-bottom:4px; background-color: #fff; border-left: 1px solid #A4A4A4; border-right: 1px solid #A4A4A4; border-bottom: 1px solid #A4A4A4; }
+#mainMenu ul{ padding:0; margin:0; list-style-type: none; }
+#mainMenu li{  padding:0; margin:0; margin-right:2px; list-style-type: none; display:inline-block; height:18px; width:30px; cursor:pointer; }
+#mainMenu li.mainmenu-separator{ width:12px; }
+#mainMenu li.current_opened_file{ vertical-align: middle; height:auto; width:auto; color:gray; }
+
+#debug-div{
+	display:none;
+	position:absolute;
+	top:90px;
+	left:200px;
+	right:200px;
+	height:150px;
+	z-index:31000;
+	font-size:9px;
+	border:1px solid red;
+	background-color:white;
+	padding: 12px;
+	overflow:scroll;
+}
+
+#paintarea-wrapper{
+	position:absolute;
+	border: none;
+	left: 0px;
+	top: 64px; /*(50+10+2+2)*/
+	bottom: 0px;
+	right: 0px;
+	outline: none;
+	overflow: scroll;
+}
+
+div .view_xml_box{
+	outline: none;
+	overflow: scroll;
+	padding: 2px;
+	font-size: 8px;
+}
+
+#paintarea{
+	border: none;
+	width: 2300px;
+	height: 2300px;
+	outline: none;
+}
+
+#propertyDialog { text-align:left; overflow:hidden; }
+#propertyDialog .accordion_tab{ text-align:left; padding:5px; }
+#propertyDialog .accordion_tab table{ margin:0; padding:0; border-collapse:collapse; border:none; width:100%; margin-top: 12px; }
+#propertyDialog .accordion_tab table tr{ height: 20px; }
+#propertyDialog .accordion_tab input{margin:0; padding:0;}
+#propertyDialog .accordion_tab select{margin:0; padding:0;}
+#propertyDialog .accordion_tab input[type="text"]{ width:100%;}
+#propertyDialog .accordion_tab select{ width:100%; }
+#propertyDialog .accordion_tab .param_name{ font-size: 9px; text-align:left; color: gray; cursor: default; }
+#propertyDialog .accordion_tab .param_edit{ font-size: 9px; }
+#propertyDialog .accordion_tab .param_edit.subtitle { color: green; }
+#propertyDialog .accordion_tab .addelem{ display:inline-block; cursor: pointer; }
+#propertyDialog .accordion_tab .remelem{ display:inline-block; cursor: pointer; float:right; }
+
+#paletteDialog {}
+#tools_container{ border:none; margin:0; padding:0; width:100px; }
+.tool_draggable{ position:relative; z-index:20000; cursor:move; width:98px; cursor: move; margin-bottom: 5px; text-align: left; }
+#tools_container #bt_tool_undo, #tools_container #bt_tool_redo{ cursor: pointer; text-align:center; width: 45px; }
+#tools_container #bt_tool_undo{ float: left; }
+#tools_container #bt_tool_redo{ float: right; }
+
+#elementsListDialog{ font-size: 9px; }
+#elementsListDialog div.obj{ border:1px solid gray ; margin:3px; padding:1px; }
+#elementsListDialog ul{ margin-left:20px; padding:0; }
+#elementsListDialog ul li{ margin:0; padding:0;}
+#elementsListDialog .attr1{ color: gray; }
+
+/* --------- jQuery tooltip ------------------- */
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;
+}
+#tooltip h3, #tooltip div { margin: 0; padding-left:5px; padding-right:5px; }
+
+/* --------- jQuery modal dialog ------------------- */
+#confirmDialog table{ width:100%; }
+#confirmDialog input, #confirmDialog select{ width:100% }
+
+
+#messageDialog table{ width:100%; }
+#messageDialog input, #messageDialog select{ width:100% }
+
+/*---------- add new action dialog -----------------------*/
+#confirmDialog table[name="_tblvalues"]{ border-collapse: collapse; }
+#confirmDialog table[name="_tblvalues"] td{ padding: 1px; text-align:middle; }
+#confirmDialog table[name="_tblvalues"] input{ width:99%; }
+#confirmDialog input{ width:99%; }
+#confirmDialog div[name="_addvalue"],#confirmDialog div[name="_remvalue"]{ width:18px; cursor: pointer; }
+
+/*#confirmDialog div[name="DbConnectionDescriptorDialog"]  input{ width:99% }*/

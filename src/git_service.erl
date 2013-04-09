@@ -7,7 +7,7 @@
 %% ====================================================================
 %% API functions
 %% ====================================================================
--export([get_repositories/0,clone_repo/1,get_status/1]).
+-export([get_repositories/0,get_repository/2,clone_repo/1,get_status/2,commit_repo/2]).
 -include("constants.hrl").
 -define(BUCKET,<<"git">>).
 -define(CLONE_URL,<<"/orion/gitapi/clone">>).
@@ -22,31 +22,45 @@
 %% Internal functions
 %% ====================================================================
 get_repositories()->
-	[{?KEY_CHILDREN, get_children()}].
+		 [{?KEY_CHILDREN, get_children()}].
+get_repository(Path,_Req)->
+	Commits = get_commit_history(Path),
+	Children = [{?KEY_CHILDREN, [lists:append(get_repo2(lb(Path)),Commits)]}],
+	
+	lists:append(Children,Commits).
 
 get_children()->
 	{ok,Keys} = fw_data_server:get_keys(?BUCKET),
 	F=fun(Key)->
-			Content = get_repo(Key),
-			[{?KEY_TYPE,<<"Clone">>}|jsx:decode(Content)]
-	end,
+			get_repo2(Key)
+			end,
 	[F(Key)||Key<-Keys].
 
+get_repo2(Key) ->
+			 Content = get_repo(Key),
+    [{?KEY_TYPE,<<"Clone">>}|jsx:decode(Content)].
+
 get_repo(Key) ->
-    {ok,Content} = fw_data_server:get_value(?BUCKET, Key),
+    {ok,Content} = case fw_data_server:get_value(?BUCKET, Key) of
+					   {ok, Any}->{ok, Any};
+					   {error,notfound}-> {ok, []}
+				   end,
     Content.
 clone_repo(Req)->
 	Body = util:get_body_from_req(Req),
 	Term = util:json_to_term(Body),
 	URL = proplists:get_value(<<"GitUrl">>, Term),
 	P= proplists:get_value(<<"Path">>, Term),
-	Name = proplists:get_value(<<"Name">>, Term),
 	Path = case P of
-		undefined -> Name;
-		_ -> filename:join(P,Name)
+		undefined -> proplists:get_value(<<"Name">>, Term);
+		_ -> RepoName = filename:basename(URL,".git"),
+			 <<"/orion/file/", Suffix/binary>> = P,
+			filename:join([Suffix,RepoName])
 	end,
+	Name = Path,
+	io:format("Path ****************** ~p",[Path]),
 	RepoURL = binary_to_list(URL),
-	RepoPath = filename:join([util:get_priv(),Path]),
+	RepoPath = filename:join([util:get_priv(),bl(Path)]),
 	io:format("before clon"),
 	{ok, _Resp} = git:clone(RepoURL, RepoPath),
 	io:format("after clon"),
@@ -62,17 +76,43 @@ clone_repo(Req)->
 	fw_data_server:set_data(?BUCKET, Name , <<"">>, jsx:encode(UserData), <<"">>),
 	UserData.
 
-get_status([_,_,_|Rest])  ->
-	Suffix = filename:join(Rest),
-	RepoPath = filename:join([util:get_priv(),binary_to_list(remove_slash(Suffix))]),
+commit_repo(Path,Req)->
+	Body = util:get_body_from_req(Req),
+	Term = util:json_to_term(Body),
+	RepoPath = filename:join([util:get_priv(),Path]),
+	Msg = proplists:get_value(<<"Message">>, Term),
+	git:commit(RepoPath, bl(Msg)),
+	fw_data_server:set_data(<<"git_commit_history">>, Path , <<"">>, jsx:encode(Term), <<"">>),	
+	get_commit_history(Path).
+
+
+get_commit_history(RepoPath) ->
+	Chidren = case get_commits(RepoPath) of
+					 [] -> [];
+					 Any -> jsx:decode(Any)
+				 end,
+	io:format("Chidler ********~p",[Chidren]),
+	Location = [{?KEY_LOCATION,filename:join([<<"/orion/gitapi/push">>,RepoPath])}],
+	Commits = [{?KEY_CHILDREN ,[util:key_merge(Location, Chidren)]}],
+	[{<<"Commits">>,Commits}].
+
+get_commits(RepoPath)->
+	{ok,Content} = case fw_data_server:get_value(<<"git_commit_history">>, RepoPath) of
+					   {ok, Any} -> {ok, Any};
+				   {error,notfound}-> {ok,[]}
+				   end,
+	Content.
+get_status(Path, _Req)  ->
+	RepoPath = filename:join([util:get_priv(),Path]),
 	%%io:format("~p",[get_changed_files(RepoPath)]),
-	Changed = get_changed_files(RepoPath,Suffix),
-	Repo = jsx:decode(get_repo(filename:basename(Suffix))),
+	Changed = get_changed_files(RepoPath),
+	CommitHist= get_commit_history(Path),
+	Repo = jsx:decode(get_repo(lb(filename:basename(Path)))),
 	lists:append(Changed,Repo).
 
-get_changed_files(Repo,Suffix)->
+get_changed_files(Repo)->
 	Result = git:status_changed_files(Repo),
-	build_status_response(Result,Suffix).
+	build_status_response(Result,lb(filename:basename(Repo))).
 
 build_status_response(Result,Suffix)->
 	ModFun = fun(Elem)-> case Elem of

@@ -762,7 +762,9 @@ define(
 					canHide : true,
 					preferenceService : this.registry.getService("orion.core.preference") //$NON-NLS-0$
 					});
-
+					
+					var progress = titleWrapper.createProgressMonitor();
+console.log(repository.Commits.Children[0]);
 					currentBranch = repository;
 
 					titleWrapper.setTitle(i18nUtil.formatMessage(messages["Commits for \"${0}\" branch"], currentBranch.Name));
@@ -782,8 +784,14 @@ define(
 										that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.push", 100); //$NON-NLS-0$
 										that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, currentBranch, that,
 												"button"); //$NON-NLS-0$
-												
-
+									progress.worked(messages["Rendering commits"]);
+		
+		
+	
+		
+			that.renderCommit(repository.Commits.Children[0], false, 1);
+					
+					progress.done();
 									
 				};
 
@@ -810,6 +818,7 @@ define(
 				};
 
 				GitStatusExplorer.prototype.renderCommit = function(commit, outgoing, index) {
+				alert("i am here");
 					var sectionItem = document.createElement("div");
 					sectionItem.className = "sectionTableItem lightTreeTableRow";
 					lib.node("commitNode").appendChild(sectionItem);

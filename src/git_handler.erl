@@ -59,9 +59,10 @@ content_types_accepted(Req, State) ->
 
 from_json(Req, State) ->
 	%% @todo
-	PathInfo = lists:nth(1, util:path_info(Req)),
-	Response = case PathInfo of
-		<<"clone">> -> git_service:clone_repo(Req);
+	Path = util:get_path(Req),
+	Response = case Path of
+		"clone" -> git_service:clone_repo(Req);
+		"commit/orion/file/"++Rest -> git_service:commit_repo(Rest,Req);
 					_-> []
 	end,
 	
@@ -70,11 +71,10 @@ from_json(Req, State) ->
 	{true, Req2, State}.
 	
 from_form(Req, State) ->
-	Path = util:path_info(Req),
-	PathInfo = lists:nth(1, Path),
-	Response = case PathInfo of
-		<<"clone">> -> git_service:clone_repo(Req);
-		<<"status">> -> git_service:get_status(lists:sublist(Path), 2, length(Path));
+	Path = util:get_path(Req),
+	Response = case Path of
+		"clone/orion/file/"++Rest -> git_service:clone_repo(Rest,Req);
+		"status/orion/file/"++Rest -> git_service:get_status(Rest,Req);
 					_-> []
 	end,
 	
@@ -84,11 +84,11 @@ from_form(Req, State) ->
 	
 to_html(Req,State)->
 	%% @todo
-	Path = util:path_info(Req),
-	PathInfo = lists:nth(1, Path),
-	Repositories =case PathInfo of
-		<<"clone">> ->git_service:get_repositories();
-		<<"status">> -> git_service:get_status(Path);
+	Path = util:get_path(Req),
+	Repositories =case Path of
+		"clone/orion/workspace"++_Rest ->git_service:get_repositories();
+		"clone/orion/file/"++Rest ->git_service:get_repository(Rest,Req);
+		"status/orion/file/"++Rest -> git_service:get_status(Rest,Req);
 		_ -> []
 	end,
 	JsonResp = util:term_to_json(Repositories),

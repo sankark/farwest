@@ -1,7 +1,9 @@
 backend_version=R15B
 dialyzer/dialyzeoncompile=true
+dialyzer/enabledpltpaths=
+dialyzer/fromsource=true
+dialyzer/nocheckplt=true
+dialyzer/pltpath=
 eclipse.preferences.version=1
-include_dirs=include
-nukeOutputOnClean=true
 output_dir=ebin
 source_dirs=src

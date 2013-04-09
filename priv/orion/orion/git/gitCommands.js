@@ -615,14 +615,16 @@ var exports = {};
 			spriteClass: "gitCommandSprite", //$NON-NLS-0$
 			id : "eclipse.orion.git.push", //$NON-NLS-0$
 			callback: function(data) {
-			console.log(data.items);
+			console.log(data);
 				//previously saved target branch
 				var gitService = serviceRegistry.getService("orion.git.provider");
 				var progress = serviceRegistry.getService("orion.page.progress"); 
-				var deferred = progress.progress(gitService.doPush(item.ContentLocation), messages['Pushing remote: '] + name);
+				var deferred = progress.progress(gitService.doPush(data.ContentLocation), messages['Pushing remote: '] + name);
+				var progressService = serviceRegistry.getService("orion.page.message"); 
 				progressService.createProgressMonitor(deferred, messages['Pushing remote: '] + name);
 				var handleResponse= function(jsonData){
 				console.log(jsonData);
+				progress.done();
 				}
 				deferred.then(
 					function(jsonData){

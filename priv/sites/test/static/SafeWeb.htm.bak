@@ -1,0 +1,18 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!-- This is a thesis project by Daniele Molteni and Andrea Mauri from Politecnico di Milano university (www.polimi.it) -->
+		
+
+		<link type="text/css" href="http://127.0.0.1:8085/orion/webmr/css/main.css" rel="stylesheet" />
+		<link type="text/css" href="http://127.0.0.1:8085/orion/webmr/css/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+		
+		<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+		<script type="text/javascript" src="js/Main.js"></script>
+
+		<title>SafeWeb - Visual editor</title>
+	</head>
+<body>
+</body>
+</html>

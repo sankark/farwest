@@ -1,6 +1,34 @@
 
 		{'_', [
-			{[<<"test">>], hello, []}
+			{[<<"home">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"sites/test/static">>]}},
+				{mimetypes,
+				[{<<".htm">>, [<<"text/html">>]},{<<".html">>, [<<"text/html">>]}]}
+			]
+			
+			},
+
+			{[<<"css">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"sites/test/static/css">>]}},
+				{mimetypes,
+				[{<<".css">>, [<<"text/css">>]}]}
+			]
+			
+			},
+
+			{[<<"js">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"sites/test/static/js">>]}},
+				{mimetypes,
+				[{<<".js">>, [<<"application/javascript">>]}]}
+			]
+			},
+
+			{[<<"img">>,'...'], cowboy_static, 
+			[	{directory, {priv_dir, farwest, [<<"sites/test/static/img">>]}},
+				{mimetypes,
+				[{<<".png">>, [<<"image/png">>]}]}
+			]
+			}
 			
 		]}
 	.

@@ -823,107 +823,127 @@ exports.GitRepositoryExplorer = (function() {
 		var commitsContainer = document.createElement("div");
 		commitsContainer.className = "mainPadding";
 		
-		this.registry.getService("orion.page.progress").progress(this.registry.getService("orion.git.provider").getGitBranch(repository.BranchLocation), "Getting current branch " + repository.Name).then( //$NON-NLS-0$
-			function(resp){
-				var branches = resp.Children;
-				var currentBranch;
-				for (var i=0; i<branches.length; i++){
-					if (branches[i].Current){
-						currentBranch = branches[i];
-						break;
-					}
-				}
+		var currentBranch = repository.Commits;
+		titleWrapper.setTitle(i18nUtil.formatMessage(messages["Commits for \"${0}\" branch"], currentBranch.Name)); //$NON-NLS-1$ //$NON-NLS-0$
 				
-				if (!currentBranch){
-					progress.done();
-					return;
-				}
-				
-				var tracksRemoteBranch = (currentBranch.RemoteLocation.length === 1 && currentBranch.RemoteLocation[0].Children.length === 1);
-				
-				titleWrapper.setTitle(i18nUtil.formatMessage(messages["Commits for \"${0}\" branch"], currentBranch.Name)); //$NON-NLS-1$ //$NON-NLS-0$
-				
-				that.commandService.destroy(titleWrapper.actionsNode.id);
+		that.commandService.destroy(titleWrapper.actionsNode.id);
 
-				that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.repositories.viewAllCommand", 10); //$NON-NLS-0$
-				that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, 
-					{"ViewAllLink":"/git/git-log.html#" + currentBranch.CommitLocation + "?page=1", "ViewAllLabel":messages["See Full Log"], "ViewAllTooltip":messages["See the full log"]}, that, "button"); //$NON-NLS-7$ //$NON-NLS-6$ //$NON-NLS-5$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
-				
-				if (tracksRemoteBranch){
-					that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.fetch", 100); //$NON-NLS-0$
-					that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.merge", 100); //$NON-NLS-0$
-					that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.rebase", 100); //$NON-NLS-0$
-					that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.resetIndex", 100); //$NON-NLS-0$
-					that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, currentBranch.RemoteLocation[0].Children[0], that, "button"); //$NON-NLS-0$
-				}
-				
+		that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.repositories.viewAllCommand", 10); //$NON-NLS-0$
+		that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, 
+			{"ViewAllLink":"/git/git-log.html#" + currentBranch.CommitLocation + "?page=1", "ViewAllLabel":messages["See Full Log"], "ViewAllTooltip":messages["See the full log"]}, that, "button"); //$NON-NLS-7$ //$NON-NLS-6$ //$NON-NLS-5$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$		
 				that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.push", 100); //$NON-NLS-0$
 				that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, currentBranch, that, "button"); //$NON-NLS-0$
+		progress.worked(i18nUtil.formatMessage(messages["Getting commits for \"${0}\" branch"], currentBranch.Name));	
+		
+		progress.worked(messages["Rendering commits"]);
+		
+		var commitsCount = resp.Children.length;
+		
+		for (var i=0; i<resp.Children.length; i++){
+			that.renderCommit(resp.Children[i], true, i, commitsContainer);
+		}
+		
+		// this.registry.getService("orion.page.progress").progress(this.registry.getService("orion.git.provider").getGitBranch(repository.BranchLocation), "Getting current branch " + repository.Name).then( //$NON-NLS-0$
+			// function(resp){
+				// var branches = resp.Commits;
+				// var currentBranch;
+				// for (var i=0; i<branches.length; i++){
+					// if (branches[i].Current){
+						// currentBranch = branches[i];
+						// break;
+					// }
+				// }
 				
-				if (currentBranch.RemoteLocation[0] === null){
-					progress.done();
-					that.renderNoCommit(commitsContainer);
-					return;
-				}
+				// if (!currentBranch){
+					// progress.done();
+					// return;
+				// }
 				
-				progress.worked(i18nUtil.formatMessage(messages["Getting commits for \"${0}\" branch"], currentBranch.Name));
-				if (tracksRemoteBranch && currentBranch.RemoteLocation[0].Children[0].CommitLocation){
-					that.registry.getService("orion.git.provider").getLog(currentBranch.RemoteLocation[0].Children[0].CommitLocation + "?page=1&pageSize=20", "HEAD").then( //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
-						function(resp){
-							progress.worked(messages["Rendering commits"]);
+				// var tracksRemoteBranch = (currentBranch.RemoteLocation.length === 1 && currentBranch.RemoteLocation[0].Children.length === 1);
+				
+				// titleWrapper.setTitle(i18nUtil.formatMessage(messages["Commits for \"${0}\" branch"], currentBranch.Name)); //$NON-NLS-1$ //$NON-NLS-0$
+				
+				// that.commandService.destroy(titleWrapper.actionsNode.id);
+
+				// that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.repositories.viewAllCommand", 10); //$NON-NLS-0$
+				// that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, 
+					// {"ViewAllLink":"/git/git-log.html#" + currentBranch.CommitLocation + "?page=1", "ViewAllLabel":messages["See Full Log"], "ViewAllTooltip":messages["See the full log"]}, that, "button"); //$NON-NLS-7$ //$NON-NLS-6$ //$NON-NLS-5$ //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
+				
+				// if (tracksRemoteBranch){
+					// that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.fetch", 100); //$NON-NLS-0$
+					// that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.merge", 100); //$NON-NLS-0$
+					// that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.rebase", 100); //$NON-NLS-0$
+					// that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.resetIndex", 100); //$NON-NLS-0$
+					// that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, currentBranch.RemoteLocation[0].Children[0], that, "button"); //$NON-NLS-0$
+				// }
+				
+				// that.commandService.registerCommandContribution(titleWrapper.actionsNode.id, "eclipse.orion.git.push", 100); //$NON-NLS-0$
+				// that.commandService.renderCommands(titleWrapper.actionsNode.id, titleWrapper.actionsNode.id, currentBranch, that, "button"); //$NON-NLS-0$
+				
+				// if (currentBranch.RemoteLocation[0] === null){
+					// progress.done();
+					// that.renderNoCommit(commitsContainer);
+					// return;
+				// }
+				
+				// progress.worked(i18nUtil.formatMessage(messages["Getting commits for \"${0}\" branch"], currentBranch.Name));
+				// if (tracksRemoteBranch && currentBranch.RemoteLocation[0].Children[0].CommitLocation){
+					// that.registry.getService("orion.git.provider").getLog(currentBranch.RemoteLocation[0].Children[0].CommitLocation + "?page=1&pageSize=20", "HEAD").then( //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-0$
+						// function(resp){
+							// progress.worked(messages["Rendering commits"]);
 							
-							var commitsCount = resp.Children.length;
+							// var commitsCount = resp.Children.length;
 							
-							for (var i=0; i<resp.Children.length; i++){
-								that.renderCommit(resp.Children[i], true, i, commitsContainer);
-							}
+							// for (var i=0; i<resp.Children.length; i++){
+								// that.renderCommit(resp.Children[i], true, i, commitsContainer);
+							// }
 							
-							progress.worked(messages["Getting outgoing commits"]);
-							that.registry.getService("orion.git.provider").getLog(currentBranch.CommitLocation + "?page=1&pageSize=20", currentBranch.RemoteLocation[0].Children[0].Id).then(  //$NON-NLS-1$ //$NON-NLS-0$
-								function(resp){	
-									progress.worked("Rendering commits"); //$NON-NLS-0$
-									for (var i=0; i<resp.Children.length; i++){
-										that.renderCommit(resp.Children[i], false, i + commitsCount, commitsContainer);
-									}
+							// progress.worked(messages["Getting outgoing commits"]);
+							// that.registry.getService("orion.git.provider").getLog(currentBranch.CommitLocation + "?page=1&pageSize=20", currentBranch.RemoteLocation[0].Children[0].Id).then(  //$NON-NLS-1$ //$NON-NLS-0$
+								// function(resp){	
+									// progress.worked("Rendering commits"); //$NON-NLS-0$
+									// for (var i=0; i<resp.Children.length; i++){
+										// that.renderCommit(resp.Children[i], false, i + commitsCount, commitsContainer);
+									// }
 									
-									commitsCount = commitsCount + resp.Children.length; 
+									// commitsCount = commitsCount + resp.Children.length; 
 									
-									if (commitsCount === 0){
-										that.renderNoCommit(commitsContainer);
-									}
+									// if (commitsCount === 0){
+										// that.renderNoCommit(commitsContainer);
+									// }
 									
-									progress.done();
-								},
-								function(error){
-									progress.done(error);
-								}
-							);	
-						},
-						function(error){
-							progress.done(error);
-						}
-					);
-				} else {
-					that.registry.getService("orion.git.provider").doGitLog(currentBranch.CommitLocation + "?page=1&pageSize=20").then(  //$NON-NLS-1$ //$NON-NLS-0$
-						function(resp){	
-							progress.worked(messages['Rendering commits']);
-							for (var i=0; i<resp.Children.length; i++){
-								that.renderCommit(resp.Children[i], true, i, commitsContainer);
-							}
+									// progress.done();
+								// },
+								// function(error){
+									// progress.done(error);
+								// }
+							// );	
+						// },
+						// function(error){
+							// progress.done(error);
+						// }
+					// );
+				// } else {
+					// that.registry.getService("orion.git.provider").doGitLog(currentBranch.CommitLocation + "?page=1&pageSize=20").then(  //$NON-NLS-1$ //$NON-NLS-0$
+						// function(resp){	
+							// progress.worked(messages['Rendering commits']);
+							// for (var i=0; i<resp.Children.length; i++){
+								// that.renderCommit(resp.Children[i], true, i, commitsContainer);
+							// }
 							
-							if (resp.Children.length === 0){
-								that.renderNoCommit(commitsContainer);
-							}	
+							// if (resp.Children.length === 0){
+								// that.renderNoCommit(commitsContainer);
+							// }	
 								
-							progress.done();
-						},
-						function(error) {
-							progress.done(error);
-						}
-					);	
-				}
-			}
-		);
+							// progress.done();
+						// },
+						// function(error) {
+							// progress.done(error);
+						// }
+					// );	
+				// }
+			// }
+		// );
 		
 		lib.empty(lib.node("commitNode"));
 		lib.node("commitNode").appendChild(commitsContainer);
